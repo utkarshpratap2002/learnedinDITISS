@@ -24,6 +24,7 @@ Let’s see switches again, if we create network of four switches connected in a
 </div>
 <br> 
 
+<<<<<<< HEAD
 Let's talk about the Cables,
 - the standard **ethernet cables**, which are used to connect two devices such as Routers and switches, only remember that ethernet cables are also called *straight-through cables*
 - and **crossover cables**, which are used to directly connect two devices such as two computers that *switches* the send and recieves signals, so that thay can make a contact, like pluging the two phones together
@@ -102,4 +103,7 @@ Now calculate for the following considering **W.X.Y.0/29**:
 - LAST HOST ON 20TH SUB
 - LAST HOST ON LAST SUB
 
+=======
+![alt text](fcn-docs/day3/diagrams/day3.png)
+>>>>>>> 0adbf29e32ca9b2999d0c610c7d3cc085039b025
 
