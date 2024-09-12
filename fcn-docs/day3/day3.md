@@ -103,7 +103,4 @@ Now calculate for the following considering **W.X.Y.0/29**:
 - LAST HOST ON 20TH SUB
 - LAST HOST ON LAST SUB
 
-=======
-![alt text](fcn-docs/day3/diagrams/day3.png)
->>>>>>> 0adbf29e32ca9b2999d0c610c7d3cc085039b025
 
