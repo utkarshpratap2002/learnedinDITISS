@@ -22,5 +22,5 @@ Let’s see switches again, if we create network of four switches connected in a
 <br> 
 <br>
 
-![alt text](Diagrams/day3.png)
+![alt text](fcn-docs/day3/diagrams/day3.png)
 
