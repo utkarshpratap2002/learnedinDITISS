@@ -119,5 +119,11 @@ Remember it is only after 50% of time is over, the the given IP address is suppo
 *How DHCP make a role in our Life?* When you are connected to the internet, DHCP assigns you an IP address. Nowadays, DHCP is on Routers, Switches and everywhere else, not only on the Machines. 
 
 
+### Fixed Lenght Subnet Mask V/S Variable Lenght Subnet Mask
+
+The **FLSM** means that the whole network has on subnet. As shown below the subnet remains same for all the netowrks that exists, say if there are three network, all the three networks are using a /27 subnet mask, where as **Variable Lenght subnet mask** is the concept of using or changing the subnet mask per network and being able to use different subnet mask per network. In the below exmample we can witness the fact that routers subnet is **/30** and that of the two networks is **/26**, that gives 64 hosts per network.  
+
+
+
 
 
