@@ -24,7 +24,6 @@ Let’s see switches again, if we create network of four switches connected in a
 </div>
 <br> 
 
-<<<<<<< HEAD
 Let's talk about the Cables,
 - the standard **ethernet cables**, which are used to connect two devices such as Routers and switches, only remember that ethernet cables are also called *straight-through cables*
 - and **crossover cables**, which are used to directly connect two devices such as two computers that *switches* the send and recieves signals, so that thay can make a contact, like pluging the two phones together
@@ -103,4 +102,11 @@ Now calculate for the following considering **W.X.Y.0/29**:
 - LAST HOST ON 20TH SUB
 - LAST HOST ON LAST SUB
 
+*How we solve this?* If you see, every octet varies from 0-255. Thus, this means that every bit that subnet occupies, say **/25, /26, /27, /28, /29, /30, /31, /32**, has certain amount of subnets and host that lies within each subnet. Each subnet will have a certain reach, like **/24** will have one subnet **W.X.Y.128/25**, and it will have about 2⁷-2=**126** hosts.
 
+| `/25`  | `/26`  | `/27`  | `/28`  | `/29`  | `/30`  | `/31`  | `/32`  |
+|--------|--------|--------|--------|--------|--------|--------|--------|
+|  128   |  192   |  224   |  240   |  248   |  252   |  254   |  255   |
+|`.128`  | `.64`  | `.32`  | `.16`  | `.8`   | `.4`   |  `.2`  | `.1`   |
+
+The above tables tells how each subnet, say **/29** starts with `.8` and goes in iteration (or multiple of 64), so the first host 5th subnet of **W.X.Y.41** because the 5th subnet would be **W.X.Y.40/29**. Similarly, you can solve others.
