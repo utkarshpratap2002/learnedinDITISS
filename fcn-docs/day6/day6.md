@@ -67,7 +67,7 @@ Before going ahead check [Router Architecture](../day5/day5.md#cisco-router), be
 
 ### Cisco Discovery Protocol
 
-Use `show cdp neighbour` to figure out the network diagram. It helps in troubleshooting **network topology**, you can check the networks and devices connected to the router or switches and can draw the diagram. 
+Use `show cdp neighbour` to figure out the network diagram. It helps in troubleshooting **network topology**, you can check the networks and devices connected to the router or switches and can draw the network diagram. 
 
 ```
 Router#show cdp neighbour
@@ -105,17 +105,21 @@ You can also change the **CDP** as it could be a threat, so you can disable the 
 
 ### Backup 
 
-- Use `copy run` *ip-address of tftp*
-- Use `copy start` *ip-address of tftp*, though it would ask for the destination, but by default it will saved.
-- Use `copy flash` *ip-address of tftp*, remember that in case of **flash**, you need to specify where you need to store the file as it could be possible that you need to store is elsewhere not on the root.
+- Use `copy running-config tftp:` for copying the running configuration or  `copy startup-config tftp:` for copying the startup configuration to the **TFTP (Trivial File Transfer Protocol)** server.
+- After you run above commands, it will ask for the **TFTP** server IP, Enter the *IP*, then next write the *file-name* that you want to save running-config/startup-config to. 
+- Use `copy flash tftp:`, remember that in case of **flash**, you need to specify where you need to store the file as it might be possible that you need to store is elsewhere not on the root.
 
+Saving your **backup** is the most necessary practice as you never know what may come up, so you need to save the **running-config** or **startup-config** to the Server. You can also go and check [creating backup](../exploring-cisco-router/creating-backup.md) where you can learn more using Cisco IOS, thus we've created a practical example on how to implement the whole process of backup using Cisco Packet Tracer.
 
-The configuration of **running config** and **startup config**, as you can save the running configuration, if you were making some experiment and now have new configuration, now you don't want to store those configuration just as then, maybe later, after the final submission and apporval from the seniors, you can store the configuration to the **TFTP**. 
-
-You can store the configuration using `copy tftp running-config` or `copy tftp startup-config`, it will ask for the IP after the IP you can
+You can **restore** the configurations using `copy tftp running-config` or `copy tftp startup-config`, it will ask for the IP of the **TFTP** server followed by the *filename* of the file that you specified while saving, and then the backup is initialised and configurations will be restored on the router.
 
 But remember that when executing `copy tftp flash`, which is quite critical, as it asks for the saving the memory and this copying will ask for erasing the flash memory, but because **flash memory** is already is gone and if the router is restarted, then there is no comming, because first it is going to erase the entire flash. 
 
+<div style="border-left: 4px solid #007acc; background-color: #f1f6f9; padding: 10px; border-radius: 5px;">
+<strong>Note: </strong> Don't restart the router <strong>if</strong> while <code>copy tftp flash</code> something goes wrong or the download is not completed from the server, as if you try restarting the router, it would delete the initial <strong>flash</strong> memory and will initiate the reload with the empty flash memory, so it possible that this happens. <br>
+<i> what is better solution then?</i> Better can be done, if you can save the memory of the flash in the Cisco router only, that could help you while the download goes wrong. But don't <b>reload</b> the router and that could save you from trouble. 
+</div>
+<br> 
 The simple solution is that you can go first and save the flash memory in the memory before upgrading the memory, and then you can perform the upgrade. Though if you switched the power off, then router will reload but won't find anything in the flash memory, becuase it is already erased.
 
 ### Telnet
