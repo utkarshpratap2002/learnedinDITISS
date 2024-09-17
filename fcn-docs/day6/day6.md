@@ -67,7 +67,7 @@ Before going ahead check [Router Architecture](../day5/day5.md#cisco-router), be
 
 ### Cisco Discovery Protocol
 
-Use `show cdp neighbour` to figure out the network diagram. It helps in **network topology**, you can check the networks and devices connected to the router or switches and can draw the diagram. 
+Use `show cdp neighbour` to figure out the network diagram. It helps in troubleshooting **network topology**, you can check the networks and devices connected to the router or switches and can draw the diagram. 
 
 ```
 Router#show cdp neighbour
@@ -77,40 +77,31 @@ Device ID    Local Intrfce   Holdtme    Capability   Platform    Port ID
 cisco        Gig 0/0          133            R       C1900       Gig 0/0
 ```
 
-You can also check the `show cdp neighbour detail`
- 
-```
-Router#show cdp neighbors detail
+You can also check the `show cdp neighbour detail`, as it give furhter details about the devices you are connected to, meaning the **Version** of Cisco running, **Interface** that is connected, **communication type** as shown below:
 
-Device ID: cisco
+```
+#sh cdp neighbors detail
+
+Device ID: A
 Entry address(es): 
-  IP address : 192.178.1.2
-Platform: cisco C1900, Capabilities: Router
-Interface: GigabitEthernet0/0, Port ID (outgoing port): GigabitEthernet0/0
-Holdtime: 146
+  IP address : 172.16.20.1
+Platform: cisco C2900, Capabilities: Router
+Interface: GigabitEthernet0/1, Port ID (outgoing port): GigabitEthernet0/2
+Holdtime: 147
 
 Version :
-Cisco IOS Software, C1900 Software (C1900-UNIVERSALK9-M), Version 15.1(4)M4, RELEASE SOFTWARE (fc2)
+Cisco IOS Software, C2900 Software (C2900-UNIVERSALK9-M), Version 15.1(4)M4, RELEASE SOFTWARE (fc2)
 Technical Support: http://www.cisco.com/techsupport
 Copyright (c) 1986-2012 by Cisco Systems, Inc.
 Compiled Thurs 5-Jan-12 15:41 by pt_team
 
 advertisement version: 2
 Duplex: full
-```
+---------------------------
 
+....
+```
 You can also change the **CDP** as it could be a threat, so you can disable the CDP using `no cdp run interface` *interface*, and `no cdp enable`, and you can also the change the cdp timer using `cdp timer 90` and `cdp hold-timer 270`.
-
-As you can also see the interface CDP:
-
-```
-Router#show cdp neighbors 
-Capability Codes: R - Router, T - Trans Bridge, B - Source Route Bridge
-                  S - Switch, H - Host, I - IGMP, r - Repeater, P - Phone
-Device ID    Local Intrfce   Holdtme    Capability   Platform    Port ID
-Switch       Gig 0/1          143            S       2960        Fas 0/1
-cisco        Gig 0/0          159            R       C1900       Gig 0/0
-```
 
 ### Backup 
 
@@ -192,16 +183,8 @@ Lets consider the example diagram below:
             `ip route 172.16.30.0 255.255.255.0 172.16.60.1`,
             `ip route 172.16.10.0 255.255.255.0 172.16.60.1`
 
-This is called **stub** routes. But we can also implement **Default Routes** in the **Router D**, we configure the static route for the traffic to `.10.0`, `30.0`, and for `50.0` we specifically created a routing table, but we can do instead, `ip route 0.0.0.0 0.0.0.0 172.16.60.2`, meaning for *anything* with subnet *anything*, it has to be send `172.16.60.2`.
+This is called **Stub** routes. But we can also implement **Default Routes** in the **Router D**, we configure the static route for the traffic to `.10.0`, `30.0`, and for `50.0` we specifically created a routing table, but we can do instead, `ip route 0.0.0.0 0.0.0.0 172.16.60.2`, meaning for *anything* with subnet *anything*, it has to be send `172.16.60.2`.
 
 Thus similarly this could be done with the **Router B** also, we could use `ip route 172.16.10.0 255.255.255.0 172.16.20.1`, else for *eveything else*, we could specify the default route, `ip route 0.0.0.0 0.0.0.0 172.16.40.2`.
 
 Don't use the **exit interface** as it could cause the problem in **Multiple Access** interface. **Multi-access** intrefaces are those that has more than one branches or WAN connected, in that case packet can't understand on which path it should carry on. Typically make a habit of specifying the **next hop** instead prevent using the *interface*, as it is possible to send the traffic through the interface rather than sending the traffic through the interface. 
-
-
-
-
-
-
-
-
