@@ -1,5 +1,7 @@
 ### Cisco Commands
 
+Let's start with **Routing** commands, which we'll see *how to configure, how to see the interfaces, and how to check what it the next networking device our router is connected to*.
+
 - `show interface` *interface* - The message `GigabitEthernet0/0 is down, line protocol is down`, note that the first on **down** explicates the **physical** layer problem that has to be resolved, and another **down** says that there is problem in **Data link** Layer.
   - One major problem can be seen if there is a **physical** *up* and **data link** *down*, now that is the one which means that there is problem with the service, meaning there is some kind of mismatch, either **Clocking** or **Encpasulation**, or **Keepalives** 
   - Another situation is the one below, as if you didn't specifued the `no shutdown` you'll get **administratively down**
@@ -146,7 +148,7 @@ The simple solution is that you can go first and save the flash memory in the me
 - But if you trying to clear a user, you first need to change the password first, as the anonynemous user might be having passwords and can change the password on his second return and can throw yo =u out as well, so first change the password.
 - Remember that there only could be 7 administrators who can access the router and configure at the same time.
 
-### COnfiguration of hosts
+### Configuration of hosts
 
 You can also make configuration of the hosts, using command `ip host A 172.16.20.2` meaning this is the **static** host configuration. If there are one host, there is no need for it, but in huge number of host, there can be a problem, upto 8 hosts can be configured.
 

@@ -12,7 +12,7 @@ So far we know that we can deal with IP and Subnets and how we calculate subnet 
 
 Let’s see switches again, if we create network of four switches connected in a circular fashion, then if we send a broadcast address to the switch 1, similarly, the same broadcast will be transfered to other switches too, thus that will distributed to the switches, thus this will create a looping braodcast address, and it will chock the network. 
 
-* Switches are that intelligent, if you don’t configure the network properly, then this switching loop will exist within your network.
+* Switches are not that intelligent, if you don’t configure the network properly, then this switching loop will exist within your network.
 
 ![alt text](diagrams/day3.png)
 
