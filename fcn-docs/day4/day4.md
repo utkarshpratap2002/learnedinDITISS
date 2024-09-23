@@ -1,7 +1,3 @@
-
-
-We know that Transport layer handles the reliablity and it is basically composed of **Flow control**, as it control data using start and stop bits. And we learned UDP and TCP, where it was quite obvious that UDP is fast but not reliable.
-
 ### Port
 
 Port ranges from **1 - 65535**. When you type a webiste link, https://google.com, there is file transfer from the google takes place, the packaging of data from the google sends it on a particular port. 
@@ -11,19 +7,19 @@ Port ranges from **1 - 65535**. When you type a webiste link, https://google.com
 
 Remember that when google sends data it packs the port number in segment, the required port for the required process that was requested. Thus, this is how the Segment is, its a standard. Just like a Packet is composed of SRC and DEST, segment is composed of Segment number (given by machine) and port number, which is given by the server.
 
-**Analogy**: Imagine that there are 65535 doors to come inside the machine, as there is any door open any request through the same port can get into the machine as these ports can become a medium to get inside the system. When you talk about defender (Windows Firewall), what it does is tht it closes all the ports that are open randomly, but once yo start a process yourself, it can cause the app to run and occupy the ports, this 
+**Analogy**: Imagine that there are 65535 doors to come inside the machine, if there is any door open any request through the same port can get into the machine as these ports can become a medium to get inside the system. When you talk about defender (Windows Firewall), what it does is that it closes all the ports that are open randomly, but once you start a process yourself, it can cause the app to run and occupy the ports, this 
 
 - **TSR (Teminate State Resident)**, it keep the ports open for those necessary ports that are needed to be open, suppose any cloud application that has to store contineous memory.
 
-- What attacker does is that they start knocking every port that is available and eventually they get one. The anitvirus softwares are the one that check the TCP, but it doesn't check any ports that are being used by what processes. So in order to remain unaffect you need to gaurd your 65535 ports are to blocked by default, only those ports are allowed to open which are to be used by the company's software, that is called **Coperate Firewalls**, say *Sunbeam Firewall, Honeywell Firewall*.
+- Your Window defender might not be able to protect your system, because what attacker does is that they start looking for every port that is open and *eventually they get one*. The **anitvirus softwares** are not ones that checks *what is getting in from which port* and it doesn't check any ports that are being used for what process. So in order to remain unaffect you need to gaurd your 65535 ports, you need to block them by default, only those ports are allowed to open which are to be used by the company's software, that is called **Coperate Firewalls**, say *Sunbeam Firewall, Honeywell Firewall*.
 
-- Data link layer contains the **options** that identifies that process is to be run and what kind of dat ait contains. Now network layer is the one that identifies the protocol that is **Protocol Number**, whehter is TCP segment or it is UDP segment, so it tell this for the segment layer, after segment layer carries the packet that further tell teh segment tthat what port is to be used. 
+- Data link layer contains the **options** that identifies that process is to be run and what kind of data it contains. Now network layer is the one that identifies the protocol that is **Protocol Number**, whehter is TCP segment or it is UDP segment, so it tell this for the segment layer, after segment layer carries the packet that further tell teh segment tthat what port is to be used. 
 
 - It goes something like this, **Frame(contains the data type)** -> **Packets(contains the protocol type)** -> **Segments(containes the port number)** ->  **process**.
 
 - When talking about segemnts, there is a **session id** that capture the multiple instances of the same application, it might seem as it is not important but it plays a role while the data gets decapsulated on the destination. Remember that for different application, there is **Port Number** and for diffrent instances of the same application there is **Session ID**.
 
-- Data link layer has double reposibility because it has to deal with Physical layer as well as to Network Layer. SO it takes the Services using **MAC** from the Physical Layer and it has **LLC (Logical link control)** that gives the Option to the Network layer.
+- Data link layer has double reposibility because it has to deal with Physical layer as well as to Network Layer. So Data link layer interacts with Physical layer using **MAC (Media Access Control)** ensuring that data gets through the physical medium such as Ethernet, etc., and the data link layer has **LLC (Logical Link Control)** that gives the flexibility to understand the protocols being used on the higher end in the OSI modal, i.e., Network layer protocols.
 
 
 ### Cabling
@@ -38,16 +34,11 @@ One is Coaxial Cables and another is UTP/STP cables. For networking IEEE has def
 - Later **cat7** that referred as 1000 Base T.
 
 <div style="border-left: 4px solid #007acc; background-color: #f1f6f9; padding: 10px; border-radius: 5px;">
-<strong>Ever wondered about the Fibre-optic Tech? </strong> It has distance limitation of 40km. But there's more to it.
+<i>Ever wondered about the Fibre-optic Tech? </i> It has distance limitation of 40km. But there's more to it. As fibre-optic cables uses more advance techniques such as <b>advance modulation</b>, <b>repeater</b>, <b>optical amplifiers</b> and what not to extend the distance beyond the 40kms.
 </div>
 <br> 
 
 *Differences between UTP and STP?* An STP is same as UTP cable if it not grounded. If not grounded, it could cause a lot of potential to generate at the top of circumference of the cable and that is why it grounded so that any potential at the jack pannel could be prevented from getting high voltage on the cables outer surface.
-
-<div style="border-left: 4px solid #007acc; background-color: #f1f6f9; padding: 10px; border-radius: 5px;">
-<strong> Networking cables should be </strong> It has distance limitation of 40km. But there's more to it.
-</div>
-<br> 
 
 - There are two kind of cables, one is straight and another is cross cables, these cables workin in diffreent paradigm , as differ in fact that cross cables are able to manage to cross the transmit and recieve channels.
 - As when we are connecting the devices configure with IP address, like Routers and hosts, are need to be attached to Cross cables and when providing connectivity within the network, they are to be connected to straight cables.
@@ -60,6 +51,13 @@ Remember that when connecting with console cable, you need to see that which **c
 ### DOD
 
 It uses TCP/IP, which doesn't have any functinality of Operating system, it only commuincates based on the protocols, but later ISO standards took it and enhanced it, such that it can be used more efficiently. 
+
+In **DOD**, there are only 4 layers basically. 
+
+- **Application/Processes**, which included all the services running on machine, such as *https, https, ftp, Telnet, SSH, DNS, and DHCP*
+- **Host-to-Host Connection**, which was the implementation of TCP/UDP, ensuring the reliable connection. Refer to [day 2](../day2/day2.md) article to learn more about how TCP/UDP works in the whole scenario of **ping**.
+- **Internet**, as on this layer there were protocols similar to that used on L3 devices, one example is **Routers**. Protocols used are ARP, RARP, ICMP, IP etc.
+- **Physical/Network Access**, this is where the error detection and connection with the physical medium use to take place.
 
 ### HTTP/HTTPS
 

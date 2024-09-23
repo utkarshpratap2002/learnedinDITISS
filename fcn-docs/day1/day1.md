@@ -33,7 +33,8 @@ After that, Cloud Computing, we know it already.
 * Later we got Hub-and-spoke Architecture, clients that were having problems they were able to connect to the server as the server were accessible across different locations
 * Though, hub-and-spoke became the most popular choice for the Cloud Infrastructure.
 * Client doesn’t connect directly to the other nodes (or say spokes) in the connection.
-* The first level of Cloud Computation, Infrastructure as a service. Suppose a MS-Office, on every new version of the MS-Office, as they were to update it on all their systems, so Microsoft came up with Office 365, a cloud based application, providing SaaS.
+* The first level of Cloud Computation, Infrastructure as a service, providing virtual servers, scalalibility and flexiblity to adopt as you grow.
+* Suppose a MS-Office, on every new version of the MS-Office, as they were to update it on all their systems, so Microsoft came up with Office 365, a cloud based application, providing SaaS.
 * Office 365 represented the shift to cloud, where every application was delivered over the cloud.
 * Then after that it was Platform as a Service. Where you get all different types of software and carry on with the job you have. 
 * Now there is Communication as a service. 
@@ -58,10 +59,11 @@ Let’s get to know VPN, Virtual Proivate Networks, You have one medium to conne
 
 Let’s move onto SAN, Server Area Network, where multiple servers are connected, providing access of data not focused on storage or data centers.
 
-Let’s talk about SAN, Storage Area Network, thus, it provides high-speed solution of that fact that you don’t need multiple server connectd into one server? You can simply go create one data center storage and then connect all the multiple servers with them. Earlier, there were multiple servers running, data too was accessed using these many servers, which wasn’t reliable.
+Let’s talk about SAN, Storage Area Network, thus, *it provides high-speed solution of fact that you don’t need connected multiple server acting as a single server*, you can simply go create **one data center** storage and then connect all the multiple servers with them. Earlier, there were multiple servers running, data too was accessed using these many servers, which wasn’t reliable.
 
 * This uses RAID, Redundant Array of Inexpensive Disk, connecting storage devices to the Network.
-* Instead we created one single data center that allow the availability of resource or say data, meaning if one server is down, you can anyway access the data from the other servers, because there are multiple servers accessing the same data. So you are not dependent on same server to get data.
+* Instead of extracting specific data from each server, we created one single data center that allow the availability of resource to all the multiple servers, i.e., now you don't have to go for a specific server for specific data, instead, you can just go onto the single server that has all the resources.
+* This also means that if one server is down, you can anyway access the data from the other servers, because there are multiple servers accessing the same data. So you are not dependent on same server to get data.
 
 There is one more thing called as GAN, Galaxy Area Network. If we were to create a Intersteller communication, we would have been able to communicate throughout the solar system. The part where communication between Moon and Earth is already established.
 

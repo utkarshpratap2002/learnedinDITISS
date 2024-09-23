@@ -2,8 +2,8 @@
 
 So far we know that we can deal with IP and Subnets and how we calculate subnet mask and then further how we are able to create subnets and number of hosts that be in subnet.
 
-* There exist two kind of IPs, one is private and another is public, this kind of IP are to be used within your private organisations, as private IPs are supposed to used in your private infrastructure.
-* Basically, Routers has something called NAT, that is Network Address Translation, basically it is communicating with internet as well as 
+* There exist two kind of IPs, one is private and another is public, **private** IP are to be used within your private organisations, as private IPs within your private infrastructure can be same as that on internet and hence private IPs can't be used for communicating over the internet.
+* Basically, Routers has something called **NAT**, Network Address Translation, basically it is for communicating with internet as routers IP is unique over the internet so it is able to translate your private IP into the public IP.
 * Routers have something called proxy servers, that means dummy, routers take that IP and sends the requests to internet.
 * Now NAT and Proxy, these two technolgies are used in to communicate with IP addresses over the internet.
 * **APIPA (Automatic Private IP addressing)** is the kind of IP address where system themselves are able to assign an IP within the subnetworks and they are able to communicate with them.
@@ -16,7 +16,7 @@ Let’s see switches again, if we create network of four switches connected in a
 
 ![alt text](diagrams/day3.png)
 
-* What happens is that it creates a broadcast strorm.
+* What happens is that it creates a broadcast strorm, where the broadcast address get forwarded within the network and doesn't stop any where.
 * Routers seperate collison domains as they tend to seperate the collison domains into seperate networks, and this prevents the collison domain.
 
 <div style="border-left: 4px solid #007acc; background-color: #f1f6f9; padding: 10px; border-radius: 5px;">
@@ -25,8 +25,8 @@ Let’s see switches again, if we create network of four switches connected in a
 <br> 
 
 Let's talk about the Cables,
-- the standard **ethernet cables**, which are used to connect two devices such as Routers and switches, only remember that ethernet cables are also called *straight-through cables*
-- and **crossover cables**, which are used to directly connect two devices such as two computers that *switches* the send and recieves signals, so that thay can make a contact, like pluging the two phones together
+- the standard **ethernet cables**, which are connected in order, thus the same order is maintained on both the ends. Ethernet cables are used to connect devices such as Routers and switches, only remember that ethernet cables are also called *straight-through cables*
+- and **crossover cables**, which are used to directly connect two devices of same type such as two computers, two *switches*. Here tranmiting wires are swapped with receiving wires, so that thay can make a contact, like pluging the two phone together.
 
 There are two more cables called **CSU/DSU (Control Service Unit/Data Service Unit)**, and **DCE/DTE (Data Terminal Equipment/Data Communication Equipment)**.
 
@@ -83,7 +83,7 @@ Transport layer functionality includes:
 - It also got the sequencing, meaning it tracks the label of of the packets it is recieving
 - Flow control, a resource can be asked by many machines, so this occupation of resources is handle by machine (having the resource) using stop bit and ready to go bit, meaning if the resource is demanded while the machine is busy, simply machine will send a stop bit that tell to hold on and when the machine gets free, it sends the ready to go bit.
 
-Remember that all of it are part of segments. As segments never go alone,
+Remember that all of it are part of segments. As segments never go alone, either **TCP** or **UDP**.
 
 |UDP         |TCP       |
 |------------|----------|
@@ -102,7 +102,7 @@ Now calculate for the following considering **W.X.Y.0/29**:
 - LAST HOST ON 20TH SUB
 - LAST HOST ON LAST SUB
 
-*How we solve this?* If you see, every octet varies from 0-255. Thus, this means that every bit that subnet occupies, say **/25, /26, /27, /28, /29, /30, /31, /32**, has certain amount of subnets and host that lies within each subnet. Each subnet will have a certain reach, like **/24** will have one subnet **W.X.Y.128/25**, and it will have about 2⁷-2=**126** hosts.
+*How we solve this?* Refer to [subnet calculation](../fundamentals-again/subnet-calculation.md) to learn more, however if you see, every octet varies from 0-255. Thus, this means that every bit that subnet occupies, say **/25, /26, /27, /28, /29, /30, /31, /32**, has fixed amount of subnets and host that lies within each subnet. Each subnet will have a certain reach, like **/24** will have one subnet **W.X.Y.128/25**, and it will have about 2⁷-2=**126** hosts.
 
 | `/25`  | `/26`  | `/27`  | `/28`  | `/29`  | `/30`  | `/31`  | `/32`  |
 |--------|--------|--------|--------|--------|--------|--------|--------|
@@ -110,3 +110,26 @@ Now calculate for the following considering **W.X.Y.0/29**:
 |`.128`  | `.64`  | `.32`  | `.16`  | `.8`   | `.4`   |  `.2`  | `.1`   |
 
 The above tables tells how each subnet, say **/29** starts with `.8` and goes in iteration (or multiple of 64), so the first host 5th subnet of **W.X.Y.41** because the 5th subnet would be **W.X.Y.40/29**. Similarly, you can solve others.
+
+So let's solving **W.X.Y.0/29**.
+
+We know the subnet **/29** means that the first **five** bits are occupied, so the first **subnet** will start from **W.X.Y.8/29**, then **W.X.Y.16/29**, then **W.X.Y.24/29**, and so on. 
+
+**FIRST HOST ON 5TH SUBNET**
+- W.X.Y.41/29
+
+**LAST HOST ON 10TH SUBNET**
+- W.X.Y.86/29
+
+**BR ID 12TH SUB**
+- W.X.Y.103/29
+
+**LAST HOST ON 15TH SUBNET**
+- W.X.Y.126/29
+
+**LAST HOST ON 20TH SUB**
+- W.X.Y.166/29
+
+**LAST HOST ON LAST SUB**
+- W.X.Y.246/29
+
