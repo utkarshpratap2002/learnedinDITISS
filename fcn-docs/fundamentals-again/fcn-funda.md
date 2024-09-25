@@ -23,6 +23,15 @@
 - POP3 - 110
 - HTTPS - 443
 
+### RIP 
+
+- **Update timer** - Every 30 Sec routing table is sent to the neighbour to ensure the Network Topology remains updated
+  - Updates send on **Broadcast address** **`255.255.255.255`** in RIP
+  - Updates send on **Multicast address** **`224.0.0.9`** in RIPv2
+- **Hold-on/Invalid timer** - If Update is not recieved within **180 Sec**, the router is marked to be invalid.
+  - Hold-on timer in used in **Hold-down** time, waiting until 180 sec to confirm the decision to be taken on the network. After that the route is marked **Invalid**
+- **Flush timer** - After waiting for 180 Sec, the network is flushed after waiting for any update in **240 Sec**, thus this 240 Sec also include 180 Sec from Hold-on timer.
+
 ### OSPF
 
 - ***hello*** Timer - every 10 sec
