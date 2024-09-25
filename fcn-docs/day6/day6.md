@@ -127,7 +127,7 @@ The simple solution is that you can go first and save the flash memory in the me
 ### Telnet
 
 - You can use `telnet` *ip-address* to create a session with the desired device and can create multiple instances by using telnet.
-- Telnet uses **Shift + Control + 6* to move to another session
+- Telnet uses *Shift + Control + 6* to move to another session
 - You can check how many session are currently running or previously runned using `show session`
 
 ```

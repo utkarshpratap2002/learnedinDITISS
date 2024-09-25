@@ -90,6 +90,9 @@ Pro  Inside global     Inside local       Outside local      Outside global
 ---  202.208.220.3     172.16.10.3        ---                ---
 ```
 
+Remember that the NAT table forms once the connections are established. In case of Dynamic NAT, you'll the table formed after you connect with outside networks. In case of Packet tracer, you won't see the outside networks able to reach the Inside global until the NAT table isn't formed.
+
+
 ### Dynamic NAT With Overload
 
 When the Public IPs assigned for the Global communication falls short of the Private IPs, NAT uses Port Numbers to identify and forward the request to the internet. Thus Router is able to negotiate with the port numbers identifying the machines using port number, as every machine in the network can't use the same port number to communicate with the same service. So Router says, *lets use another port number for the accessing the same service* for different machines.

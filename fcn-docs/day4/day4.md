@@ -65,7 +65,7 @@ Hyper text transfer protocol became so efficient that now using a HTML format yo
 
 ### FTP/TFTP
 
-File Tranfer Protocol, and Trivial File Transfer Protocol, FTP uses TCP and TFTP uses UDP. FTP is slow as it uses TCP and TFTP uses UDP and FTP is also useful for sharing data as it supports the **Directory Browsing**, but there is no Directory browsing.
+File Tranfer Protocol, and Trivial File Transfer Protocol, FTP uses TCP and TFTP uses UDP. FTP is slow as it uses TCP and TFTP is fast and FTP is also useful for sharing data as it supports the **Directory Browsing**, but there is no Directory browsing in TFTP, as there is no features like FTP browsing the directories and ability to manage them.
 
 Remember that FTP has authentication and there is no authentication in the TFTP, it is not about being fast but it is about the simplicity.
 

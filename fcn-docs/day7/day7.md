@@ -1,6 +1,5 @@
 # Distance-vector Routing Protocol
 
-Refer to [day 6](../day5/day5.md#cisco-commands) to learn more about
 
 ### Administrative Distance
 
@@ -90,10 +89,10 @@ The **[120/1]**, where **120** is the **Administrative Distance** and **1** is y
 
 | RIP      |    RIP v.2  |
 |----------|-------------|
-|RIP needs the FLSM ot work with| RIP v.2 can work with VLSM|
-|It doesn't send S.M information| RIP v.2 sends the S.M. messages|
-|Classful -> 255.255.255.255| RIP v.2 sends a multicast add -> 224.0.0.9|
-|It can't have authentication| It can have authentication|
+|Fixed Lenght Subnet Mask|Variable Lenght Subnet Mask|
+|It doesn't send Subnet Mask information| RIP v.2 sends the Subnet mask information|
+|Default Broadcast address to announce the update -> **255.255.255.255**|Multicast Address for sending the updates -> **224.0.0.9**|
+|It can't have authentication|It can have authentication|
 
 - To implement the RIP verison 2, just execute the command `version 2` in `(Router-config)`, but remember that if we are working with version 2 and another router is working with version 1, then our router will also work as **version 1**.
 
@@ -102,7 +101,7 @@ The **[120/1]**, where **120** is the **Administrative Distance** and **1** is y
 
 ![alt text](routing-loop.png)
 
-As the **network 5**, when starting from **ROuter A** is reachable **via** **Router B** and also through **Router C**. If due to any delay the network 5 unreachability is not achieved, then there would be unnecessary updates to the **Router C** that **network 5** is reacheacble and hence there would be looping **RIP** packets in all the network. 
+As the **network 5**, when starting from **ROuter A** is reachable **via** **Router B** and also through **Router C**. If due to any delay the network 5 unreachability is not updated, then there would be unnecessary updates to the **Router C** that **network 5** is reacheacble and hence there would be looping **RIP** packets in all the network. 
 
 #### Hop Count Limit
 
@@ -121,11 +120,11 @@ The memory is updated with the updates recieving on the interface about the **Ne
 
 #### Trigger Update
 
-Trigger updates are the updates made instantly when the network topology undergo any changes, thus this makes the updates in the network topology,
+Whenever router senses the network topology has gone under changes, it immediately will send the updates to the other routers informing about the updated network topology. Typically the Normal update time is **30 Sec**, instead of waiting for tht next interval, it will tell the next router about the update in network tipology.
 
 #### Dont Listen until Hold-on Timer
 
-ANother solution if there will be no action taken on that down network.
+Whenever there is a fluctuating network the router doesn't listen to the network for the **Hold-on timer**, i.e., **180 sec**. It keeps the route in the routing table for the Hold-on timer, if within the interval it recieves any update on the network, then if updates the network and starts listening to that network. Usually if router senses the router to the network is **infinity**, then the router will stop listening to it until the **Hold-on Timer** passes.
 
 #### Route Poisoning 
 
