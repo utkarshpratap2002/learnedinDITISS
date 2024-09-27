@@ -24,7 +24,20 @@ In **Linux**, there are 7 types of files and every file is expresses as followin
 - Character Speacial file - denoted by `c`
 - Block Speacial file - denoted by `b`
 
-The data is when flowed **character-by-charater (Charater Speacial File)** then those devices files are saved using `c` and sometimes the data flows **block-by-block (Block Speacial)**, you see these files in the `div` directory.
+
+The data is when flowed **character-by-charater (Charater Speacial File)** then those devices files are saved using `c` and sometimes the data flows **block-by-block (Block Speacial)** that is represented by `b`, you see these files in the `dev` directory.
+
+- In `c` the data flows sequentially, meaning on character at a time, this can be seen in `/dev` dir that stores files of such types.
+    ```
+    ❯ cd /dev
+    ❯ ls -la ttyw0
+    crw-rw-rw-  1 root  wheel  0x4000070 Sep 28 04:19 ttyw0
+    ```
+- In case of `b` the data flow is in the block of data, meaning it could be pendrive or any storage device that has a contineous flow of data.
+    ```
+    ❯ ls -la disk0
+    brw-r-----  1 root  operator  0x1000000 Sep 28 04:19 disk0
+    ```
 
 ### `mkfifo`
 
@@ -43,12 +56,14 @@ There are three levels of permissions given to the user, based on which categroy
 Cosider a scneario where yo have std1, std2, std3, all lies in **group1**, then there is staff1 and staff2, lies inthe **group2**, then admin1 and admin2 lies in **group3**.
 
 There can three file system, read, write, and execute. These permission are given on three level, wither user/owner, group, and others.
+| | |
+|-|-|
+|user/group| rw- |
+|group| rw- | 
+|other| r-- |
 
-user/group - rw-
-group - rw-
-other - r--
+*Now how these can be manipulated?* Meaning there can be used octal for assigning the permissions, these permissions can be given on these respective levels.
 
-*Now how these can be manipulated?* Meaning there can be used octal for assigning the permissions. 
 | | |
 |-|-|
 |0 | 000|
@@ -59,5 +74,14 @@ other - r--
 |5 | 101|
 |6 | 110|
 |7 | 111|
+
+If the permission to be given is read and write then you need to provide the **1** otherwise **0**. This is also explicated in th table given below:
+
+| rw- | rw- | r--|
+|-|-|-|
+|110|110|100|
+
+drwxr-xr-x  4 utkarshsingh  staff   128 Sep 28 03:43 test
+
 
 
