@@ -1,2 +1,3 @@
 # What is TCP/IP?
 
+*If heard TCP is a statless Protocol?* This means that every request that is sent over on the network by TCP is complete new request as it doesn't has to do anything with the previous one. Refer to [crc v/s transport layer security](crc-vs-tranport-layer-security.md#crc-vs-tranport-layer-security) to learn more about TCP that is implemented on Transport layer taking care of the **error detection and error recovery**.

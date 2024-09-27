@@ -23,7 +23,7 @@ Transport Layer works on Layer 4, it is ensure the reliability and  **end-to-end
 |**CRC (Data Link Layer)**|**TCP/UDP (Transport Layer)**|
 |-|-|
 |CRC is implemented on Data Link Layer, i.e., **Ethernet** frames|In Transport Layer the Checksum is implemented by TCP/UDP, adding it to the data segement|
-|CRC provides no **Error Recovery** of data|TCP provides the recovery of data by sending the request for the data segment that has errors|
+|CRC provides no **Error Recovery** of data|TCP provides the recovery of data by sending the request for the data segment that haes errors|
 |CRC is implemented on Ethernet frames so it ensure that devices/destination is found ensuring the **end-to-end connection**|TCP ensures theh reliable communication such that the data segments are send **correctly** over the multiple networks|
 
 

@@ -1,0 +1,71 @@
+<mxfile host="65bd71144e">
+    <diagram id="_HVQdmM9SYORzg_Nl-vE" name="Page-1">
+        <mxGraphModel dx="632" dy="539" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="4" value="Partition" style="whiteSpace=wrap;html=1;fontSize=22;fontStyle=1" parent="1" vertex="1">
+                    <mxGeometry x="180" y="460" width="130" height="130" as="geometry"/>
+                </mxCell>
+                <mxCell id="5" value="Volume&lt;br&gt;Control&lt;br&gt;Block" style="whiteSpace=wrap;html=1;fontSize=22;fontStyle=1" parent="1" vertex="1">
+                    <mxGeometry x="310" y="460" width="130" height="130" as="geometry"/>
+                </mxCell>
+                <mxCell id="6" value="Master File Block" style="whiteSpace=wrap;html=1;fontSize=22;fontStyle=1" parent="1" vertex="1">
+                    <mxGeometry x="440" y="460" width="230" height="130" as="geometry"/>
+                </mxCell>
+                <mxCell id="7" value="Data Block" style="whiteSpace=wrap;html=1;fontSize=22;fontStyle=1" parent="1" vertex="1">
+                    <mxGeometry x="670" y="460" width="340" height="130" as="geometry"/>
+                </mxCell>
+                <mxCell id="8" value="Partition" style="whiteSpace=wrap;html=1;fontSize=22;fontStyle=1" parent="1" vertex="1">
+                    <mxGeometry x="180" y="250" width="130" height="130" as="geometry"/>
+                </mxCell>
+                <mxCell id="9" value="Volume&lt;br&gt;Control&lt;br&gt;Block" style="whiteSpace=wrap;html=1;fontSize=22;fontStyle=1" parent="1" vertex="1">
+                    <mxGeometry x="310" y="250" width="130" height="130" as="geometry"/>
+                </mxCell>
+                <mxCell id="10" value="Master File Block" style="whiteSpace=wrap;html=1;fontSize=22;fontStyle=1" parent="1" vertex="1">
+                    <mxGeometry x="440" y="250" width="230" height="130" as="geometry"/>
+                </mxCell>
+                <mxCell id="11" value="Data Block" style="whiteSpace=wrap;html=1;fontSize=22;fontStyle=1" parent="1" vertex="1">
+                    <mxGeometry x="670" y="250" width="340" height="130" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+    <diagram id="lW-SboMRcwWc3UPcbnQ4" name="Page-2">
+        <mxGraphModel dx="824" dy="1078" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="C9LySvGq4XJJpUaHwboN-1" value="/" style="text;strokeColor=none;align=center;fillColor=none;html=1;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=40;fontStyle=1" vertex="1" parent="1">
+                    <mxGeometry x="520" y="170" width="90" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="C9LySvGq4XJJpUaHwboN-2" value="/" style="text;strokeColor=none;align=center;fillColor=none;html=1;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=40;fontStyle=1" vertex="1" parent="1">
+                    <mxGeometry x="50" y="260" width="90" height="80" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+    <diagram id="NkkD8HA8DhHQcASPVjIR" name="Page-3">
+        <mxGraphModel dx="1648" dy="2156" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="1kfR2J-9Tuo0g6zm2trs-1" value="End-User" style="whiteSpace=wrap;html=1;fontSize=40;fontStyle=1" vertex="1" parent="1">
+                    <mxGeometry x="160" y="220" width="290" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="1kfR2J-9Tuo0g6zm2trs-2" value="OS" style="whiteSpace=wrap;html=1;fontSize=40;fontStyle=1" vertex="1" parent="1">
+                    <mxGeometry x="160" y="480" width="290" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="1kfR2J-9Tuo0g6zm2trs-3" value="Shell" style="ellipse;shape=doubleEllipse;whiteSpace=wrap;html=1;fontSize=40;fontStyle=1" vertex="1" parent="1">
+                    <mxGeometry x="160" y="320" width="280" height="110" as="geometry"/>
+                </mxCell>
+                <mxCell id="1kfR2J-9Tuo0g6zm2trs-4" value="CLI&amp;nbsp;" style="text;strokeColor=none;align=center;fillColor=none;html=1;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=40;fontStyle=1" vertex="1" parent="1">
+                    <mxGeometry x="640" y="250" width="60" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="1kfR2J-9Tuo0g6zm2trs-6" value="GUI" style="text;strokeColor=none;align=center;fillColor=none;html=1;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=40;fontStyle=1" vertex="1" parent="1">
+                    <mxGeometry x="640" y="440" width="60" height="30" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
