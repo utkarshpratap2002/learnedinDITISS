@@ -1,6 +1,0 @@
-1 2 3 4 5
-total 8
--rw-r--r--   1 utkarshsingh  staff  1610 Sep 12 22:25 README.md
-drwxr-xr-x   7 utkarshsingh  staff   224 Sep 30 05:41 cosa-docs
-drwxr-xr-x  19 utkarshsingh  staff   608 Sep 30 04:58 fcn-docs
-drwxr-xr-x  12 utkarshsingh  staff   384 Sep 15 21:44 python-docs
