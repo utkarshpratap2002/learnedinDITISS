@@ -5,14 +5,14 @@ The calculations for the given subnet, you need to calculate the **Broadcast ID*
 ### W.0.0.0/18
 |Calculate| IP address|
 |-------------------|-------------------|
-|Br ID of First Subnet| **W.0.190.255**|
-|Subnet ID of 2nd Subnet| 
-|100th host on 3rd Subnet| 
-|200th host on 3rd Subnet| 
-|300th host on 3rd Subnet| 
-|Br ID of the 8th Subnet| 
-|1st host on 10th Subnet|
-|300th host of 30th Subnet|
+|Br ID of First Subnet|**W.0.190.255**|
+|Subnet ID of 2nd Subnet|**W.0.128.0**|
+|100th host on 3rd Subnet|**W.0.192.100**|
+|200th host on 3rd Subnet|**W.0.192.200**|
+|300th host on 3rd Subnet|**W.0.193.44**|
+|Br ID of the 8th Subnet|**W.2.62.255**|
+|1st host on 10th Subnet|**W.2.64.1**|
+|300th host of 30th Subnet|**W.7.65.44**|
 |400th host on 50th Subnet|
 |600th host on 100th Subnet|
 |800th host on 300th Subnet|

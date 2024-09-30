@@ -141,13 +141,13 @@ There are three major connection in WAN:
 
 - **Circuit Switching**, it was the line that was called ISDN, meaning the ISPs use to charge for the individual connection that the company use to ask for.
 
-- **Packet Switching**, it was the paradigm which use to take care of customers by providing the individual network and throughout the distance they had their own infrastructure and throgh tha line infras* the whole connection was established.
+- **Packet Switching**, is a paradigm where packet is broken down into various packets and is send over the internet. It is more efficient way of transfering data and data irrespective of devices can be send over multiple devices.
 
-  - Within Packet Switching there are few terminologies and concepts on how the ISPs are giving the services and how eveything works? 
-  - Baiscally there is **Demarc**, a demarakation point till where the ISPs are providing the network connection, it is till the point where the line starts getting used by the customers. 
-  - The part used by customers is called **CPE (Customer Premises Equipment)**, where the end users use it and if ther is any problem, ISPs are not responsible for any that problem.
-  - Next within the Demarc, there are lines of ISPs, which is called Local Loop, these loops are the main infrastructre lines of the ISPs connected to their main control Centre which is called **Control Office**, from where the lines are extended to the destination connection.
-  - The misery is that when thes ISPs are making the connection establishment for th Customers, these lines are not only the **local lines**, but ther are is **last mile**, these are the lines taken by ISPs from another ISPs, many times there could be any local ISPs, already taken the lines over the infrastructure and this is taken by ISPs.
+Within Packet Switching there are few terminologies and concepts on *how the ISPs are giving the services and how eveything works?* 
+  - Baiscally there is **Demarc**, a demaracation point that physically defines the point where the ISPs responsiblity ends and customers responsibility starts. Typically the physical point where the ISPs fibre or cables lines enters the building is called Demarc. 
+  - The part used by customers is called **CPE (Customer Premises Equipment)**, which can be networking device used to manage the networks within the premises.
+  - Next within the Demarc, there are lines of ISPs, which is called **Local Loop**, these loops are the main infrastructre lines of the ISPs connected to their main control Centre which is called **Control Office**, from where the lines are extended to the destination connection.
+  - The misery is that when the ISPs are making the connection establishment for th Customers, these lines are not only the **local lines**, but ther are is **last mile**, these are the lines taken by ISPs from another ISPs, many times there could be any local ISPs, already taken the lines over the infrastructure and this is taken by ISPs.
 
 *What is HDLC?* It is a *link control*, one that IBM created was SDLC, which was copywrite of the IBM. It adds a **LLC (local link control)** that is to fullfil the need to be able to identified by the network. Now it has three things associated to it:
 

@@ -6,3 +6,4 @@ Use `d` to see the info on directory itself. Normally the `ls` command will show
 ❯ ls -ld TEST
 drwxr-xr-x  10 utkarshsingh  staff  320 Sep  1  2023 TEST
 ```
+

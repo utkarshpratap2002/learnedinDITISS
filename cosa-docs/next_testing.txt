@@ -1,0 +1,2 @@
+Thus is first line
+ls: cosa-docs/another.txt: No such file or directory
