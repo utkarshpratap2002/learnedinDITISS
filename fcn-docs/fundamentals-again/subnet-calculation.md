@@ -11,13 +11,13 @@ The calculations for the given subnet, you need to calculate the **Broadcast ID*
 |200th host on 3rd Subnet|**W.0.192.200**|
 |300th host on 3rd Subnet|**W.0.193.44**|
 |Br ID of the 8th Subnet|**W.2.62.255**|
-|1st host on 10th Subnet|**W.2.64.1**|
-|300th host of 30th Subnet|**W.7.65.44**|
-|400th host on 50th Subnet|
-|600th host on 100th Subnet|
-|800th host on 300th Subnet|
-|300th host on 600th Subnet|
-|800th host on 800th Subnet|
+|1st host on 10th Subnet|**W.2.128.1**|
+|300th host of 30th Subnet|**W.7.129.44**|
+|400th host on 50th Subnet|**W.12.129.145**|
+|600th host on 100th Subnet|**W.25.2.89**|
+|800th host on 300th Subnet|**W.75.1.34**|
+|300th host on 600th Subnet|**W.150.1.44**|
+|800th host on 800th Subnet|**W.200.3.35**|
 |**Last host on last Subnet**| **W.255.191.254**|
 
 <br>

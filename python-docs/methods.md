@@ -151,5 +151,19 @@ You can use the return method to impove your return statement efficiency using t
 return <value_if_true> if <condition> else <value_if_false>
 ```
 
+### `all()` - A Truthy Method
+
+The `all()` funciton checks if all the items in the **iterable** are true, if true it will return true, else it will return false. A *Super cool* function.
+
+```
+def is_monotonic(arr):
+    is_increasing = all(arr[i] <= arr[i+1] for i in range(len(arr) - 1))
+    is_decreasing = all(arr[i] >= arr[i+1] for i in range(len(arr) - 1))
+    
+    return is_increasing or is_decreasing
+```
+
+Use it for the tasks when you need to check for itentical items within the iterable or perhaps something like monotonic increasing or monotonic decreasing, where it was required to check if all the members in the items are increasing or decreasing.
+
 
 

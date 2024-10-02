@@ -46,11 +46,29 @@ usage: wc [-Lclmw] [file ...]
 
 # How the Redirection stuff works?
 
-The PCB contains a file descriptor that keeps the log of all the standard process numbers that are swaped while the output redirection is taking place using the `dup()` function call. 
+By default three key **file descriptors** are always open for every process and PCB have its pointer on the file descriptor `0` **stdin**, `1` **stdout**, and `2` **stderr**. 
 
-If you want the output of any program into the file say **output-testing.txt**, in that case the **standard output** is replaced by the **output-testing**. By default behaviour is to take the input from the **stdin** and give outout on **stdout**.
+When we are performing [**redirection**](../redirection/redirection.md#redirection) the fiel descriptors are swapped with the specified file when we are making the redirection. In that case `dup()` system call is made to swap the pointers of the PCB from **std output** with the file specified.
 
-Pipe is an **IPC (Inter-Process Communication)** mechanism, on one end we write and on other end we read. 
+```
+commmand > output.txt
+```
+
+Remember initially the file descriptor `1` **stdout** was associated with the terminal to produce the output, but after the `dup()` function call take place the file descriptor `1` is pointing to the `output.txt`. So the output that was meant to go to **stdout** is now directed to **`output.txt`**.
+
+**Pipe** is called IPC (Inter-Process Communication) that allows two programs to communicate with each. Pipe works by connection the **stdout** of one process to **stdin** of another process. 
+
+```
+command1 | command2
+```
+
+The pipe operator **|** logically connects the **stdout** of command1 with the **stdin** of the command2. 
+
+- Basically the command1 will generte the **stdout**
+- The **stdout** of the command1 will be directed as **stdin** of the command2
+- command2 will then take **stdin** and will generate the **stdout**
+
+The shell sets up this using the `pipe()` system call, one **writing** to the pipe connected to command1 (stdout) and another **reading** to the pipe connectd to command2 (stdin).
 
 #### How does `sort number.txt > fifo` and `uniq < fifo` is working?
 
