@@ -164,9 +164,7 @@ These are the following commands that can be used for process inspection:
 - Use `ps`, `ps -e` and `ps -e -o pid, ppid, cmd`, show what are actively running processes running, along with the information of their **PID** process-id, parent process-id, and all the commands running.
 - **`tty`** represents the terminal devices that are conneected.
 
-
-
-
+NOTE* OBJDUMB and EXECUTABLE
 
 
 

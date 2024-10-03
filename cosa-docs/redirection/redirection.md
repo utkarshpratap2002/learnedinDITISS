@@ -75,4 +75,4 @@ Imagine using the functinality of `less` with out std output of the `ls -la` fol
 ❯ ls -la ~ | less
 ```
 
-The above command will pipe the **std output** with the second command which is `less`. So the pipelining is *super handy* when it comes to filtering, piping different commands.
+The above command will pipe the **std output** with the second command which is `less`. So the pipelining is *super handy* when it comes to filtering, piping different commands. Refer to [how the command redirection works?](../day3/day3.md#how-the-redirection-stuff-works) to learn more about Piping and IPC (Inter-Process Communication).

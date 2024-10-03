@@ -59,7 +59,7 @@ Let’s get to know VPN, Virtual Proivate Networks, You have one medium to conne
 
 Let’s move onto SAN, Server Area Network, where multiple servers are connected, providing access of data not focused on storage or data centers.
 
-Let’s talk about SAN, Storage Area Network, thus, *it provides high-speed solution of fact that you don’t need connected multiple server acting as a single server*, you can simply go create **one data center** storage and then connect all the multiple servers with them. Earlier, there were multiple servers running, data too was accessed using these many servers, which wasn’t reliable.
+Let’s talk about SAN, Storage Area Network, thus, *it provides high-speed solution of fact that you don’t need connection over multiple server acting as a single server*, you can simply go create **one data center** storage and then connect all the multiple servers with them. Earlier, there were multiple servers running, data too was accessed using these many servers, which wasn’t reliable.
 
 * This uses RAID, Redundant Array of Inexpensive Disk, connecting storage devices to the Network.
 * Instead of extracting specific data from each server, we created one single data center that allow the availability of resource to all the multiple servers, i.e., now you don't have to go for a specific server for specific data, instead, you can just go onto the single server that has all the resources.

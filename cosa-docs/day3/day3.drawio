@@ -1,0 +1,84 @@
+<mxfile host="65bd71144e">
+    <diagram id="QIklp8zOGH-bhesyUvls" name="Page-1">
+        <mxGraphModel dx="749" dy="980" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="2" value="0 - stdin" style="whiteSpace=wrap;html=1;fontSize=22;fontStyle=1" vertex="1" parent="1">
+                    <mxGeometry x="250" y="220" width="260" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="3" value="1 - stdout" style="whiteSpace=wrap;html=1;fontSize=22;fontStyle=1" vertex="1" parent="1">
+                    <mxGeometry x="250" y="280" width="260" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="4" value="2 - stderr" style="whiteSpace=wrap;html=1;fontSize=22;fontStyle=1" vertex="1" parent="1">
+                    <mxGeometry x="250" y="340" width="260" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="5" value="3 - testing.txt" style="whiteSpace=wrap;html=1;fontSize=22;fontStyle=1" vertex="1" parent="1">
+                    <mxGeometry x="250" y="400" width="260" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="6" value="4 - output.txt" style="whiteSpace=wrap;html=1;fontSize=22;fontStyle=1" vertex="1" parent="1">
+                    <mxGeometry x="250" y="460" width="260" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="7" value="" style="whiteSpace=wrap;html=1;fontSize=22;fontStyle=1" vertex="1" parent="1">
+                    <mxGeometry x="250" y="520" width="260" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="8" value="" style="whiteSpace=wrap;html=1;fontSize=22;fontStyle=1" vertex="1" parent="1">
+                    <mxGeometry x="250" y="580" width="260" height="60" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+    <diagram id="NTDnLI0bCuNCqQPprdjJ" name="Page-2">
+        <mxGraphModel dx="1404" dy="1198" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="_lbsI5VeGoA9WWPQn8_d-1" value="&lt;meta charset=&quot;utf-8&quot; style=&quot;font-size: 40px;&quot;&gt;&lt;div style=&quot;color: rgb(59, 59, 59); background-color: rgb(255, 255, 255); font-family: Menlo, Monaco, &amp;quot;Courier New&amp;quot;, monospace, Menlo, Monaco, &amp;quot;Courier New&amp;quot;, monospace; font-size: 40px; line-height: 21px;&quot;&gt;&lt;div style=&quot;font-size: 40px;&quot;&gt;&lt;span style=&quot;color: rgb(128, 0, 0); font-size: 40px;&quot;&gt;`sort number.txt | uniq`&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;" style="text;whiteSpace=wrap;html=1;fontSize=40;fontStyle=1;align=center;" vertex="1" parent="1">
+                    <mxGeometry x="219" y="70" width="730" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="Gga_F78Sk6cvpD9I_jl_-1" value="0 - stdin" style="whiteSpace=wrap;html=1;fontSize=22;fontStyle=1" vertex="1" parent="1">
+                    <mxGeometry x="150" y="230" width="260" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="Gga_F78Sk6cvpD9I_jl_-2" value="1 - stdout" style="whiteSpace=wrap;html=1;fontSize=22;fontStyle=1" vertex="1" parent="1">
+                    <mxGeometry x="150" y="290" width="260" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="Gga_F78Sk6cvpD9I_jl_-3" value="2 - stderr" style="whiteSpace=wrap;html=1;fontSize=22;fontStyle=1" vertex="1" parent="1">
+                    <mxGeometry x="150" y="350" width="260" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="Gga_F78Sk6cvpD9I_jl_-4" value="3 - testing.txt" style="whiteSpace=wrap;html=1;fontSize=22;fontStyle=1" vertex="1" parent="1">
+                    <mxGeometry x="150" y="410" width="260" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="Gga_F78Sk6cvpD9I_jl_-5" value="4 - output.txt" style="whiteSpace=wrap;html=1;fontSize=22;fontStyle=1" vertex="1" parent="1">
+                    <mxGeometry x="150" y="470" width="260" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="Gga_F78Sk6cvpD9I_jl_-6" value="" style="whiteSpace=wrap;html=1;fontSize=22;fontStyle=1" vertex="1" parent="1">
+                    <mxGeometry x="150" y="530" width="260" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="Gga_F78Sk6cvpD9I_jl_-7" value="" style="whiteSpace=wrap;html=1;fontSize=22;fontStyle=1" vertex="1" parent="1">
+                    <mxGeometry x="150" y="590" width="260" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="Gga_F78Sk6cvpD9I_jl_-15" value="0 - stdin" style="whiteSpace=wrap;html=1;fontSize=22;fontStyle=1" vertex="1" parent="1">
+                    <mxGeometry x="820" y="220" width="260" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="Gga_F78Sk6cvpD9I_jl_-16" value="1 - stdout" style="whiteSpace=wrap;html=1;fontSize=22;fontStyle=1" vertex="1" parent="1">
+                    <mxGeometry x="820" y="280" width="260" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="Gga_F78Sk6cvpD9I_jl_-17" value="2 - stderr" style="whiteSpace=wrap;html=1;fontSize=22;fontStyle=1" vertex="1" parent="1">
+                    <mxGeometry x="820" y="340" width="260" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="Gga_F78Sk6cvpD9I_jl_-18" value="3 - testing.txt" style="whiteSpace=wrap;html=1;fontSize=22;fontStyle=1" vertex="1" parent="1">
+                    <mxGeometry x="820" y="400" width="260" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="Gga_F78Sk6cvpD9I_jl_-19" value="4 - output.txt" style="whiteSpace=wrap;html=1;fontSize=22;fontStyle=1" vertex="1" parent="1">
+                    <mxGeometry x="820" y="460" width="260" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="Gga_F78Sk6cvpD9I_jl_-20" value="" style="whiteSpace=wrap;html=1;fontSize=22;fontStyle=1" vertex="1" parent="1">
+                    <mxGeometry x="820" y="520" width="260" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="Gga_F78Sk6cvpD9I_jl_-21" value="" style="whiteSpace=wrap;html=1;fontSize=22;fontStyle=1" vertex="1" parent="1">
+                    <mxGeometry x="820" y="580" width="260" height="60" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
