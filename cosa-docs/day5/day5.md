@@ -23,11 +23,13 @@ We'll try to understand what meant with **Darwin Kernel**.
 
 There arr various editor in the shell, out of which `nano` and `vi` editor commands are very important and crucial, becuase they are powerful and delivers the job. 
 
-#### `rename` *pattern* filename.ext
+#### `rename` *s/old-pattern/new-pattern* *pattern
 
+`rename` can be very efficient while changing the multiple name of the same pattern of files or dirctories. The syntax is given below:
 ```
 rename 's/file/test` *.txt
 ```
+The files as well as folder can be changed, in 
  
 #### `ls -la | grep "^d"`
 
@@ -293,7 +295,11 @@ case $choice in
 
 ```
 
+While shell scripting there is major role played by the **spaces**, if yo didn't used the spaces before and after the operator, it won't be a trouble, but if you used spaces while assignement, remember, **spaces** are **not** allowed while assignments.
 
-
-
-
+```
+if [ condition ]; then
+  - -         - 
+  | |         |
+  space      space
+```

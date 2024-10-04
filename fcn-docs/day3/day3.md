@@ -73,7 +73,7 @@ Network 1 is Pune, Network 2 is routers connected on both side, Network 3 is Del
 
 Now, Routers themselves can communicate among them and can provide a comm beyond the networks. For that there are routing protocols, these are RIP, OSPF, EIGRP.
 
-What happens at Transport layer?  It is about relliability, it provides a assurity, but remember that segments never go alone, it always includes the parts like NACK and ACK
+*What happens at Transport layer?*  It is about relliability, it provides a assurity, but remember that segments never go alone, it always includes the parts like **NACK (Negative Acknowledgement)** and **ACK (Acknowledgment)**, along with ACK and NACK, transport layers segement is responsible for segementation of frames, adding sequence number for arrangement of data, flow control that manages the **window size**, and sliding window protocol, along with **retransimission**, that helps in recovery of data, if lost (in TCP).
 
 Transport layer functionality includes:
 

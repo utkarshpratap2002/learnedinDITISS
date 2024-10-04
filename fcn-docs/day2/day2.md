@@ -4,7 +4,7 @@ Let’s consider the Machine A and Machine B wants to communicate, question, how
 
 * The purpose of ARP is to learn the MAC address of the **Destination** machine. A will broadcast that he wants to communicate with the Machine B, the broadcast message carries `::FFFF`
 
-![alt text](arp.png)
+![alt text](fcn-docs/day2/diagrams/arp.png)
 
 <br>
 
