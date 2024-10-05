@@ -8,6 +8,19 @@ So far we know that we can deal with IP and Subnets and how we calculate subnet 
 * Now NAT and Proxy, these two technolgies are used in to communicate with IP addresses over the internet.
 * **APIPA (Automatic Private IP addressing)** is the kind of IP address where system themselves are able to assign an IP within the subnetworks and they are able to communicate with them.
 
+
+
+- **Private Address Series** 
+  - 10.0.0.0/8 (10.0.0.0 - 10.255.255.255)
+  - 172.16.0.0/12 (172.16.0.0 - 172.31.255.255)
+  - 192.168.0.0/16 (192.168.0.0 - 192.168.255.255)
+
+- **Multicast Address** - 224.0.0.0 to 239.255.255.255
+
+- **APIPA (Automatic Private IP Addressing)** - 169.254.0.0/16
+
+- **Loopback Addresses** - 127.0.0.0/8
+
 ### Spanning Tree Protocol
 
 Let’s see switches again, if we create network of four switches connected in a circular fashion, then if we send a broadcast address to the switch 1, similarly, the same broadcast will be transfered to other switches too, thus that will distributed to the switches, thus this will create a looping braodcast address, and it will chock the network. 
@@ -83,7 +96,7 @@ Transport layer functionality includes:
 - It also got the sequencing, meaning it tracks the label of of the packets it is recieving
 - Flow control, a resource can be asked by many machines, so this occupation of resources is handle by machine (having the resource) using stop bit and ready to go bit, meaning if the resource is demanded while the machine is busy, simply machine will send a stop bit that tell to hold on and when the machine gets free, it sends the ready to go bit.
 
-Remember that all of it are part of segments. As segments never go alone, either **TCP** or **UDP**.
+Remember that all of it are part of segments. As segments never go alone, either **TCP** or **UDP**. And when we talk about the segements **sequence number** and **ACK** number, it is called and identified using **byte number** inside the **segment header**, which is used while sequencing of data.
 
 |UDP         |TCP       |
 |------------|----------|
