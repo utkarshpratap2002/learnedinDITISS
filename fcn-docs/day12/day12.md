@@ -14,7 +14,7 @@ WEP version 2 - Uses Triple DES, AES.
 
 ### GRE Tunnel
 
-Before we get into the technolgy, we need to understand that with standard NAT, ther eis a problem faced in the industry. Every time you can use Overloading of NAT and expect to have a stable connection as ability to be communicate fromthe outside to the inside isn't possible, therefore to get the better view at the problem, look at problem statement.
+Before we get into the technolgy, we need to understand that with standard NAT, there is a problem faced in the industry. Every time you can use Overloading of NAT and expect to have a stable connection as ability to be communicate fromthe outside to the inside isn't possible, therefore to get the better view at the problem, look at problem statement.
 
 
 **Problem statement** - 
