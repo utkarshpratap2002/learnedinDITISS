@@ -47,13 +47,54 @@ Remember that each computer follows its own security database and that is stored
 
 It is the service that allows you to create a centralised security database. You need a plan that you need to execute because here you are not going to configure **AD** on all 1000 machines, but only one.
 
-1. Therefore, **Domain**
+1. **Domain**
   - It is logical group of computers or devicees which follow a comman security database, such that these logical groups are not fixed and can be changed as per requirements.
   - These domain names can be given in **internet** format, such as, ***sunbeam.com***, ***ditiss.lab***.
+
+---
 
 2. **Domain Tree**
   - It is collection of domanis which share a comman namespace and are bind with parent and child realationship.
   - If you create a name with *cdac.com* and *param.cdac.com*, then *cdac.com* becomes the parent of *param.cdac.com* and therefore it follows the tree structure, hierarchical structure.
+
+---
+
+3. **Forest**
+  - Suppose there are multiple TATA groups, so in order to go into multiple groups there has to be only one account so that there are not multiple accounts wandering in multiple groups.
+  - *Again*, It is also a **logical entity**.
+  - It is colletion of domain trees, all the domains within a forest are bind with 2 way trusts.
+
+---
+
+4. **Domain Controller**
+  - It is server whihc creates the security database for the domain and hosts it.
+  - Each domain has its own **Domain Controller**.
+
+---
+
+5. **Additional Domain Controller**
+  - It is server that copies the securty database feom ta somain controiller. It works as a backup for domain controller.
+  - Becuase all the usernames and passwords are saved on **Domain Controller** and if it fails, **ADC** will verify the users and login the users.
+  - **ADC** also does **Load Balancing**, meaning it manages the load based on traffic.
+  - A domain may have any number of ADCs.
+  - The purpose of ADC is to overcome DC failure.
+  - Also it allows security database management from multiple locations.
+
+
+
+# Forest
+
+- Everytime there will be an user login to 
+- Multiple ADCs can be created using this arhctitecture.
+- There is only one server tha needs configuraiton. 
+- If you need to add another password, so tha tdoesn't mean that thre is local management in the comapny.
+
+
+# Add Roles and Features
+
+
+
+
 
 
 
