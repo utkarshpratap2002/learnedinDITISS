@@ -1,5 +1,9 @@
 # What are the jobs of an Adminstrator?
 
+- **Installation of operating system** - It involves doing the configurations and making the partitioning for the multiple os environment.
+
+- **User and Server Management** - Another is user and server management using administrative powers.
+
 # Windows Server
 
 Windows server are different and client are not expected to be that effiient and ther fore servers require:
@@ -32,8 +36,6 @@ Feature of the Window 10 Pro:
 - **Bitlocker Encyption** - It is full volume encryption.
 
 Refer to **gpedit policy** for administrators and it is not available in Home edition.
-
-### Difference between Window OS and Server
 
 - **Expandable/Scalability**
   - There is much more RAM available for the organistion if they feel like exapaned

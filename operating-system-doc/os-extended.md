@@ -107,6 +107,26 @@ Still the problem is not solved, therefore you need to make the changes to `/etc
 
 This was all about **GRUB Tweaking**. 
 
+# Virtual Machine
+
+- Virtual Machines are used heavly in the industry and are best for development of software amd application
+- Next, these VMs are used for learning netowrking and Security, as one of these machine are used for the security testing.
+
+*You might ask where Virtual Machines shouldn't be uesd?* You can't use VMs for running games, for hardware intensive jobs, and don't use for **device drivers**, it is also a bad choice if you are using it for the 
+
+- **XEN** or **KVM (Kernel Virtual Machine)** is another virtual machien that is use only to install Linux.
+- **DOS** is another Virtual Environment that is used for the playing classic games.
+- **Q Emulator** is another **qemu** based emulator that can emulate the hardware solutions such as **arm**, **mips**, **x86**.
+- **WINE (Wine Is Not Emulator)** used for the running the application on the upper layer of the Operating system.
+- **CygWin** - Linis apps on windows, system calls/APIs virtualisation.
+
+There are two types of VIrtualisation:
+
+- **Type 1 Virtualisation** - It is the kind that uses spereate **Hypervisor** that runs over the Hardware and this uses the full potential of the hardware if the OS is removed form the layer.
+- **Type 2 Virtualisation** - This is another technology that is uses virtualisation over the host OS
+
+# Containerisation
+
 
 
 

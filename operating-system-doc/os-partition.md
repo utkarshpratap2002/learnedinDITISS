@@ -6,7 +6,7 @@ The first thing that need yor concern is not installatin, but the Booting sequen
 
 You can't just use multiple OS as virtual machines as there are lots of pros and cons and every machine is limited by its hardware and software, you can't efficiently test it. Even **JAVA** on different machines have different outputs and ther fore you can't just install java on multiple OS and except the same output. 
 
-- PXE - Pre execution environment, a CD/DVD on different machine and through network you can install servers and OPerating system.
+- PXE - Pre execution environment, a CDDVD on different machine and through network you can install servers and OPerating system.
 - Post-install troubleshoot - After installation you can ruin that system, but that is not part of the workshop.
 
 We'll be installing Windows 7, Ubuntu, Solaris, PC-BSD, Red Hat, SuSE, and Window 2012, and Windows 8.1. Remember that there is **Lunux** (Red Hat, Ubuntu, Mac OS X), then **Windows** (Window 8.1, Window 2012, and Window 7).
@@ -82,7 +82,7 @@ The one that loads the kernel to the memory, and **bootstrap** is always specifi
 
 - Whenever you boot OS, you might see the **Boot Loader**, which ask for what OS you might choose to run and respectively it gives you the respective OS command.
 
-- Windows older verison before the Vista was **NTADR (New Technology)**, the new one was called **Boot NGR**. The **boot configuration file** is saved in **boot ini**, **bc (boot config data)**.
+- Windows older verison before the Vista was **NTADR (New Technology)**, the new one was called **Boot NGR**. The **boot configuration file** is saved in **boot ini**, **bc (boot config data)**, and the kernel of windows is saved in `ntoskrnl.exec` called NT kernel.
 
 - Solaris which is the original Solaris, has the boot loader named as **Silo**.
 
@@ -132,8 +132,7 @@ Remember for other primary partition there won't be any other partition table be
   - **16KB** - is the size of every entry
   - Every partition is given a partition section that stores the Partition system ID, thus at a time there is only allowed that will tell which system was running previous and therefore there need to be only one.
   - **startchs** and **endingchs**
-  
-  - 
+  - Remember that if you tried booting without making change in the partition table with the one that was previously enabled as active partitioning.
 
 
 Remember the rules that PC-BSD cannot be installed on any other partition, therefore you need to understand that you can't give partition to any OS, becuase of the rules and needs of specific OSs. And Original **Solaris** rule says that it only need the partition withint the first **8Gb** of partition. Therefore, after Windows we gave the **Solaris**. But Open solaris can be given any primary partition. 

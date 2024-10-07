@@ -7,3 +7,6 @@ Use `d` to see the info on directory itself. Normally the `ls` command will show
 drwxr-xr-x  10 utkarshsingh  staff  320 Sep  1  2023 TEST
 ```
 
+### `$()`
+
+Whenever you need to calcalate the expression on extract the value out of expression, you need to use this **substitution** methods.
