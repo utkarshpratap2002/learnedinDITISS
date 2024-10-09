@@ -1,10 +1,12 @@
-
+# Utilities
 
 1. **Disk Manager** - It tell which utility is installed on the computer and therefore you check check which hardware, say a network card, device manager will tell who is the network card manufracturer. Whe it is about the **server** upgrade, you need to know what it is.
 
 2. **User Management** - Administrator has all the user management access. You need to add users and manage users. OS gives you default users and therefore all the permissions are already given, if you need to change ther permission, administrator does that.
   - **User meta data** - There are policies for users, the permissions, all of these are saved on **database**, another if **SQL**, then **Excel**, and therefore it is called **flat databases**.
   - **`windows/system32/config`** - This file holds the username passowrds groups etc., it is called **SAM (Security Accounts Manager)** file, similarly in linux there is `/etc/passwd` where everything users password and information is stored.
+
+<br>
 
 # How do you add Users?
 
@@ -32,20 +34,25 @@ Remember that each computer follows its own security database and that is stored
 
     - The shared folders will be available to the machines on the same network. And thus, you can access the file, *if they are sharing the same network*.
 
-    - **How to make sure the network is same**
-        - First you need to check whether the networks are on the same subnet.
-        - You would need to share the data.
+    - **How to make sure the network is same ?** 
+      - First you need to check whether the networks are on the same subnet.
+      - Then you would need to write the password for the user authentication, as the windows being a secure system can't let any user in whoes entry isn't made inside the SAM file.
+      - So, if you share passwords, there might be a possiblity that your password gets comporomised.
     
-    - **How to make sure that there is no password sharing problem**
+    - **How to make sure that there is no password sharing problem ?**
         - So you need to create one user on all the sytems having same name and same password, such that **SAM** can recognise the same user trying to access the **shared file** from differnt machine without authentication.
+        - In this case if a **user1** password is changes on machine1, there the password on other machine with **user1** won't change, so again, management is a problem.
 
 - **Central Security Database**
     - Instead of working in **Workgroup** mode, you will have only one account, through which you'll be able to manage all the users within the organisation.
 
+<br>
 
-# ADDS (Active Directory Domain Service)
+# AD DS (Active Directory Domain Service)
 
-It is the service that allows you to create a centralised security database. You need a plan that you need to execute because here you are not going to configure **AD** on all 1000 machines, but only one.
+It is the service that allows you to create a **centralised security database**. **AD** is where you create user directories and user accounts and passwords and store their data. You need a plan that you need to execute here you are going to configure **AD** on all 1000 machines, but only one. Remember that Active Directory is for administrators and therefore it eases the job of administrator, it stores the data of users and has a logical and hierarchical structure where adminstrator can manage all the users in the organisation.
+
+Active Directory contains two concepts, **domain** and **forest** but remember that **AD** shows itself through a logical plane that consists **domain** and **forest** and **tree** but relies on the physical structure that is **database** and this database is stored on all the **domain controller** of the forest. Lets see the elements involved in **Logical Structure** of Active Directory.
 
 1. **Domain**
   - It is logical group of computers or devicees which follow a comman security database, such that these logical groups are not fixed and can be changed as per requirements.
@@ -77,13 +84,14 @@ It is the service that allows you to create a centralised security database. You
   - Becuase all the usernames and passwords are saved on **Domain Controller** and if it fails, **ADC** will verify the users and login the users.
   - **ADC** also does **Load Balancing**, meaning it manages the load based on traffic.
   - A domain may have any number of ADCs.
-  - The purpose of ADC is to overcome DC failure.
+  - The purpose of ADC is to overcome the **load balancing** and manage the **trafficing**.
   - Also it allows security database management from multiple locations.
 
 
 
 # Forest
 
+- Collection of domain trees, and binds all the user database to it.
 - Everytime there will be an user login to 
 - Multiple ADCs can be created using this arhctitecture.
 - There is only one server tha needs configuraiton. 
