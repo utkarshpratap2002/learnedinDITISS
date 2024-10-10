@@ -87,6 +87,9 @@ Active Directory contains two concepts, **domain** and **forest** but remember t
   - The purpose of ADC is to overcome the **load balancing** and manage the **trafficing**.
   - Also it allows security database management from multiple locations.
 
+### `Windows/NTDS/ntds.dit`
+
+Whenever a user is creating a Active Directory, everything about that directory is saved into the database, which is the physical part of the Active Directory. 
 
 
 # Forest

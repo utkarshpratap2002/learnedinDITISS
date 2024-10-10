@@ -32,7 +32,8 @@ In the below example, if **sunbeam.lab** trust **cdac.lab** has an child domain,
 
 # Steps to Create ADC
 
-- Go to manage 
+Active Directory controller are for backups and whenever the Domain Controller fails, there would be another called ADC (Active Directory Controller), which takes all the database that DC has, including *SAM*, every user and account file. You might need to add relationship between the domains and forest while you create the **ADC**.
+
 
 # Adding Tree domains and Child domain 
 
