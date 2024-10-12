@@ -103,8 +103,10 @@ Both the images are provided by the Microsoft on window OS DVD. THe DVD has fold
     - And then install.
 
 2. **Configure the Server**
-    - Then you need to go to the Tools, then Window Deployment Service, then configure teh server.
+    - Then you need to go to the Tools, then Window Deployment Service, then configure the server.
     - Then you need to choose from **Integrated Active Directory**.
+
+3. **Add Image Wizrd**
 
 3. **Keep DHCP and WDS on same Server**
     - It will make sure that WDS and DHCP are able to listen to each other.
