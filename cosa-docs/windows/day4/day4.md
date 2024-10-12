@@ -83,16 +83,44 @@ Lets discuss the roles within the **Forest-wide** Roles:
   - Any new updates to AD Schema should be first performed on Schema Master.
   - Then Schema Master will update it to all other domain controllers within a forest.
 
+2. **Domain-naming Master**
+  - It makes sure that there isn't any duplicate domains in the forest.
+
 Lets discuss roles within the **Domain-wide** Roles:
 
 1. **RID Master**
   - In a domain as the user account are created on DC and any ADC, ther is a chance that 2 uers get the same SID number. 
   - RID Master takes care of that duplication.
-  - The Resource ID master allocated teh SID number ot ADC's which they can assign to accounts created on them. This avoids SID duplication.
-  
+  - The Resource ID master allocated the SID number ot ADC's which they can assign to accounts created on them. This avoids SID duplication.
+
+2. **Infrastructure Master**
+  - It performs cross-domain information transfer. It basically communicates with the other domain for the exchange of information.
+  - For example, **student1** (of sunbeam.cdac.com) is added to the *acts.cdac.com* by the domain administrator. 
+
+3. **PDC Emulator**
+  - It originally used for the backward compatibility with windows NT. It is Primary Domain Controller.
+  - Now it works as a time server for the computers within a domain.
+  - Also handles usr password changes - communicates other domain user password changes to PDC of that domain.
+
+![alt text](pdc.png)
+
+Now consider the below structure and give the roles that will be assigned to each of the server:
+
+![alt text](roles.png)  
+
+- Remember in case of **Schema Master**, the first domain will be assigned the **Schema Master**. Then, in case of the **Domain-naming Master**, it will be assigned to the same as Schema Master. 
+
+- Thus in case of the srv6, there is no ADC yet created for the domain, so it will have all the domain-wide roles.
+
+Now if you create a new role with only domain, as given below example, it will have all the roles of the forest and domain. Refer to [Day 5](../day5/day5.md) to learn ahead about the **Transfer of roles**.
+
+![alt text](roles-2.png)
+
 ### `Netdom query fsmo`
 
 If you look at the `netdom query fsmo` you'll find the RID master and all kinds of roles within it.
+
+Now lets discuss about the infrastructure Master
 
 
 
