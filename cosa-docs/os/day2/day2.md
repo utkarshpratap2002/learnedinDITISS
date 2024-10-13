@@ -23,7 +23,7 @@ In **Linux**, there are 7 types of files and every file is expresses as followin
 
 The data is when flowed **character-by-charater (Charater Speacial File)** then those device files are saved using `c` and sometimes the data flows **block-by-block (Block Speacial)** that is represented by `b`. You can see these files in the `dev` directory. Refer to [day1](day1/day1.md) to learn tree arch of linux.
 
-- In `c` the data flows sequentially, meaning on character at a time, this can be seen in `/dev` dir that stores files of such types.
+- In `c` the data flows sequentially, meaning one character at a time, this can be seen in `/dev` dir that stores files of such types.
     ```
     ❯ cd /dev
     ❯ ls -la ttyw0

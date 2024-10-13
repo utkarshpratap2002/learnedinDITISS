@@ -135,12 +135,12 @@ Linux - GNOME (GNU Network Object Modal Env), KDE (Kimman Desktop Env)
 
 Mostly the `bash` shell is used by default, called **Born Again shell**. You can open the shell using the GUI application called Terminal that uses CLI on in the backend.
 
-1. Use `echo $SHELL` to see the default shell your are using. Because the shell being used is `zsh` and it is stored in **bin**, which means it can be used by any user.
+- Use `echo $SHELL` to see the default shell your are using. Because the shell being used is `zsh` and it is stored in **bin**, which means it can be used by any user.
     ```
     bash-5.2$ echo $SHELL
     /bin/zsh
     ```
-2. Use `ls` *path* to see the directory within the path specified.
+- Use `ls` *path* to see the directory within the path specified.
     ```
     bash-5.2$ ls /
     Applications	Users		cores		home		sbin		var
@@ -149,50 +149,47 @@ Mostly the `bash` shell is used by default, called **Born Again shell**. You can
     ```
 You can also check the the proc directory, see there is **cpuinfo** and **meminfo**, now you can see that there are memory 
 
-3. You can check and change the date. Use `date` cmd along with options to change it.
+- You can check and change the date. Use `date` cmd along with options to change it.
 
-```
-❯ date
-Thu Sep 26 12:20:45 IST 2024
-```
+    ```
+    ❯ date
+    Thu Sep 26 12:20:45 IST 2024
+    ```
 Go an explore different types of the options and **FORMAT** you can use in the commands.
 
-4. You can see the calender using `cal` cmd.
+- You can see the calender using `cal` cmd.
 
-```
-❯ cal
-   September 2024     
-Su Mo Tu We Th Fr Sa  
- 1  2  3  4  5  6  7  
- 8  9 10 11 12 13 14  
-15 16 17 18 19 20 21  
-22 23 24 25 26 27 28  
-29 30                 
-```
+    ```
+    ❯ cal
+    September 2024     
+    Su Mo Tu We Th Fr Sa  
+    1  2  3  4  5  6  7  
+    8  9 10 11 12 13 14  
+    15 16 17 18 19 20 21  
+    22 23 24 25 26 27 28  
+    29 30                 
+    ```
 
-5. Use `pwd` to see the current working direcotry. 
+- Use `pwd` to see the current working direcotry. 
 
-```
-```
+- Create multiple directories using `mkdir` *file1* *file2* *file3*.
 
-6. Create multiple directories using `mkdir` *file1* *file2* *file3*.
+- Use `-p` as option for creating the directories in the hierarchy within the directories.
+    ```
+    ❯ mkdir -p create/dir/within/the/dir
+    ❯ ls
+    create
+    ❯ ls create/
+    dir
+    ❯ ls create/dir/
+    within
+    ❯ ls create/dir/within/
+    the
+    ```
 
-7. Use `-p` as option for creating the directories in the hierarchy within the directories.
-```
-❯ mkdir -p create/dir/within/the/dir
-❯ ls
-create
-❯ ls create/
-dir
-❯ ls create/dir/
-within
-❯ ls create/dir/within/
-the
-```
+- Use *Ctrl + L* in Windows and *Cmd + L* in the Mac for `clear`.
 
-8. Use *Ctrl + L* in Windows and *Cmd + L* in the Mac for `clear`.
-
-9. Use `-R` for seeing the content within the directory recursivley.
+- Use `-R` for seeing the content within the directory recursivley.
     ```
     ❯ ls -R
     create
@@ -212,9 +209,9 @@ the
     ./create/dir/within/the/dir:
     ```
 
-10. Create an empty file using the `touch` command.
+- Create an empty file using the `touch` command.
 
-11. Use `cat` commands to **show** the contents of the file and **create** a file with content. 
+- Use `cat` commands to **show** the contents of the file and **create** a file with content. 
     ```
     cat > file.txt 
     ❯ cat file.txt
@@ -223,13 +220,13 @@ the
     ```
     Remember if you tried using the command on the pre-existing file, then in that case the file content will be overidden. If you need to append the content, you can use `cat >> file.txt` meaning that you can append the data.
 
-12. Simply use `rm` to remove the file from the machine.
+- Simply use `rm` to remove the file from the machine.
 
-13. Use `cp` *src*  to create a copy of the file as well to copy the file to the *path destination*, if you want to copy the direcotry to the directory, use the 
+- Use `cp` *src*  to create a copy of the file as well to copy the file to the *path destination*, if you want to copy the direcotry to the directory, use the 
 
-14. Remember that using `mv` command you don't need `-R`
+- Remember that using `mv` command you don't need `-R`
 
-15. Use `rmdir` along with the `-r` followed by the file name, if the directory is not empty.
+- Use `rmdir` along with the `-r` followed by the file name, if the directory is not empty.
 
 
 The below are the convention that are followed in the Linux.

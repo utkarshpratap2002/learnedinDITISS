@@ -212,82 +212,12 @@ Used for **searching pattern**, can be used in the given below syntax:
 ```
 grep [options] <pattern> <filename>
 ```
+Refer to [grep](../concepts/grep.md) to learn more about it in details. Here is the description of all the commands options of grep along with their description of what they are doing.
 
-#### `grep -w "pattern" taste.txt`
-
-Used for the display the exact word or exact pattern, so it will only show the selected pattern specified.
-
-#### `grep -n "pattern" filname`
-
-It'll show the result on each line within the text, along with the line number.
-
-#### `grep -v "pattern" taste.txt`
-
-All the lines that do not have the pattern in it will be displayed.
-
-#### `grep -i "pattern" taste.txt`
-
-This will ignore the case sentivity and will display irrespective of it existence in uppercase or lowercase.
-
-#### `grep "^pattern" filename.txt`
-
-It will check for the *pattern* character-by-character, meaning it will check if ther are spaces after, then also it will reject the word, even if there is *pattern*.
-
-#### `grep "pattern$" filename.txt`
-
-It will list all the lines that are ending with the *pattern*.
-
-#### `grep "^pattern$" filename.txt`
-
-It will show all the lines that contains only *pattern* in the whole line.
-
-#### `grep "b[aeu]g" filename.txt`
-
-It will list all the combination including a,e,u, as given the command.
-
-
-##### `grep "b[^aeu]g" filename.txt`
-
-It will list all the lines excluding **a**, **e**, **u**.
-
-#### `grep "b.g" filename.txt`
-
-It will include all the characters between **b** and **g**.
-
-#### `grep "b\*q" filename.txt`
-
-The `\` is used to escape the `*` character such that it is used as escape character.
-
-#### `grep "b[*]q" select.txt`
-
-Anything inside the `[]` does not have any meaning so it will act as **fixed** pattern character.
-
-#### `grep -F "b*g" select.txt`
-
-
-#### `fgrep "b*g" select.txt`
-
-
-
-```
-grep "b*g" repeat.txt
-grep -E "ba?g" repeat.txt
-egrep "ba?g" repeat.txt
-egrep "ba+g" repeat.txt
-egrep "ba{4}g" repeat.txt
-egrep "ba{4,6}g" repeat.txt
-egrep "ba{4,}g" repeat.txt
-egrep "ba{,4}g" repeat.txt
-egrep "b[aa]g" repeat.txt
-egrep "b(aa)g" repeat.txt
-egrep "b(aa){2}g" repeat.txt
-egrep "b[aa]{2}g" repeat.txt
-egrep "b[aa]g" repeat.txt
-egrep "(good|cake)" taste.txt
-egrep "good|cake" taste.txt
-```
 
 # `cut` 
+
+
 
 
 
