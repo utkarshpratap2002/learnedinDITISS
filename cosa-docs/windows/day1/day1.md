@@ -6,9 +6,9 @@
 
 # Windows Server
 
-Windows server are different and client are not expected to be that effiient and ther fore servers require:
+Windows server serves different purpose as it give tools and features to manage the clients on the server:
 - Efficient processing, so that services can be processed efficiently
-- Strong hardware support, so that it could have good RAM
+- It needs Strong hardware support, so that it could have good RAM
 
 Server OS is designed for large or medium scaled organisations, one of the reasons it is used ot manage the services for all the **end users**. 
 
@@ -89,7 +89,7 @@ To release the ouse thene eyou nedd use th folllow commamds:
 
 # What if File is not found?
 
-If while operating system setup, you find that there is no Operating system file found, that means it is problem of **Hard driver**, such that it is not able to find the right path, therefore you need to set the path.
+If you find there is no operating system, that means it is problem of **Hard driver**, such that it is not able to find the right path, therefore you need to set the path.
 
 *Now what if the servers are not given the names?* Refer to [operating system partitioning](../../operating-system-doc/os-partition.md) to learn more about partitioning and hence you need to give names to the server which are manageable and rememberable.
 
