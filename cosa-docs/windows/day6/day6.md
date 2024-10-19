@@ -69,9 +69,13 @@ It allows the administrators to install windows operating system on the network 
 
 Before you install the WDS, there are few prerequisite for the installation:
 
-- There should be an Active Directory domain (The server may be DC/ADC/Member).
-- Working DNS server
-- Working DHCP service
+- There should be an Active Directory domain (The server may be DC/ADC/Member). If the WDS is set in the standalone environment, the AD DS is not required, but agian in small environment it is possible that they might not be using the AD DS, but for large scal environment it is required you must install AD.
+- Working DHCP service with an active scope of addresses, because the machine which will start would require an IP address, so before the boot starts, it will ask for IP address. 
+
+DHCP uses the PXE (Preboot Execution Environment) which starts booting the server which doesn't have any Operating system installed, directly using network to recieve the ISO image file. However, in order to boot from network also PXE needs IP address and therefore, DHCP should be able to give the IP address to the Machine for successful boot. So make sure that you've configured the DHCP service properly.
+
+- Then you must have an Active running DNS server.
+
 - One NTFS partition
 - PXE boot compliant client. This allows the sytem to boot all over the network.
 - Then it requires 2 types of images. 

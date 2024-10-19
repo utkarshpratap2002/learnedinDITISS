@@ -81,3 +81,10 @@ If you have yanked a line using `yy`, you can paste it below the current line by
 
 ---
 
+### Shebang Header 
+
+When it comes to adding a shebang header, it tells the script that will execute the commands directly as it will be knowing what is 
+
+```
+#!/etc/bin/python3
+```

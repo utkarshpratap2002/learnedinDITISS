@@ -42,3 +42,45 @@ Now what is problem, it that when it comes to multiple website, there is a probl
 8. Go to the browsser and type the IP address along with the PORT number, thus now it recognises the webite you've created.
 
 Go to the default documents and you;ll find the list of inherited files which are recognise by the browser first, and therefore you need to make an entry of the sales.html file in the Dfefault Documents and you can see the html file in the browser.
+
+# How to configure using Domain Name?
+
+If the file is not configured with another name other that **`index.html`**, the file will simply not open and then you need to tell the IIS that the file named, say `application.html` is present and run that.
+
+- First go to the Service IIS.
+
+- Then Go to default Configurations, and recognise that there are many entries and then you need to add the entry of the filename, in our case it is `applicaiton.html`.
+
+But Remember that this only tells the service to look for file other than index.html, this doesn't tell there server that if you write your webiste name instead of the IP address along with the port number it doesn't know where to look for the domain name. So for that we need to implement the DNS A record in order to map the page with the domain name.
+
+- Open DNS service and expanf the **Forward Lookup Zone**.
+
+- Then create a new Primary Zone by specifying the domain name of the webite that we wish to host and assign it the IP address of the machine/DC. Remember to transfer the file copy to all the servers in the forest.
+
+- Now you need to create the A Record for the website, so **right-click* and select **A record**.
+
+- Now you need to give the entry of the domain that you wish to run. Once the entry is created, you need to **Refresh** and **Restart** the IIS Service.
+
+# How to add FTP Server?
+
+1. You first need to install the FTP, for that you need to go to Web Server, and expand it and click on FTP server.
+2. Then you need to open the network settings and go to **WIndow Firewall**, then you need to go to Advance Settings.
+3. Then go to **Inbound Rules**, then **New Rules**.
+4. Then you need to set rules for the Port, then select TCP apply rules on TCP.
+5. You can apply the port settings by giving ports to the specific ports or range of ports seperated by comma. Then Next.
+6. Then you need to give the name for the ports.
+
+This was about adding the rules to the firewall. 
+
+# How to do that using Command Line Interface
+
+# Network Load Balancing
+
+Network Load balancing is for distribution of network and balance the load over the network, as before configuring you might need to make surethat it has DHCP disabled. Before installing the NLB you shoul d make sure DHCP is removed.  
+
+- First you you need to uninstall the IIS, which excludes web servers and all.
+- Then install **Network Load Balancing** on Domain controller as well as on ADC.
+
+Remember that you need to make sure that DNS is installed on DC and ADC. 
+
+- Add new Cluster to the 
