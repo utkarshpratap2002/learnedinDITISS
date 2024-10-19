@@ -2,6 +2,8 @@
 
 To transfer files from your Fedora server to your local Mac machine through **SSH**, you can use **`scp` (secure copy)** or **`rsync`**. Below are a few methods with detailed steps.
 
+## `scp` 
+
 The **`scp` (secure copy)** command is a simple way to copy files between your remote Fedora server and your local machine, meaning it copies the files from the host on the network. The syntax for it is given below:
 
 ```bash
@@ -26,24 +28,21 @@ scp -r sindhya@172.16.164.128:~/Sindhya ~/Downloads/
 Remember this happens both the way, either you can use the local server, which in our case it **utkarshsingh**, and the server is **sindhya**. Both of the machine can copy the files from one server to local server. All the above commands as executed on local machine but you can do `scp ~/Sindhya/folder/file.txt utkarshsingh@192.168.1.8:~/Documents/folder/` to copy the files from server to the local machine. 
 
 
-## **Method 2: Using `rsync` for Faster File Transfer**
+## `rsync`
 
-The **`rsync`** command is faster and more efficient than `scp`, especially for **large files or directories**. It also allows **resuming transfers** in case of interruptions.
+The `rsync` command is faster and more efficient than `scp`, especially for large files or directories. It also allows resuming transfers in case of interruptions.
 
-### **Syntax**:
 ```bash
 rsync -avz username@remote_ip:/path/to/remote/file /path/to/local/directory
 ```
 
-### **Example**:
+To understand this lets understand what **-avz** stands for, thus, `-a` is reponsible for archive mode (preserves permissions, symbolic links, etc.), then `-v` is Verbose mode (shows the progress), and lastly there is `-z` which compress files during transfer for speed.
+
+<br>
+
 ```bash
 rsync -avz sindhya@172.16.164.128:~/Sindhya/filename.txt ~/Downloads/
 ```
-
-- **Explanation**:
-  - `-a`: Archive mode (preserves permissions, symbolic links, etc.).
-  - `-v`: Verbose mode (shows the progress).
-  - `-z`: Compress files during transfer for speed.
 
 ---
 
@@ -99,23 +98,39 @@ You can also use **`sftp` (Secure FTP)**, which is similar to SSH but provides a
 
 ---
 
-## **Summary**
+<br>
 
-- **`scp`**: Simple and effective for copying files.
-  ```bash
-  scp sindhya@172.16.164.128:~/Sindhya/filename.txt ~/Downloads/
-  ```
+Thus, we can say that **scp** is a simple and effective for copying files. 
+```bash
+scp sindhya@172.16.164.128:~/Sindhya/filename.txt ~/Downloads/
+```
 
-- **`rsync`**: Use for faster transfers, especially with large directories.
-  ```bash
-  rsync -avz sindhya@172.16.164.128:~/Sindhya/ ~/Downloads/
-  ```
+And, **rsync** is used for faster transfers, especially with large directories.
+```bash
+rsync -avz sindhya@172.16.164.128:~/Sindhya/ ~/Downloads/
+```
 
-- **Reverse `scp`**: Initiate transfer from the server to your Mac.
-  ```bash
-  scp ~/Sindhya/filename.txt your_mac_username@your_mac_ip:~/Downloads/
-  ```
+Also, Reverse **scp** initiate transfer from the server to your Mac/local machine.
+```bash
+scp ~/Sindhya/filename.txt your_mac_username@your_mac_ip:~/Downloads/
+```
 
-- **`sftp`**: Use for interactive file browsing and downloads over SSH.
+Lastly, **sftp** is used for interactive file browsing and downloads over SSH.
+```bash
+sftp sindhya@172.16.164.128
+```
+
+<br>
+
+# Troubleshooting
+
+Sometimes it might occur that you've modified your .bashrc file because of which there can't be a proper transfer between the networks, this occurs because sftp only allows the transfer of protocol, hence if any additional messages such as echo messages or any welcome messages are found in between you might get the below output while doing sftp or scp. 
+
+``` 
+Received message too long 1416128883
+Ensure the remote shell produces no output for non-interactive sessions.
+```
+
+This typically happens because there are additional messages in you .bashrc file. You need to open the .bashrc file on the server and you need to remove all those additional commands that produces unnecessay outputs.
 
 Choose the method that best fits your needs. **scp** is usually the simplest, while **rsync** offers more control and speed for larger data transfers.
