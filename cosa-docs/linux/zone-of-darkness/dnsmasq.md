@@ -15,7 +15,7 @@ Importantly if you remember PXE boot from windows, PXE booting is a powerful too
 Then you need to be able **Handling Local and Public DNS Zones**, As a server admin, you may need to **set up internal DNS zones** (e.g., `internal.example.com`) that are only visible within your network, while public DNS servers handle external queries. `dnsmasq` allows you to manage such zones efficiently.
 
 
-# So what should be do?
+# So what should be done?
 
 *In that case*, you need to trust the NetworkManager to allow the changes to be made, if you need to make the configuration changes, make changes within the NetworkManager settings only.
 
