@@ -44,59 +44,45 @@ To understand this lets understand what **-avz** stands for, thus, `-a` is repon
 rsync -avz sindhya@172.16.164.128:~/Sindhya/filename.txt ~/Downloads/
 ```
 
----
+## Reverse `scp` 
 
-## **Method 3: Reverse `scp` (Initiating Transfer from the Remote Server)**
+This is Initiating Transfer from the Remote Server, it is similar to **scp** but instead from the local machine, we are trying to trasfer the file using the server. If you are logged into the Fedora server via SSH, you can run `scp` to **push** the file to your Mac.
 
-If you are **logged into the Fedora server** via SSH, you can run `scp` to **push the file to your Mac**.
+Think you are logged on to your fedora server via ssh, and on the server you have file *filename.txt* and you need to send it to the local machine, so will do the following to transfer it to local machine.
 
-1. **On Your Fedora Server (logged in via SSH)**:
-   ```bash
-   scp ~/Sindhya/filename.txt your_mac_username@your_mac_ip:/path/to/local/directory
-   ```
+<br>
 
-2. **Example**:
-   ```bash
-   scp ~/Sindhya/filename.txt sindhya@192.168.1.10:~/Downloads/
-   ```
+```bash
+scp ~/Sindhya/filename.txt your_mac_username@your_mac_ip:/path/to/local/directory
+```
 
-- **Note**: 
-  - You may need to **enable remote login (SSH)** on your Mac via **System Preferences** → **Sharing** → **Remote Login**.
-
----
-
-## **Checking Your IP Address on Mac (for Reverse `scp`)**
-
-On your Mac, you can check your IP address with:
+You may need to enable **remote login (SSH)** on your local machine, so that you can do the sharing using ssh and you also need to check for the IP address on your Mac, you can check your IP address with:
 ```bash
 ifconfig | grep inet
 ```
 
 Look for the **IPv4 address** (e.g., `192.168.1.10`).
 
----
+## `sftp`
 
-## **Method 4: Using `sftp` for File Transfer**
+You can also use **`sftp` (Secure FTP)**, which is similar to SSH but provides a file transfer interface. This will give you the file interface of the server and then you use **get** to download the file to your local machine.
 
-You can also use **`sftp` (Secure FTP)**, which is similar to SSH but provides a **file transfer interface**.
+Basically, first **Connect** to the Remote Server. <br>
 
-1. **Connect to the Remote Server**:
-   ```bash
-   sftp sindhya@172.16.164.128
-   ```
+```bash
+sftp sindhya@172.16.164.128
+```
 
-2. **Navigate and Download Files**:
-   ```bash
-   cd Sindhya
-   get filename.txt ~/Downloads/
-   ```
+Then, **Navigate** and Download Files.
+```bash
+cd Sindhya
+get filename.txt ~/Downloads/
+```
 
-3. **Exit**:
-   ```bash
-   exit
-   ```
-
----
+Then you can **Exit**.
+```bash
+exit
+```
 
 <br>
 
