@@ -37,7 +37,48 @@ These command will show the network details and don't forget to prevent the usag
 
 Initially NetworkManager will start when system boots up and it will start all the processes, then Networkmanager will assign the dnsmasq to handle the services of DHCP (Assigning IP addresses) and DNS (Maintaing records of Server). All the configurations will be of NetworkManager, not of dnsmasq, if any changes to the network occurs, it will update the dsnmasq, and rest all the management will keep of running by NetworkManager.
 
+*How NetworkManager and dnsmasq Work Together?*, it will be as following:
+
+1. NetworkManager **starts** when your system boots up. <br>
+
+2. If Network Manage detects a network connection, it **starts** dnsmasq to handle:
+   - DHCP (assigning IP addresses to devices on your network)
+   - DNS caching (making websites load faster by storing DNS responses locally)
+   <br>
+
+3. NetworkManager **decides** what settings dnsmasq should use, **ignoring** the manual dnsmasq config file (`/etc/dnsmasq.conf`), because NetworkManager needs to be in full control. <br>
+
+4. If the connection **changes** (e.g., you switch to a different Wi-Fi network or enable a VPN), **NetworkManager updates dnsmasq** settings automatically, ensuring your network keeps running smoothly. <br
+
 
 # How to Set Up and Administer dnsmasq
 
-First you need to install the 
+First you need to install the dnsmasq using the [dnf](dnf.md) package manager in fedora.
+
+```
+sudo dnf install dnsmasq -y
+```
+
+Once done, you need to know **four** things, **first and foremost**, do not use systemctl to start the dnsmasq, **second**, you need to know that there is default **dns** running which is configured in **/etc/resolv.conf** file that will have the entry of default dns which will be resolving the IP addresses and now we need out NetworkManager using the dnsmasq configuration for running the DNS server, so we need to disable it using the below command.
+
+```
+sudo systemctl disable systemd-resolved
+sudo systemctl stop systemd-resolved
+```
+
+# Basic Configuration
+
+All dnsmasq-related configurations that you want NetworkManager to use should be placed in the following file below:
+
+```
+/etc/NetworkManager/dnsmasq.d/
+```
+
+This directory is where you add individual configuration files for specific tasks (e.g., managing DNS, DHCP, or network interfaces). 
+
+If you need to create static DNS entries (i.e., specific IPs always map to specific hostnames), use this file as below:
+
+```
+/etc/dnsmasq.conf
+```
+
