@@ -28,20 +28,32 @@ Network-based storage, such as NAS, SAN, and cloud technologies, may also be use
 
 # Understanding Storage
 
-Now we need to see multiple options for storing the data. The hardware decision should be made based on the certain criteria. The certain criterias are given as two aspects. One is **Ccpacity** or **Durability**, **bugdet** and **performance**. 
+*Now we need to see multiple options for storing the data.* It could be **Capacity** or **Durability**, **bugdet** or **performance**. The hardware decision should be made based on the certain criteria. The certain criterias can be classified in different aspects. 
 
-Then there are connectors, that are used a sinterfaces, such as the USBs, M.2 ports (used for the SSDs), then there are SATA ports that connects the HD/CD drives, the there is PATA, then there is **Firewire** it was uesd to cameras, and iPods but arn't used right now. Now we don't use Firewire now anymore. Then, there is ESATA, a more larger and faster devices. Even when talking about the USB disk, there is only SATA disk, bedcause behind the scene there is DATA disk. 
+#### Aspects of storage
+
+HDDs are inexpensive and budget friendly, and have good capacity to store the data. Thus, SDDs are expensive and do give good performance, then, USBs, they are used as the connection devices to connect different devices including storage devices. So there are different interface that allows you to store different kind of data.
 
 |Interface|.extension|
 |---------|----------|
+|USB| Mostly uesd in Printers, Hard Drives|
+|M.2| Used in Internal SSDs|
+|SATA| HD/CD Drives |
+|PATA| HD/CD Drives|
+|Firewire| Cameras, iPods|
+|eSATA| Express SATA: Way Faster|
 
 # /dev
 
-It contains all thedevice files and after the recognistion the linux gives names to the dev. 
+It contains all the device files and after the recognistion the linux gives names to the dev. This directory contains all the connected device information and devices can be classified as below.
 
 |Devices||
 |-|-|
-|dev/sda |If you going to connect multiple device, is is called PATA.
+|**dev/sda** | Any **HDD Driver**/**SDD Drivers** based or could be **SATA** based devices are mentioned as dev/sda, dev/sdb and so on.  |
+|**dev/nvme0n1**| It is called **Non-volatile memory express**, any Non-volatile storage options such as modern SDDs are mentioned inside dev/nvme0n1, dev/nvme0n2 and so on.  |
+|**dev/hda**| It is called the old-school hard drives that are very slow, uses magnetic disk and are very cheap |
+|dev/vda| Called **Kernel-based Virtual Machine**, these are called KVM |
+|dev/xvda| When Virtual Machines are running on the Xen, then xvda is used|
 
 # Types of Storage Design
 
