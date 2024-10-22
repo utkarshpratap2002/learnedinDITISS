@@ -1,4 +1,4 @@
-# Installatin of the Operating system
+# Installation of the Operating system
 
 The first thing that need yor concern is not installatin, but the Booting sequence and BIOS and different important factors that are used while the **partitioning**. Wht is MBR and Booting process, and **GParted**, all thes concepts relating to **Boot tweaking**. *You might ask what is UEFI*, and *mounting*, and several other concepts that are important for the Operating system.
 

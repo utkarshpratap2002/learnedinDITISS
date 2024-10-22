@@ -59,8 +59,6 @@ Installing macOS, especially on non-Apple hardware, requires careful planning an
 
 By following the steps outlined and ensuring that all prerequisites are met, you can create a stable macOS environment that leverages its powerful capabilities, regardless of whether you're using official Apple hardware or a Hackintosh.
 
----
-
 # GPT (GUID Partitioning Table)
 GPT is part of EFI speacification, and it comes from the EFI, the maximum disk allowed is 8 ZB, 
 

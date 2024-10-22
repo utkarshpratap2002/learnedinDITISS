@@ -113,17 +113,17 @@ There are certain variables that are needed to be created in the environment spe
 
 ### `/etc/profile`
 
-The **`/etc/profile`** file stores the system-wide configuration that are avaialable globally, these environment variables are to be configured in order to make the user avialable all theconfiguration that he might need, these can be configured by moving to **/etc/profile** then creating the entry using:
+The **`/etc/profile`** file stores the system-wide configuration that are avaialable globally, these environment variables are to be configured in order to make the user avialable all the configuration that he might need, these variables can be configured by moving them to **/etc/profile**.
 
 ```
 export $PATH=/opt/bin
 ```
 
-Such that when the user will login the packages for the user will be available. 
+Such that when the user will login the packages for the user will be available, all those that are available in /opt/bin.  
 
 ### `/etc/bashrc`
 
-The **`/etc/bashrc`** stores all the configuration that will store configuration that are specifc to the shell
+The **`/etc/bashrc`** stores all the configuration that will store configuration that are specifc to the shell and 
 
 
 
