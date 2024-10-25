@@ -112,5 +112,18 @@ You can also check the Length of the Variable:
 echo "${#name}"   # Outputs: 4 (length of "Raya")
 ```
 
+### `hostnamectl`
+
+Use the below command in order to change the hostname of the machine.
+
+```
+sudo hostnamectl set-hostname server
+```
+
+### known_hosts
+
+It might have occured that sometimes you are not able to work through **ssh**, thus you are not able to make a remote connection to the remote machine. In that case, you need to remove the file called **known_hosts**, this will restart the ssh and will make the fresh start for **ssh**. Move to directory named **~/.ssh** and remove the **known_hosts**.
+
+
 
 
