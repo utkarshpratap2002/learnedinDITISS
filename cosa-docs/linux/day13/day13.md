@@ -1,8 +1,9 @@
 # Apache
 
-Apache is being trusted by many organisations and it is also open-source systems, we can configured it in multiple variants, call is deployment of apache. 
+Apache is being trusted by many organisations and it is also open-source system, we can configured it in multiple variants, call is deployment of apache. Basically we need to remember how web works, it is **Web Architecture** we need to discuss.
 
-# Web Architecture
+URLs (Uniform Resource Locators) are used to address resources on the web. They specify a protocol (e.g. http), a server name, a path to the resource, and potentially a query string. A client, such as a web browser, sends a request to a server using a URL. The server then sends a response, which includes a status code indicating whether the request was successful or not. The server may also send a response body, which contains the requested data. Details of the transaction, including any errors, are logged for later reference.
+
 
 This architecture works by reponding with services that needs to be provided, using the **request** and **reponse** server, both of them contains the header in key-value pairs and another contains the boy corresponding to the request that client has made.
 
@@ -13,9 +14,9 @@ Both of them uses **Stack**, these stacks are used during the deployment and we 
 - **MEAN** - Mongo + Express + Angular + Node
 - **MERN** - Mongo + Express + React + Node
 
-# How to do it?
+# How do you configure a service?
 
-First you need to check if the server is already installed.
+First you need to check if the **httpd** server is already installed. Thus, it is the httpd server that we are going to use to create a server on the machine and then hosts it. SO first you use **rpm** to check if the daemon httpd is installed.
 
 ```
 rpm -q httpd
@@ -28,18 +29,18 @@ sudo systemctl status httpd
 sudo systemctl enable httpd
 ```
 
-Now you need to check if httpd default website is accessible. If if doesn't give a script, it means the connection is not established and the server is not running, which you can using the previous command.
+Now you need to check if httpd default website is accessible. If if doesn't give a response, it means the connection is not established and the server is not running, which you can using the previous command.
 
 ```
 curl http://localhost
 ```
 
-You can customise or deply a custom webiste, where you need to directory
+You can put your file into the default path **/var/www/html** and this is where you'll find a default *index.html* which will be hosted if you do **curl localhost**.
 
 
-# Configuring the Apache 
+# Apache Configuration
 
-WHen you have the service running, now you can configure the apache file, that is, **/etc/httpd/httpd.conf**. You can directly go to the file and look into the settings.
+You can COnfigure the configuration file **/etc/httpd/httpd.conf**. You can directly go to the file and look into the settings. This is where you'll find the server configuration 
 
 ### ServerRoot "/etc/httpd"
 
@@ -66,7 +67,7 @@ This proves the fact there apache is using the system user and this can checked 
 cat /etc/passwd | grep apache
 ```
 
-### <Directory> blocks
+### Blocks
 
 This is another file that 
 
@@ -117,6 +118,4 @@ Then you need to go to the file **/etc/hosts** and write the follwoing entry.
 
 Then you need to restart using systemctl.
 
-
-# 
 
