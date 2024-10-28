@@ -1,6 +1,14 @@
 # Dvice Drivers
 
-THis are device specific drivers that are used for driving the drives, mreaning every device comes with th edevice drivers and therefore, every device has a **device Driver**. It is the part of 
+Operating system is the **interface program** that stands between the user and the hardware, operating system do have certain reponsibilities and some of them are mentioned below, but the we are interested in **device drivers**.
+
+- Memory Mangement
+- Process Mangement
+- File System Mangement
+- CPU Scheduling
+- Hardware Abstraction
+
+These are device specific **drivers** that are driven by users, meaning every device comes with the device drivers and therefore, every device has a **Device Driver**. It is the part of operating system management system that includes management of devices through 
 
 # kernel
 
@@ -83,9 +91,12 @@ Unix has various flavours such as
 - AIX (It was created by IBM)
 - (BSD) Berkely Software Distribution, ut was developed y University of California, Berkeley. If we talk about BSD, it was the first one to create the 
 
-    - **Redirection Pipe**
+    - **Redirection Pipe**, which is used to pass input/output of one command to another command.
     - **Socket**, which leds to the communication over the internet, they added socket and socket led to TCP/IP communication.
-    - BSD created user level utilities 
+    - **Networking**, it introduced networking to the world, tcp/ip implementation of the network layer 4.
+    - Many user level utilities.
+
+It is not like that, there are many version of the BSD, there is NetBSD, OpenNSD, and FreeBSD. 
 
 - SCO Unix
 - NEXTSTEP and OPenStep another created by the Steve Jobs, it has whole story behind it and even today, Apple Mac is using NEXTSTEP and OpenStep, which is one version of Unix 64bit Unix. 
