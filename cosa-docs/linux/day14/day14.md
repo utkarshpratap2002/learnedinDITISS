@@ -66,8 +66,6 @@ The image shows a portion of a configuration file (likely `/etc/vsftpd/vsftpd.co
 
 The lines you've shown configure various aspects of the FTP service. Let's break down the example entries:
 
-* **`# add following`:** This is a comment, indicating the following lines are additions to the configuration.  You need to add these specific settings to the `vsftpd.conf` file.
-
 * **`pam_service_name=vsftpd`:**  This configures the Pluggable Authentication Modules (PAM) to use for handling vsftpd authentication.  This determines the specific authentication method and rules for the FTP server.
 
 * **`userlist_enable=YES`:** This enables a user list for authentication.  This is a way to restrict access to the FTP server based on a defined list of users.
