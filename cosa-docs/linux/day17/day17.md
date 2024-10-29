@@ -6,7 +6,6 @@ First you need to install the bind and bind-utils, and then you need to go to th
 options{
     // listen-on port 53 .. 
     // listen-on-v6 port 53 .. 
-
 }
 ```
 
