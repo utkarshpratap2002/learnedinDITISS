@@ -35,87 +35,57 @@ In order to install and inplement the FTP we use the daemon is called **vsftpd**
 - **Check if they belong in Same Network** - You need to use the `ping` command, check if the server is same.
 - **Two ports**, port number 21 is used to send the command control, meaning that when you'll hit the command, it will control what commands are being communicated, but what is getting communicated is done using the port 20, it control the data between the client and server. 
 
+# FTP's Active and Passive Modes
+
+There are two modes in which FTP works, the difference lies in the fact that which side start or say initiates the data connection. This is seemingly a small distinction but create a real-world impact by the fact that it decides the firewall configurations and Network Address Translation. 
+
 FTP is used in two ways, they were **active** and **passive**. This wil dicide what should be used.
 
 - **Active FTP**, It was traditionally used, client connect on port numbers above 1024.
-  - A **Control Command Channel** is created that is communicated using 21 on the server, then on client there is an ephemeral
-  - **Data Transfer** is another process created to communicate teh data, security was not that important, but becuase it (FTP client) is choosing the random ports. the request is innitited by the client and the server is then opening the data connection, but instead the server might open the connection, but the client
+  - A **Control Command Channel** is created that is communicated using 21 on the server, then on client shares an ephemeral port number that tells server which port it'll listen on for the data.
+  - **Data Transfer** is another process created to communicate teh data, security was not that important, but becuase it (FTP client) is choosing the random ports, the request is initited by the client and the server is then opening the data connection, but instead the server opening the connection, the client does it in Active FTP.
 
-# How to Configure FTP on server
+- **Passive FTP**, It is not the same as the Active FTP but here too client initiates the connection with the server.
+  - A **Control Connection** is initiated by the client to the server on port 21, then client request the server to assign a high port (above 1024) for the data connection, server then opens the listening port and communicates the IP address and port number with the client.
 
-Initially you need to check if the FTP daemon is installed. so you need to 
+Passive FTP is generally preferred for most situations because it's much more compatible with firewalls and NAT, which are common in today's networks. Active FTP can be useful in specific scenarios where the server is behind a firewall and cannot accept incoming connections, but the client has a more permissive firewall configuration, but this is less common. 
+   
+# How to configure FTP 
 
-```
-sudo yum install vsftpd
-```
+First you need to check the vsftpd service running on the server, if not, install the vsftpd daemon using `yum install vsftpd` and progress by creating few users such that you can test whether it is working or not. 
 
-Now you need to create a user, this and assign a password to it. Then you need to create a **chroot_list**, it will get created inside the /etc/vsftpd/chroot_list, if it doesn't exist, you need to be able to create the file. But **sudo vim /etc/vsftpd/vsftpd.conf** is where you need to do the service configuration.
-
-```
-sudo vim /etc/vsftpd/vsftpd.conf
-```
-
-Now you need to add certain configurations as given below:
+Once the vsftpd daemon is installed, you need to start configuring the configuration file of the vsftpd. First thing first, create the **chroot_list** that will contain the list of users that are allowed on the ftp server. 
 
 ```
-# configure the vsftpd.conf
-> sudo vim /etc/vsftpd/vsftpd.conf
-
-# on line 12 make sure that anonymous setting is NO
-> anonymous_enable=NO
-
-# line 83,84: uncomment ( allow ascii mode )
-ascii_upload_enable=YES
-ascii_download_enable=YES
-
-# line 101,102: uncomment ( enable chroot )
-chroot_local_user=YES
-chroot_list_enable=YES
-
-# line 104: uncomment ( chroot list file )
-chroot_list_file=/etc/vsftpd/chroot_list
-
-# line 110: uncomment
-ls_recurse_enable=YES
-
-# line 115: change (if listening IPv4 only)
-# if listening IPv4 and IPv6 both, specify [NO]
-listen=YES
-
-# line 124: change (if listening IPv6 only)
-# if listening IPv4 and IPv6 both, specify [YES]
-listen_ipv6=NO
-
-# add to the end
-# specify root directory (if don't specify, users' home directory become FTP home directory)
-local_root=public_html
-
-# use local time
-use_localtime=YES
-
-# turn off for seccomp filter (if cannot login, add this line)
-seccomp_sandbox=NO
-
-# fix PASV ports to allow FTP access with PASV
-pasv_enable=YES
-
-# this will enable the server to allocate an ephemeral port for client's data exchange
-pasv_min_port=21000
-pasv_max_port=21010
+vim /etc/vsftpd/chroot_list
 ```
 
-Now you need to autostart the server using `sudo systemctl start vsftpd`, make sure that you check the *running status*. The last thing you need to do is add the firewall-cmd configurations.
+Then configure the **vsftpd.conf** file by adding the below entries to the file:
 
-```
-sudo firewall-cmd --list-services 
-sudo firewall-cmd --add-service=ftp
-```
+The image shows a portion of a configuration file (likely `/etc/vsftpd/vsftpd.conf`) for the vsftpd FTP server.  It's a configuration file, not a general system configuration file.
 
-Then finally you need to start the ftp process.
+The lines you've shown configure various aspects of the FTP service. Let's break down the example entries:
 
-```
-ftp localhost
-```
+* **`# add following`:** This is a comment, indicating the following lines are additions to the configuration.  You need to add these specific settings to the `vsftpd.conf` file.
+
+* **`pam_service_name=vsftpd`:**  This configures the Pluggable Authentication Modules (PAM) to use for handling vsftpd authentication.  This determines the specific authentication method and rules for the FTP server.
+
+* **`userlist_enable=YES`:** This enables a user list for authentication.  This is a way to restrict access to the FTP server based on a defined list of users.
+
+* **`use_localtime=YES`:**  Configures the FTP server to use the local time zone.
+
+* **`chroot_local_user=YES`:**  This is a security feature.  It confines users to their home directory, preventing access to other parts of the system.  Crucial for security.
+
+* **`chroot_list_enable=YES`:**  In conjunction with `chroot_local_user=YES`, this defines a list of users that should *not* be confined.  Essentially, this allows some users to access parts of the filesystem outside of their home directory, and thus often contains a list of trusted or administrative users.
+
+Refer to the [chroot](../concepts/chroot.md) to understand the concept behind the chroot and why it is important to create a user authorization for accessing the files and folder that exist beyond the users home directory, and also refer to [ftp server](../concepts/ftp.md) that explore the crucial concept of user authentication in ftp.
+
+* **Security:** The `chroot` options are critical for security.  Improper configuration can lead to security vulnerabilities.  It's very important to manage the `chroot_list` appropriately to only allow users that should not be restricted.
+* **File Permissions:**  Make sure the `/etc/vsftpd/` directory and the files within it have appropriate permissions to prevent unauthorized access.
+* **Restart vsftpd:** After making changes to `/etc/vsftpd/vsftpd.conf`, you will need to restart the vsftpd service (`sudo systemctl restart vsftpd`) for the changes to take effect.
+
+These changes are FTP-specific configuration settings. They are not general system configuration changes.  Don't confuse these parameters with broader Linux system settings like hostnames or firewall rules. Remember the security implications and review your configuration carefully.
+
 
 # NFS (Network File System)
 

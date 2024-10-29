@@ -1,4 +1,4 @@
-# Apache as a component in web server "Stack"
+# Apache as a component in Web Server Stack
 
 It is important to understand that Apache isn't a singular entity within the scope web servers, but a component that is a part of the whole web server system, other parts are also there that come together to make things work within the scope of web server.
 
