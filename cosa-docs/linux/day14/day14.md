@@ -5,26 +5,28 @@ We are going to install two server on which we are going to implement a load bal
 sudo rpm -q haproxy
 ```
 
-If not, then you need to install the **haproxy** on first server and similarly there needs to installed on another server also.
+If not, then you need to install the **haproxy** on a server and we need two servers that are running the web service [Apache server](../day13/day13.md#apache) hosting websites. You must have the IP address of both the servers. *So, first thing first*, we need to install the haproxy on the server.
 ```
 sudo yum install haproxy
 ```
 
-Now you need to configure teh haproxy configuration directory, and fiund haproxy.cng configuration file.
+Now you need to configure the haproxy configuration directory, and edit the haproxy.cfg configuration file and make the changes inside **frontend main** and **backend app**.
 
 ```
 sudo /etc/hasproxy
-sudo vim haproxy.cng
+sudo vim haproxy.cfg
 ```
 
-Now you'll witness lots of information
-1. *frontend main*:and you need to bind it to the port number 8080, on **line number 67**. Remove the lines and let the *default backend*, don't change anything.
-2. Then you need to change the dummy server and you need to change the IP address of the machines you've configured.
 
-After configuring with the status **check** you need to restart the haproxy server and check the status of the server.
+- **`frontend main`**: This handles the frontend of haproxy, it tells which port the haproxy is listening on, it should have a consistent port number to that of the web servers that are going to send the responses to the haproxy. If the backend servers are listening on port same as haproxy, then only the haproxy would be able to forward the traffic. 
+- **`backend app`**: This contains the backend server definations, you need to enter your backend server IP address on which the [Apache](../day13/day13.md#apache) service is running, along with the port number they are listening on.
+
+After configuring check the status and then start/restart the haproxy server and check the status of the server. 
 ```
 sudo systemctl restart the haproxy
 ```
+
+Now you need to curl on the server (haproxy server) itself, you'll get the load getting balanced on both the server having apache service running. 
 
 # FTP
 
