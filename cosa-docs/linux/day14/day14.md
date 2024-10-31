@@ -1,6 +1,6 @@
-# Load Balancing
+# Configuring Load Balancing
 
-We are going to install two server on which we are going to implement a load balancing between the two server, see [day13](../day13/day13.md) where discussed the concept of **load Balancing**. You need to check if the HA proxy is isntalled or not, use the following command.
+We are going to install two server on which we are going to implement a load balancing between the two server, see [Load Balancing](../day13/day13.md#load-balancing) where discussed the concept of **load Balancing**. You need to check if the HA proxy is isntalled or not, use the following command.
 ```
 sudo rpm -q haproxy
 ```

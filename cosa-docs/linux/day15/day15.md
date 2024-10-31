@@ -39,7 +39,22 @@ This was about the nfs we did something similar and here too we can do something
 
 # Mail Server
 
-We need to configure three protocol, **smtp** used to configure the email services where are going to use for **postfix**, then we ned to configure **imap** and **pop3** and **devcot** for the imap and pop3.
+Mail server is the server within the domain that has SMTP service running that is handling the transfer and receiving of emails. SMTP is a **Simple Mail Transfer Protocol** that is used to send mails over the internet, primarily it is used to send the mails over the servers and across the servers. Refer to [SMTP](../zone-of-darkness/smtp.md) in order to learn more about the mail servers and how mail services are carried out. But we will go into looking the overview here.
+
+Basically the job of SMTP includes:
+
+- **Building Connection** - On a client side, the *Email Client* initiates a connection with the SMTP server for the transfer of email messages.
+- **Email Submisssion** - The sender then sends the emails address of the recipent and sender along with the content of the email.
+- **Processing** - This is where the SMTP after getting the sender and recipients email address decides which domain or mail server it needs to send the email by checking if the domain of recipent belong to different domain, in that case it identifies the mail server of the recipent's email address. Here you can refer to  [smtp](../zone-of-darkness/smtp.md) to learn how it works.
+- **Email relays** - SMTP uses the postfix for the efficient delivery of the emails to its recipients mail server, it takes care of how the email message is delivered to the recipients inbox.
+
+**Postfix** is protocol that is implemented in order to make sure the delivery of the recipent email, **postfix** acts as a potential relay between the servers while transfering the email message.
+
+Lets see how the Postfix works. Postfix has its role and set of procesdure that it follows to make sure the email is received on the destined mail server.
+
+- **Email Submission** - The email client first inititates a connection with the SMTP server typically through (MUA, Mail User Agent), thus identifying itself to the server.
+- **Processing** - Posfix then checks for the recipients email address and try to identifies the domain it belongs to, if the domain is same, postifix transfers it to MDA (Mail Delivery Agent) to transfer the email to desired inbox of the recipents inbox. But if it is not, it look in to DNS for the recipients domain name for the identification of mail server, for that it goes with multiple DNS queries to find out the desired mail server. Once it finds out the mail server it forwards it to the destined mail server, thus acting as a relay communicating across the servers.
+- **Managing Failures** - Failures are managed if any of the process of inspection or check for the discovery of the mail server fails, refer to [smtp](../zone-of-darkness/smtp.md), it queues the email message to retry it later on the SMTP Queue.
 
 *Lets see what we need to do in order to configure it on linux server.* **SMTP**, we are using emails that is standard way of sending the data. We have a sender who sends an email, a reciever is the one who will recieve it. It is easy to communicate with each other using email address. 
 
@@ -49,18 +64,29 @@ Then **SMTP** is the one responsible for transfering the emails from one machine
 
 # Components of Emails
 
-There are three mail componenets.
+There are three mail componenets. As we talked about the [Mail Server](#mail-server), we saw different terminologies on how these things work in mail server and email transfer within and across the servers. So we further re-collect on the them by saying that there are three components of Email Communication.
 
-### MUA 
+### MUA (Mail User Agent)
 
-It is responisible for maintaining the user interface between the client and server.
+It is responisible for maintaining the user interface between the client and server. Itis where the user is able to manage there mails reading, creation, deletion, and other such tasks. It also provide basic formatting of the email message in HTML and plain text options.
+
+Further, we talked about connection establishment where MUA is the only one that initiates the connection with the SMTP server that allows the SMTP server to recognise the client. Moreover, MUA is responsible for retriving the mails from the SMTP server using POP3 and IMAP to download the mails to the local drive. MUA sends the information such as senders and recipients addresses, message body, and subject line to the SMTP server using command `MAIL FROM`, `RCPT TO`, and `DATA`.
+
+The MUA acts as the front-end application that interacts directly with users while relying on back-end systems like Mail Transfer Agents (MTAs) for sending messages and Mail Delivery Agents (MDAs) for storing received messages.
 
 ### MTA (Mail transfer Agent)
 
-Suppoe you are usng the yahoo and you are having a gmail, then MTA is agent that communicates with the email server and threfore mtu is used to capabilities, 
+MTA is responsible for the efficient and secure trasfer of the mail from one server to another, postfix is one the Mail Tranfer Agent that works to send you mail to the destined recipients mail server. Thus, if the email domain of the recipient is the same as that of the senders, it is traferable within the local domain, but if the domain is differnt, **postfix** is responsible for making the transfer. 
 
-### MDA (Mail Deliver agent)
+It includes the various roles in the Email comm, it first establishes the connection, then checks for the recipients email address and resolves the mail server for the recipient domain, refer to  [smtp](../zone-of-darkness/smtp.md), postfix communicates multiple MTAs in order to resolve the desired mail server for the recipients domain, once found it acts as a relay to communicate between the servers. It also maintains the Failure Queue, that contains all the mail that either failed or couldn't get resolved due to downtime of the mailserver.
 
+### MDA (Mail Delivery agent)
+
+The main job of MDA is like a *Email Reception** where MDA receives the email sent by the MTA to the designated mail server or say recipients domain. MDAs job is to manage the storage for the emails, make sure they are sorted, stored, and accessible easily within the file system.
+
+Not only MDA receives the emails from the MTA, but it also handles the emails such that the MUA is able to communicate with the MDA, as users should be able to make the changes in emails they recieve on the interface, so MDA also interacts with the interface of MUA. 
+
+MDA is like a final delivery point for the emails as it acts at the communicator between the MTA and MUA for the final delivery of the email message on the recipients domain.
 
 # SMTP
 

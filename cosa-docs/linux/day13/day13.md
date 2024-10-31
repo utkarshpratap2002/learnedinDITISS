@@ -186,6 +186,8 @@ The **HTTP response** from a web server after a client request.  Let's break dow
 
 These headers provide crucial information about the server, the response, and the content being sent.  They are vital for the client to understand and process the server's reply effectively.  They are a crucial part of the HTTP protocol's communication between a client and a server.
 
+# Load Balancing
+
 
 
 
