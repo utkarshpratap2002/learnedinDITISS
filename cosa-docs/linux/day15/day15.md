@@ -82,7 +82,7 @@ It includes the various roles in the Email comm, it first establishes the connec
 
 ### MDA (Mail Delivery agent)
 
-The main job of MDA is like a *Email Reception** where MDA receives the email sent by the MTA to the designated mail server or say recipients domain. MDAs job is to manage the storage for the emails, make sure they are sorted, stored, and accessible easily within the file system.
+The main job of MDA is like a *Email Reception* where MDA receives the email sent by the MTA to the designated mail server or say recipients domain. MDAs job is to manage the storage for the emails, make sure they are sorted, stored, and accessible easily within the file system.
 
 Not only MDA receives the emails from the MTA, but it also handles the emails such that the MUA is able to communicate with the MDA, as users should be able to make the changes in emails they recieve on the interface, so MDA also interacts with the interface of MUA. 
 
@@ -90,7 +90,24 @@ MDA is like a final delivery point for the emails as it acts at the communicator
 
 # SMTP
 
-It is the standard that is used in every communication when its about the having a email server, postfix is just one of implementation of the operating system, it is one of the transaction protocol used for the mail service.
+Till the point where we are, we already know about Mail Server, then what are the components that are used within the email communication (i.e., MUA, MTA, and MDA). Though the bigger picture is that mail server is implemented using **SMTP**, which is basically used for trasfer of the email to the recipients domain, but how the complete delivery happens is taken care by either POP3 or IMAP. SMTP, POP3, and IMAP are the Protocols that are used to make the email transfer, SMTP is implemeted on **inbound**, meaning where the emails are send to the recipients domain, then how emails are to be accessed is looked by POP3 or IMAP.
+
+SMTP is the standard that is implemented using **postfix**, it is one of the transaction protocol used for the mail service and you can refer to [Mail Server](#mail-server) to understand in more detials. Though the bigger picture of SMTP can be described to be one that handles the senders request to the client, acting like a push operation. Lets see how SMTP make sure the domain discovery of the recipients domain and successful resolution of the recipients mail server.
+
+- First the email client is suppose to make a connection with the SMTP server.
+- Next, the client will send the command `SEND FROM`, `RCPT TO`, and `DATA` to the server to send the senders and recipients address.
+- Next, the SMTP server will resolve the mail server of the recipients domain, and thus, look for the DNS query if necessary.
+- If the email transfer fails, the smtp server will store the message in the queue in order to make the delivery later.
+
+# POP3 and IMAP
+
+POP3 is protocol that works as retrieval of email messages from the mail server to the users local drive. POP3 make the emails message available for the download onto the users local mahine and hence, we can say that POP3/IMAP works as a pull operation. Lets see it in more details.
+
+- The client will make connection with the POP3 server or IMAP server
+- Then the server make start downloading the emails onto the local drive of the user.
+- Once done with the downloading, POP3 will remove all the emails from the mail server, ensuring that emails are only available on the users local drive.
+
+The major difference between the POP3 server and IMAP server is that IMAP is much more powerful and provide better features, IMAP doesn't necessarily download the emails to the local device, instead it allows you to access the through the server, as you can access them, manage them, perform operations, and even delete them accordingly. As the emails are accessible from any device, its feature is to maintain the synchronization accross the multiple device.
 
 # How to configure the SMTP?
 
