@@ -64,7 +64,7 @@ Before going ahead check [Router Architecture](../day5/day5.md#cisco-router), be
 6. Then go to **global configuration mode** using `configure terminal`
 7. Enter the password, `enable password` *cisco*
 8. Now restore the configuration register, using `configure-register 0x2101`
-9. Now you need to copy the running configuration to the startup configuration as you've made changes to the password and this needed to be saved.
+9. Now you need to **copy the running configuration**, `copy run start` to the startup configuration as you've made changes to the password and this needed to be saved.
 10. And you can `reload`.
 
 ### Cisco Discovery Protocol
