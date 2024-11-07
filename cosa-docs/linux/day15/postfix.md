@@ -34,7 +34,7 @@ smtp_sasl_security_options = noanonymous
 
 # Filename: sasl_passwd
 
-# Add the below line
+# Add the below line and remember to change the email@gmail.com with your gmail
 [smtp.gmail.com]:587 email@gmail.com:password
 ```
 
