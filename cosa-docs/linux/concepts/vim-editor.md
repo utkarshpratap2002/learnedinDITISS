@@ -192,3 +192,55 @@ The above shebang header might be containing the program which could be python s
 
 Remember that there is only **one** shebang header in a bashh file, the first line of the file is interpreted as shebang header, next line are considered as normal and regular lines, so even if you tried adding a header other than shebang header, it won't be one becuase it'll be interpreted as code. Refer to 
 [can a bash script have multiple shebang header](can-a-bash-script-have-multipe-shebang-header.md) to learn more about it.
+
+# Deleting Methods
+
+There are several ways to delete all the content within a Vim editor:
+
+**1. Using `ggdG` (Most common and efficient):**
+
+   * `gg`:  Go to the beginning of the file.
+   * `dG`: Delete to the end of the file.
+
+   This is the most concise and commonly used method.
+
+**2. Using `:%d`:**
+
+   * `:%`:  This range represents the entire file (from the first line to the last line).
+   * `d`:  The delete command.
+
+   This method is also very efficient.
+
+**3. Using visual mode and `d`:**
+
+   * Press `gg` to go to the beginning of the file.
+   * Press `V` (uppercase V) to enter linewise visual mode.
+   * Press `G` to select all lines to the end of the file.
+   * Press `d` to delete the selected lines.
+
+   This method is useful if you want to visually confirm the selection before deleting.
+
+**4. Using `:1,$d`:**
+
+   * `:1,$`: This range also specifies the entire file (from line 1 to the last line, represented by `$`).
+   * `d`: The delete command.
+
+This is functionally equivalent to `:%d`.
+
+**5. Using a blank register and putting nothing:**
+
+* `gg`: Go to the beginning of the file.
+* `"_dG`: This deletes the content into the black hole register `_`, effectively discarding it.
+
+
+**Emptying a buffer without deleting the file:**
+
+If you want to clear the contents of the buffer *without* deleting the file on disk (so it will be empty when you save), you can use this command:
+
+```vim
+:0,$d
+```
+This deletes from line 0 (which clears out things before line 1, like modelines), to the end of the file.
+
+
+The most efficient and commonly recommended methods are `ggdG` or `:%d`. Choose the one that feels most comfortable for you.  All of these methods achieve the same result of deleting the entire contents of the current buffer in Vim.

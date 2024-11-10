@@ -123,7 +123,7 @@ This is by default asending sort order, then you can make the query run in desen
   - DECIMAL(m,n) where m and n means the precession that needs to be made in order to approximation upto particular decimal places, then you can use the concept of DECIMAL.
 
 - **Date time types**, we can keep the dates and time.
-  - DATA: "YYYY-MM-DD"
+  - DATE: "YYYY-MM-DD"
   - TIME: "HH:MM:SS", this is called interval time, meaning how many time has passed.
   - DATETIME: "YYYY-MMM-DD HH:MM;SS", is where you can to store the exact date and time of the customer.
   - TIMESTAMP(4bytes-num of seccs from epoch time: 1-1-1970 0:0:0)
