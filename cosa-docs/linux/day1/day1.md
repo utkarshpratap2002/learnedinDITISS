@@ -6,7 +6,14 @@ To define the operating system, you can say tat OS is an interface between **End
 
 To tell more about the Operating system, you can say that there is interface between the **application software** and **hardware**.
 
-To me even more precise, we can say that it is a contolled program, controlling the execution of all the softwares running over the operating system. Operating system is a **resource allocator** or say resoruce manager, which allocated hardware resources to the programs running over the operating system, **one-by-one**.
+To me even more precise, we can say the following things about the operating system and reponsibility that it holds.
+
+- It is a contol program, controlling the execution of all the softwares running over the operating system.
+- Operating system is a **resource allocator** or say resource manager, which allocates hardware resources to the programs running over the operating system, **one-by-one**.
+- It is composed of three things:
+  - **Kernel**, which is the core OS repoonsible for managing the CPU, I/O devices, and memory management
+  - **System software** that involves the other softwares that are part of OS that makes an OS function, like providing System utilities softwares, Shell and Command Interpreter and all that makes OS perform different functionality.
+  - **System Utilities** that manages the functions apart from that of the Kernel, menaing monitoring and system analysis (we use `htop` and `ps` cmds to inspect) and software package management (we use apt-get in ubuntu for example).
 
 # What lies in CD/DVD IOS file?
 
@@ -48,7 +55,7 @@ Out of which the Compulsary functionality are the first five and rest is optiona
 
 # File Management
 
-File is simple collection of data, but with the perspective of Operating system, it see it in data and meta data, one is data that contains the data (actual data), another is meta data that contains the information about the file, operating system sees what the file is about, *what kind information is stored in meta data?* 
+File is simple collection of data and metadata (information about data), but with the perspective of Operating system, it see it in data and meta data, one is data that contains the data (actual data), another is meta data that contains the information about the file, operating system sees what the file is about, *what kind information is stored in meta data?* 
 
 - **name/path**, OS stores the data name and the path to the file
 - **size**

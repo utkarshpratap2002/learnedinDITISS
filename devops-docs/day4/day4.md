@@ -2,9 +2,27 @@
 
 Install [apcahe](../../cosa-docs/linux/day13/day13.md) using the package manager and start the apcahe server by making a default website. 
 
+The procedure that you were running on the server is the same, and in the similar manner you can go and start using the apache services. 
+
 # Virtual Private Cloud
 
-...
+VPC (Virtual CLoud Provider) is the logically isolated network that provides a secure way of having retrival and commition of data within the secure environment. VPC contains various networking contructs such as route tables, security groups and other networking constructs to define how **your reosurces** within the system would work or say communicate. This is like having your own little data center within your premise.
+
+Lets discuss one of the appliation of VPC, one such application is where organisations use their on premise data centre and connects it with the cloud utilising the hybrid cloud infrstructure by connecting your data centre with the cloud using VPN tunneling.  
+
+Imagine your office network is your house, and the cloud is a separate building downtown where you want to store some files and run some applications.  You need a secure way to access those resources as if they were in your house. A VPN is like building a private, secure tunnel between your house and that downtown building.
+
+Here are the three ways you can build that tunnel:
+
+1. **You build one end of the tunnel, and the cloud provider builds the other:**  You install a special secure tunnel-building device (like a powerful router) in your house. The cloud provider sets up a similar device in their downtown building.  These devices communicate over the regular internet but encrypt all the data passing through, creating a private tunnel. You're responsible for maintaining the device in your house, and they handle theirs.
+
+2. **The cloud provider builds most of the tunnel:**  The cloud provider sets up a virtual tunnel-building device in their downtown building. You configure your existing internet router in your house to connect securely to their device. This is easier for you as the cloud provider handles more of the technical setup.
+
+3. **A dedicated private tunnel:** Instead of using the regular internet, imagine building a dedicated, physical cable directly from your house to the downtown building. This is much faster and more reliable. You can then build a secure tunnel (like in option 1 or 2) over this dedicated cable for even stronger security and performance.  This is like Direct Connect.
+
+
+These methods all achieve the same goal: securely connecting your office network to your cloud resources as if they were part of the same network.  They offer different levels of management, performance, and cost, so you can choose the option that best suits your needs.
+
 
 # Object Storage
 

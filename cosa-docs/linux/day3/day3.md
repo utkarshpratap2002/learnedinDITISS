@@ -2,7 +2,7 @@
 
 **`task_struct`** is the critical data type in **Linux** used in the creation of PCB (Process Control Block), typically size of **4KB**. It stores all the necessary information about the process that kernel needs while execution. It has **pid**, **ppid**, **schedulign info**, **memory management (heap, stack, virtual memory)**, **timers**, and **file descriptor table**. 
 
-PCB is called sometimes **uarea**, sometimes it is called **Process Descriptor**. Remember when you use [`ps -e`](cosa-docs/os/concepts/top-and-ps.md) use to show all thelist of the running processes in the memory, it is becuase there is a process list maintained by the system. There are various data structure that OS uses:
+PCB is called sometimes **uarea**, sometimes it is called **Process Descriptor**. Remember when you use [ps -e](../concepts/top-and-ps.md) use to show all thelist of the running processes in the memory, it is becuase there is a process list maintained by the system. There are various data structure that OS uses:
 
 - **Job queue/ Process list** - contains the `init_task` head that maintain all the process running in the memory. 
 - **Ready Queue** - CPU scheduler chooses from the **Ready queue** during the selection of processes that are ready to be executed. 
@@ -11,7 +11,7 @@ PCB is called sometimes **uarea**, sometimes it is called **Process Descriptor**
 
 # What is command redirection?
 
-The commands below shows how the [redirection](cosa-docs/redirection/redirection.md) is taking place at `wc < testing.txt`, but this case explicates the **input redirection**, normally the `wc` command when executed, it is taking the input from the std input, via keyboard, but on the `wc < testing.txt` command was taking the input from the testing.txt file that we passed it.
+The commands below shows how the [redirection](../redirection/redirection.md) is taking place at `wc < testing.txt`, but this case explicates the **input redirection**, normally the `wc` command when executed, it is taking the input from the std input, via keyboard, but on the `wc < testing.txt` command was taking the input from the testing.txt file that we passed it.
 
 ```
 ❯ wc
