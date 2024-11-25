@@ -1,30 +1,31 @@
 # What is Operating System?
 
-For any system to be called Operating system, it needs CPU, and all. 
+For any system to be called Operating system, it needs CPU, RAM, Monitor, Keyboard, and Harddisk. These components doesn't make any system operating system, but in order to operating system run, it needs these hardware components on which it could *run* and *manage*.
 
-To define the operating system, you can say tat OS is an interface between **End-User** and **Hradware**. Though having an general defination for OS is impossible. Mostly we are using an apllication over the OS, application programs, used to communicate with the operating system.
+To define the operating system, you can say that OS is an interface between **End-User** and **Hradware**. Though having an general defination for OS is impossible. Mostly we are using an apllication over the OS, application programs, used to communicate with the operating system.
 
-To tell more about the Operating system, you can say that there is interface between the **application software** and **hardware**.
-
-To me even more precise, we can say the following things about the operating system and reponsibility that it holds.
-
-- It is a contol program, controlling the execution of all the softwares running over the operating system.
+- To tell more about the Operating system, you can say that there is interface between the **application software** and **hardware**.
+- To be more specific, we can say Operating system is the control program that controls the application software running on the Operating system.
 - Operating system is a **resource allocator** or say resource manager, which allocates hardware resources to the programs running over the operating system, **one-by-one**.
+
+<br>
+
+# What lies in CD/DVD IOS file?
+
 - It is composed of three things:
   - **Kernel**, which is the core OS repoonsible for managing the CPU, I/O devices, and memory management
   - **System software** that involves the other softwares that are part of OS that makes an OS function, like providing System utilities softwares, Shell and Command Interpreter and all that makes OS perform different functionality.
   - **System Utilities** that manages the functions apart from that of the Kernel, menaing monitoring and system analysis (we use `htop` and `ps` cmds to inspect) and software package management (we use apt-get in ubuntu for example).
 
-# What lies in CD/DVD IOS file?
-
-It containes the Core Operating sytem software, along with additional application sofrtware, and system utilities (installed by default with the ISO file). The Core operating syustem is also called **Kernel**, becuae eventually all the other are controlled by Kernel, meaning it controls application s/w and system utilities.
+It containes the Core Operating sytem software, along with additional application software, and system utilities (installed by default with the ISO file). The Core operating system is also called **Kernel**, because eventually all the other are controlled by Kernel, meaning it controls application s/w and system utilities.
 
 # OS is like Big Elephant
 
 Every aspect of the operating system is true but in order to the look at it hardware perspective, it is resource allocator, if you are looking at it using the software, you say it is a application contoller, an every aspect of the operating system is true, becuase it has different agents working in differenet aspect.
 
-# Functions of Operating System
+### Functions of Operating System
 
+The below are the different aspects from which OS can looked and studies, it involves:
 
 - Process Management
 - CPU scheduling 
@@ -37,7 +38,11 @@ Every aspect of the operating system is true but in order to the look at it hard
 
 Out of which the Compulsary functionality are the first five and rest is optional. 
 
-*What is Process?* Any Program loaded into the memory is called Process. So all the programs we run are the processes. IPC (Inter-Process Communication) handles all the coomunication between the processes. Thus this can be seen using `ps` cmd in Linux.
+*What is Process?* Any Program loaded into the memory is called Process. So all the programs we run are the processes. IPC (Inter-Process Communication) handles all the coomunication between the processes. There are various kinds of IPCs:
+- One of them are **socket** which is used for network communication, where client is able to communicate with the server and are able to send and recieve data using socket APIs. 
+- Another example of the IPC is **Pipes** where one process reads the data from a file and another process write the data to the file. FIFO is one of the types called method of **Named Pipes**, where data can be communicated to another machines also, meaning other OSes.
+
+Thus this can be seen using `ps` cmd in Linux. This is another command used for getting the PIDs of the processes, as that it is used to see the running processes on the system.
 
 *CPU Scheduler* does the scheduling of the Processes. THe OS manages what process should be put into the CPU for processing, for example there is **Round-Robin Algorithm**, **First Come First Serve Algorithm**.
 

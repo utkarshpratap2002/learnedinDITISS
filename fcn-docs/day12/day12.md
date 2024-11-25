@@ -65,7 +65,7 @@ B(config-if)# no
 There are two typese of IP security, one is Tunnel Mode and Transport Mode. When your packet is going through the internet, the packet is basically encrypted with payload. It basically tries to protect the src and dest IP address. 
 
 - When the company choose to go directly to the public servers, then they need Transport Mode 
-- WHen the company choose to be more secure not exposing the servers to the internet or oublically accessible, then they need Tunnel Mode. 
+- When the company choose to be more secure not exposing the servers to the internet or oublically accessible, then they need Tunnel Mode. 
 
 Tunnel Mode also hides the data, as there is IP header within the IP header so it is impossible to know whether this is tunneling or the Regular IP header.
  

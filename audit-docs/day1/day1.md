@@ -1,12 +1,15 @@
 # Introduction to CIA
 
-What kind of data organisation as a whole carries, and what kind of information you are protecting, these are the kind of information that the organisations are looking asnwers for, so you might ask what id CIA.
+What kind of data organisation as a whole carries, and what kind of information you are protecting, these are the kind of information that the organisations are looking asnwers for, so you might ask what is CIA.
 
 - **Confidentiality**, meaning the data should be only visible to the authorised users, menaing that it shouldn't be disclosed to unauthorised users. For example, if you birth date, which is you confidential data, in confidentiality we discuss what is the data and how to protect its value that it holds, in order such that it is not compromised.
 
-- **Integrity** - Data Modification should be, meaning no one should be able to look at data
+- **Integrity** - Data Modification should be, meaning no one should be able to look at data and manipulate it. Integrity involes the **accuracy** and **reliability** of data, tapering with data will cause various organisational loses, for example, in case of Coca-Cola, tampering with the formula will cause the disruptions and losses, for example, wrong sales data could lead to wrong maketing strategy and therefore the should be an accuracy to data flowing within the organisation.
 
-*What is difference between the Confidentiality and Privacy?* There is a slight differnce between the two, meaning if there is an organisation their data needs confidentiality and if there is a user, who needs certain rights and then users should be hold responsible for their own data, meaning users should be holding responsible for what kind of organisation they are sharing their data. 
+- **Availability** - Talking about Coca-Cola, there should be a continuous flow of data within the organisation to the authorised users, meaning a single downtime in sales system or manufacturing could lead to loses within financial department and reputational loses. 
+
+
+*What is difference between the Confidentiality and Privacy?* There is a slight differnce between the two, meaning if there is an **organisation** their data needs confidentiality, meaning they should be able to protect their data from unauthorised users and entity, but when it is about a **user**, a user should have certain rights so that user can hold responsibilty of their data, meaning *they can control their data*, decide who can use it and who cannot, they can control and objectify where their data is going, who is using their data.
 
 *What do you mean by Vulnerability?* It can be loopholes in the system that requires regular check-ups in the system and which can require regular attention. 
 
@@ -58,23 +61,44 @@ So we need to prepare a final list where you'll realise only threat agents where
 - **Natural Threats**: Fire, brokern, etc.
 - **Human-based threats**: Hacking, 
 
+# Compliance 
+
+*What is compliance?* Compliance is ensuring that there are rules and regulations r standards that are being followed within the organisation, it can be **internal** (for example, company
+code of conduct) or **external** (for example, HIPAA, PCI DSS etc). This is called adherene to the rules. Basically we can define what compliance involves:
+
+- **Adherence to rules**, meaning there should be proper standards, rules, and regulation to be followed, can be internal as well as external, for example companies own code of conducts or any compliance standard, such as 
+
+- **Risk Management** - By adhering to rules, the organisation tries to prevents various risks, such as financial loses, operation disruption, legal panelties and all
+
+- **Accountabilty** - COmpliance also make sure that there are people who are given responsibility to look after certain rules and regulation or say compliance requirements, such as there should be people holding reponsible, when something goes wrong.
+
 
 # Auditing
 
-- **Internal Security audits**
-  - Intenal employee relations may not give real information
+Auditing is independent inspection of whether the organisaiton is *compliant* or not. Auditor is a sperate entity that is seperate from the entity that are being audited. So an Auditor is a seperate entity that checks for the processes and alignment within the organisation. Auditors gather evidence through interviews, observations, document reviews, and testing to support their findings.
 
-  - Limited Knowledge
-    - New threats
-    - New technologies
+- **Internal Security Audits**
+  - Internal audits are done by the seperate auditing commitee working within the organisation, not as part of the management department of the organisation, whose job is to 
+- **External Security Audits**
+  - These are seperate authorities that work inddependent to the organisation and hence have extreme level of independence.
+- Limited Knowledge
+  - New threats
+  - New technologies
 
-  - Other Factors
-    - Total Work
-    - Overtime Paid
+- Other Factors
+  - Total Work
+  - Overtime Paid
 
 ### VAPT Audits
 
-What it does is it check if the firewalls are working correctly, whether they are performing tasks that they should be, wherether they are performing the same way. 
+It is **Vulnerability Assesment and Penetration testing** audits that work for the identification as well as exploiting the possible vulnerability of the system. 
+
+- **Vulnerability Assessment** - This is to identify the possible vulnerability within the system and then 
+- **Penetration Testing** - This focusses on exploiting the identified vulnerability.
+
+Thus the goal is always to identify and fix vulnerabilities before attackers can exploit them.
+
+
 
 
   

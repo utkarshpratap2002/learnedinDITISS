@@ -62,9 +62,11 @@ A scenario where you can include bunch of machiens
 
 It could be a private network that is handling your requests, it is used over the internet to provide you services, such as creating Virtual Machines, creating Server, deploying application and what not. Having a server might make it vulnerable as if you tried buying 10 such server, if the demand within the coorporation decreases, that would mean loss of resorces.
 
+*So what is cloud computing?* Cloud Computing is the an **On-demand delivery** of an **IT resource** over the internet on **pay as you go** basis. Yes IT resources such as server, engines and all these server could be unsettling and businesses doesn't get ahead of the competition after just installing the MySQL server or any server for example, it is the management and organisation of the data that makes them different, so you can use AWS for deploying and all and focus on the real thing.
+
 ## Scalability
 
-Every application is capable enough to exapand and shrunks the number of resources that you have. This scalability can be used in order to increase or decrease the resources.
+*Trade upfront expenses with Variable Expenses.* Meaning everytime you don't have to worry about the Scalability, just few clicks and you can start running you servers and instances. Every application is capable enough to exapand and shrunks the number of resources that you have. This scalability can be used in order to increase or decrease the resources.
 
 ## Elasticity
 
@@ -81,4 +83,7 @@ Amazon has group of resoureces where there are multiple functionalities, such as
 
 Architects uses the Management Console, and Developers uses the SDK, Administrators or say Operation team. Lets start creating our first Virtual Machine running in Cloud. 
 
+# Deployments Modals
+
+There are three deployment modals, Cloud-based deployment, On-premise deployment, and then there is Hybrid deployment.
 
