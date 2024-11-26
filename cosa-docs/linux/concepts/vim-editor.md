@@ -244,3 +244,13 @@ This deletes from line 0 (which clears out things before line 1, like modelines)
 
 
 The most efficient and commonly recommended methods are `ggdG` or `:%d`. Choose the one that feels most comfortable for you.  All of these methods achieve the same result of deleting the entire contents of the current buffer in Vim.
+
+# Using Process Substitution
+
+You can use a more convinient method to see lots of data, for example you need to check what are packages that are being installed within the Linux server, you an use `vim` for that purpose, for example you something like this below:
+
+```
+vim <(ls /path/)
+```
+
+This will open up contents of the **/path/** (it could be anything like /bin/, want to see the package within the bin).
