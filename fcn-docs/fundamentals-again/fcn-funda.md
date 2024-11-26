@@ -9,7 +9,7 @@
 
 - **APIPA (Automatic Private IP Addressing)** - 169.254.0.0/16
 
-- **Loopback Addresses** - 127.0.0.0/8
+- **Loopback Addresses** - 127.0.0.0/8, 127.250.250.250
 
 ### Port Numbers
 
