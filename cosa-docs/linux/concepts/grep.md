@@ -110,4 +110,6 @@ Here’s a layman description of the commands found in your `commands_history.tx
 
 54. **`grep -r "is" ..`**: Recursively searches for "is" in the parent directory and all its subdirectories.
 
+55. **`grep -C 2 "search-pattern" file.txt`**: Displays the two line before and after the line that find the searched *pattern*. 
 
+56. **`grep -A 2 -B 2 "search-pattern" file.txt`**: Displays the same thing, but here you can specifically specify the number for both after and before.
