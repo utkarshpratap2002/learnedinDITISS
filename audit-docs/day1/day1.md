@@ -13,11 +13,13 @@ What kind of data organisation as a whole carries, and what kind of information 
 
 *What do you mean by Vulnerability?* It can be loopholes in the system that requires regular check-ups in the system and which can require regular attention. 
 
-What is difference between software vulnerability and hardware
-
-*What is difference between Threat and Vulnerabilty?*
+*What is difference between software vulnerability and hardware vaulnerability?* If we talk about software vul, then it could be any design, code, or logical flaw that could create a possible threat to the system. But if it is Hardware vulnerabilty, it could be anything like any Hardware Torjans as implementing any malicius hardware component, then it could be **Unsecured fireware** meaning there could be 
 
 *what is threats?* These are the possible negative events that might bring harm to the software system or hardware.
+
+*What is difference between Threat and Vulnerabilty?* When we talk about threat, threat is a possible or potential for mishappening, say any unwanted event, a hacker may exploit your vulnerability, or there could be a disgruntled employee who can cause a inside threat. But when we talk about the Vulnerability, these are loopholes that can cause disruption to the operation within the organisation, could affect the availability, confidentiality, or integrity of data.  
+
+*What is Risk?* Risk is the potential of loss, which could do damage to the organisation, potential financial loss, operational disruption, legal panelty due to any resultant to the *vulnerability that got expoited*.
 
 *What is Exploit?* It is the method that is used to corrupt the software system and cause threat to the organisation, such as **buffer overflow** where buffer is filled with the data such that is called Exploiting the comman vulnerability, thus that is exploiting. Thus, the method like speacial code, speacial input to the system/software that uses the vulnerability is called Exploit.
 
