@@ -65,7 +65,26 @@ Go to the Help Mannual page of the VMWare, and three yo can find the network ada
 ### Network Adapter in Virtual Box
 
 1. Internal Adapter
+  - All the virtual machines within the same Virtual Machine, say Red Hat and Ubuntu, than that means only the Virtual machines can be 
 2. Bridge Adapter
+  - A bridge is the kind where all the machines will be treated as individual network adapter. The the Router providing the IP addresses to the local machine, the Virtual machine will start acting as individual machine.
 3. Host Only
+  - If you only want to communicate with the local machine only. Thus, it could be on that you only want to make communication between Virtual Machine and Host Machine. 
 4. NAT
+  - In case of NAT there is internet connection between the Virtual Machines, thus this is how it differs from the Internal Network.
 5. NAT Network
+
+### Concept on Apache2 web server
+
+- If you need to see the log of the requests that were send to the server, you can do that using the follwoing file **access.log**.
+
+```
+cat access.log
+```
+
+If you check the request when you accessing the website
+
+# Activity
+
+- Need to perform the social Engineering such that people could recognise it and click the link. See what kind of information are getting displayed.
+- Another is create a basic website that accepts the login credentials and then redirect the page infront.
