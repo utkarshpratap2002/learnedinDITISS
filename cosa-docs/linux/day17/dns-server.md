@@ -51,6 +51,10 @@ $TTL 2d    ; default TTL for zone
                                 )
 ```
 
+# Getting Into Basics
+
+What is DNS server, its a name resolver, meaning it resolves the names to the IP addresses, I meed to talk about DNS, the its just a configuration that will allow us to make queries, meaning these queries should be maintained and should be configured well.
+
 
 
 

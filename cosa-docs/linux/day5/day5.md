@@ -21,7 +21,23 @@ We'll try to understand what meant with **Darwin Kernel**.
 
 # Shell Programming
 
-There arr various editor in the shell, out of which `nano` and `vi` editor commands are very important and crucial, becuase they are powerful and delivers the job. 
+There are various editor in the shell, out of which `nano` and `vi` editor commands are very important and crucial, becuase they are powerful and delivers the job. But you might ask *what is a Shell?* Shell allows us to run command that helps in interacting with the system and get the results and outputs. 
+
+Use the **`echo $SHELL`** to learn what shell you are using, it will give you the shell you are using. You can also use `which bash` command to learn about the bash , say if it is `/urs/bin/bash`, then run this command `/usr/bin/bash` to start the bash shell.
+
+Thus you can start by doing the basic math calculation by using the `expr` command.
+
+```
+$ expr 40 + 60
+120
+```
+
+You can escape **`\`** the character in case you are conflicting the methods, for example, when using multiplication, you need to escape it. Because what `*` does it takes everything that is directory.
+
+```
+$ expr 1 \* 5
+5
+```
 
 #### `rename` *s/old-pattern/new-pattern* *pattern
 
