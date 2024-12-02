@@ -182,6 +182,19 @@ The usage of variable is simple, through `$` before the variable name:
 echo $variable-name
 ```
 
+The `$` sign reference the variable meaning it identifies the variable and helps to prevent the name collision. COnsider the below example. But these are only going to remain within the same session only. 
+
+```
+$ ls="thisismyname"
+$ ls
+Contents of Directory 
+$ echo $ls
+thisismyname
+```
+
+Remember that if you are using the double quotes then it is destined to work, but if you used the single quotes, the variable name will be printed instead of variable's content.
+
+
 #### `read variable`
 
 You can use the following cmd to read the variable using the `read` command. As in `read` command it is not compulsary to define the variable as before you use them. 
@@ -213,6 +226,7 @@ div=expr $a / $b
 echo "Add : $add"
 echo "Sub : $sub"
 ```
+
 Remember don't use `expr` within the `$(( expression ))`, then you might errror. It is called [command substitution](#command-substitution). 
 
 #### Command Substitution
