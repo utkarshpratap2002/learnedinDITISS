@@ -88,3 +88,9 @@ If you check the request when you accessing the website
 
 - Need to perform the social Engineering such that people could recognise it and click the link. See what kind of information are getting displayed.
 - Another is create a basic website that accepts the login credentials and then redirect the page infront.
+
+# Try Performing
+
+- MySQL Injection
+- Brute Force Attack
+- 

@@ -1,0 +1,33 @@
+<mxfile host="65bd71144e">
+    <diagram id="Fz-NlgHIaGN8eNMtA3vs" name="Page-1">
+        <mxGraphModel dx="1388" dy="1048" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="2" value="Public Network (Internet)" style="text;strokeColor=none;align=center;fillColor=none;html=1;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1;fontSize=22;" vertex="1" parent="1">
+                    <mxGeometry x="120" y="220" width="210" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="4" value="Demilitrized Zone" style="text;strokeColor=none;align=center;fillColor=none;html=1;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1;fontSize=22;" vertex="1" parent="1">
+                    <mxGeometry x="470" y="220" width="210" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="5" value="Private Network" style="text;strokeColor=none;align=center;fillColor=none;html=1;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1;fontSize=22;" vertex="1" parent="1">
+                    <mxGeometry x="860" y="220" width="210" height="80" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+    <diagram id="YEsdtfMKyInuo9625qqL" name="Page-2">
+        <mxGraphModel dx="1735" dy="2137" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="gbpaL86Sds6MRBf7C-RO-1" value="WorkFlow of the DevOps&amp;nbsp;" style="text;strokeColor=none;align=center;fillColor=none;html=1;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=22;fontStyle=1" vertex="1" parent="1">
+                    <mxGeometry x="420" y="-40" width="310" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="gbpaL86Sds6MRBf7C-RO-2" value="" style="aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;fontColor=#4277BB;labelBackgroundColor=#ffffff;fontSize=12;spacingTop=3;image;image=img/lib/ibm/devops/devops.svg;" vertex="1" parent="1">
+                    <mxGeometry x="530" y="10" width="90" height="90" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>

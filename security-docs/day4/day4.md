@@ -61,5 +61,17 @@ YOu need to open the proxy inside *burpsuite* and start the temp project, then s
 
 - Using BurpSuite, you can write muliple methods meaning machien will do it, give it muliplte option for checking the login. Bursuite will be running various combinations and once the combination that will look different you'll be able to identify the right passwords.
 
-# Changing the Password
+# Bypassing OTP
+
+THis is another kind of vulnerability which is Bypassing the OTP, and that when it comes to bypassing you need the following steps:
+
+- Go the website *register* page, open the registration page.
+
+- Enter phone number and let the response reach the registered mobile number.
+
+# *Data & Privacy*
+
+If we go to the Youtube history, hyou 
+
+# Setting Up DNS and DHCP Server To Redirect the user to Phishing website
 
