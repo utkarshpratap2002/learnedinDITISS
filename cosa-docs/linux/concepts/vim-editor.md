@@ -190,7 +190,13 @@ Refer to [environment](environment.md) when it comes to adding a shebang header,
 
 The above shebang header might be containing the program which could be python script and if you don't give the extension to the file then also you'll be able to execute the file irrespective of the extension or the command (python3 or bash) you give, just you need to make sure that the file is executable. And you can run the file using **`./pythoncode`**. 
 
-Remember that there is only **one** shebang header in a bashh file, the first line of the file is interpreted as shebang header, next line are considered as normal and regular lines, so even if you tried adding a header other than shebang header, it won't be one becuase it'll be interpreted as code. Refer to 
+Remember that this is not enough, in order to execute the **pythoncode**, you need to be able to make the file executable using chmod. So after writing code, and shebang header, make file executable.
+
+```
+chmod +x pythoncode
+```
+
+Remember that there is only **one** shebang header in a bash file, the first line of the file is interpreted as shebang header, next line are considered as normal and regular lines, so even if you tried adding a header other than shebang header, it won't be one becuase it'll be interpreted as code. Refer to 
 [can a bash script have multiple shebang header](can-a-bash-script-have-multipe-shebang-header.md) to learn more about it.
 
 # Deleting Methods
