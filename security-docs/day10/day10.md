@@ -1,14 +1,24 @@
 ### BeVigil 
 
+BeVigil is one of the sources that is used in order to test 
+
 ### `which theHarvester`
 
-```
-sudo theharvester -s checkpoint.com -b subdomainincenter
-```
+It is an open-source intelligence (OSINT) tool that is used for information gathering, developed in Python, and that is passive tool that uses public information to harvest the information. 
+
+
+
+*Check for search engine hacking* to learn in deep about information gathering to go into more details about how different aspect of this come together. **The point is**, it gathers information from various resources such search engines, PGP, linkedin, google and others. 
 
 ```
-sudo theharvester -s checkpoint.com -b 
+sudo theharvester -d microsoft.com -l 500 -b duckduckgo
 ```
+
+The above command means that the source is duckduckgo (which is the publicly available) and microsoft.com is the target, and it will execute upto 500 results.
+
+Users can fine-tune their searches by specifying the target domain, data sources, and the type of information they seek. This flexibility allows for precise and targeted data retrieval.
+
+You can use various sources to get more information and that when it comes to information gathering you change the source to get different information.
 
 ### IntelligenceX
 
@@ -36,6 +46,11 @@ Use the following ping command to know what are the devices that are active on t
 sudo nmap -sp 172.16.0.0/21
 ```
 
-# *Law is Supreme*
+
+
+# Information Technology Act, 2008
+
+Every country has its own law and therefore it is important to know what kind of law the country is following in respective of the Cyber Security.
+
 
 
