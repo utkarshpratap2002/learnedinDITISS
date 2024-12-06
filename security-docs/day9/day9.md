@@ -45,6 +45,15 @@ It includes DAST and SAST.
 
 # Method-based access control can be circumvented
 
+It is the very vulnerability where normal users are able to promote themselves to the admin account using manipulation of the http requests. Our target is promte to normal user using the adminintrative priveleges by exploiting the method based flaws. Follow the [link](https://portswigger.net/web-security/access-control/lab-method-based-access-control-can-be-circumvented) to access the Lab.
+
+Steps to do that:
+
+- Open the lab and login in with credentials (administrator, admin) and see if you are able to upgrade the users, *which you'll be able to*, use burp-suite to track down the request made and **send it to the repeater**.
+
+- Next, try to log in with normal user, and try to change the http request by copying the session id of the user that you've logged in as, and go to the repeater and change the session id of the request that was made with the new one.
+
+- Now *double-click* and change the request to the GET, now change the username to the user you are logged in as and send the request, you'll noteice that you are able to make the change without being an administrator.
 
 # Active Scanning and Finger-printing
 
@@ -53,7 +62,7 @@ It includes DAST and SAST.
 sudo hping3 -s --scan $PORT_RANGE $TARGET_IP
 ```
 
-This `-S` means that check for SYN packages, and sepcify the port range and target IP Address. It will give the command like this.
+This `-S` means that check for SYN packages, and specify the port range and target IP Address. It will give the command like this.
 
 ```
 sudo hping3 -S -p 80 $TARGET_IP
@@ -113,3 +122,5 @@ Visit to [OWASP Input Validation](https://cheatsheetseries.owasp.org/cheatsheets
 1. Remember to read about the **SAST and DAST tools** and therefore look for it.
 2. Read about MVC Structure. Also remember to look for Web Framework, Flask.
 3. Js-gaurd is not secure, even if the website is full of virus, it won't block the website. *Need to check it!*
+
+Visit [Offsec File Inclusion Vulnerability](https://www.offsec.com/metasploit-unleashed/file-inclusion-vulnerabilities/) to learn more about how things work, it explains the RFI as well as LFI.

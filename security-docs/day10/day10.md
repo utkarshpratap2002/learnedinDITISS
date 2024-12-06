@@ -46,8 +46,6 @@ Use the following ping command to know what are the devices that are active on t
 sudo nmap -sp 172.16.0.0/21
 ```
 
-
-
 # Information Technology Act, 2008
 
 Every country has its own law and therefore it is important to know what kind of law the country is following in respective of the Cyber Security.
