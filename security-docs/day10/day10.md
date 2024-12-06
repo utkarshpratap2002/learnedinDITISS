@@ -7,7 +7,6 @@ BeVigil is one of the sources that is used in order to test
 It is an open-source intelligence (OSINT) tool that is used for information gathering, developed in Python, and that is passive tool that uses public information to harvest the information. 
 
 
-
 *Check for search engine hacking* to learn in deep about information gathering to go into more details about how different aspect of this come together. **The point is**, it gathers information from various resources such search engines, PGP, linkedin, google and others. 
 
 ```
