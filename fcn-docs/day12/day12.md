@@ -1,11 +1,13 @@
 ### WAN Security
 
+Earlier multiple technologies for WAN were in use but die to cloud adoption technologies like SD-WAN came into picture and changed everything. Earlier technologies like Frame Relays, Leased (T1/T2) Lines, ATM (Asynchroneous Transfer Mode) were used. But they are not used more. 
+
+- **MPLS (Multi Protocol Label Switching)** - Now that it is method of 
+
 **WEP (Wireless Equivalency Protocol)** works on the architecture that allows you to connect on the internet same as that of the Access-point. You know that when you are trying to connect the network, you need to connect through the WEP network and provide the passwords.
 
-Behind the scene, WEP MAC addresses are generated using the Password and the WEP algorithm, the same MAC address is to discoverd by the WEP client machine also.
-
 WEP version1 - Uses TRIP, DES (32 bits)
-WEP version 2 - Uses Triple DES, AES.
+WEP version2 - Uses Triple DES, AES.
 
 *What is Triple DES?* The text will be encrypted for the three times, once it gets encrypted then again for two more times, the DES is applied three times. *Don't think what needs to be done for security, think what hacker could do.*
 

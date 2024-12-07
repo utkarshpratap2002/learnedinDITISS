@@ -4,7 +4,7 @@ Let’s consider the Machine A and Machine B wants to communicate, question, how
 
 * The purpose of ARP is to learn the MAC address of the **Destination** machine. A will broadcast that he wants to communicate with the Machine B, the broadcast message carries `::FFFF`
 
-![alt text](fcn-docs/day2/diagrams/arp.png)
+![alt text](diagrams/arp.png)
 
 <br>
 
@@ -12,7 +12,7 @@ Let’s consider the Machine A and Machine B wants to communicate, question, how
 
 Once the connection is established, it keeps the MAC address is kept for 10mins. Suppose A is transfering 40Gb of data, A has generated creadcast and lets say the communication was for 20min. Once the comm stops, if 10mins last, after the communication with respect to the fact that there is ideal period, meaning 10 mins lasted and no comm is happening, then MAC address will remain for that 10min. It is called ARP Cache time.
 
-![alt text](two-department-comm.png)
+![alt text](diagrams/two-department-comm.png)
 
 <br>
 
