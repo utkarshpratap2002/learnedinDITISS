@@ -111,6 +111,7 @@ It is a Layer 2 Attack and you can flood mac addresses and use the tool named **
 sudo macof -i en9
 ```
 
+And that's it, you'll be able to find the random MAC addresses generating out of nowhere. 
 
 
 # Resources
