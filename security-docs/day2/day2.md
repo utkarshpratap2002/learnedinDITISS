@@ -86,9 +86,13 @@ You need to log into the original page, or perphaps you need an actual link, tha
 
 - For that you need to use the social engineering tool that you can get from the git **zphisher**.
 
-- Then you need to start with 
+- Then you need to start with executing the zphisher script using `bash zphisher.sh`, then select appropiate options to clone the website such as *Instagram*, or *LinkedIn* or whatever.
+
+- Once done with the attack, you can go to /auth/username.dat which will contain the infomation for the users data.
 
 # Social Engineering Toolkit
+
+It is an open source penetration testing framework designed for xocial engineering, that is used for the education purposes, how the payloads are created and how trojans are transfered to the targets and attack is performed. 
 
 - You first need to install the social engineering toolkit in linux. 
 - You need to select the following number according what you are going to perform.
@@ -102,4 +106,38 @@ You need to log into the original page, or perphaps you need an actual link, tha
 
 2
 
+# Meterpreter Reverse TCP
+
+Basically we need a windows machine that will revert the session to the meterpreter after we create a payload and insert it inside the windows machine. All you need to do is, create a **payload** using the social engineering toolkit and somehow get it passed to the window machine. The below are the steps:
+
+- Open SET, and select option **1** *Create Payload and Listener*
+
+<div style="border-left: 4px solid #007acc; background-color: #f1f6f9; padding: 10px; border-radius: 5px;">
+<strong>Note: </strong> Remember that this practical lab is using Windows 7 Machine for the exploitation.
+</div>
+<br> 
+
+- Then select the Machine for which you need to generate Reverse TCP, which is *Windows Meterpreter Reverse TCP x64*, **5**
+
+- Then *Enter* the Local IP address (LHOST), and LPORT, remember enter the IP address on which you need to listen to the reverse tcp.
+
+- After **Enter** the payload will be generated, it will be saved to **/root/.set/payload** and you'll be able to find the payload on server running on the IP address.
+
+- Now SET will provide a option to listen to the windows server ***now***, you just need to say *yes* and it will open meterpreter (multi/handler) for you, now this is will wait for any connection or incomming that are out there for our **payload**. 
+ 
+- Now you need to get this payload to the windows machine, so in order to do that we need to set the up the server using **python**. Remember to do it in the same directory you are having the payload.
+
+```python
+python -m SimpleHTTPServer 80
+```
+
+- Then you need to go to windows machine and look for the local network on which actually *you will try phishing strategies* to trick the user to move to that website, and then once the payload a downloaded, the website will be hacked.
+
+- You need to move to the meterpreter and start the session using the following command.
+
+```
+session -i 1
+```
+
+And then you can try looking for information around within the windows system, the *windows is yours*.
                 
