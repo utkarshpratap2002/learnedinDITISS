@@ -104,7 +104,7 @@ sudo hping3 --icmp -c 1 192.168.0.255 --rand-source --flood
 
 This will send the ICMP messages to the Broadcast address of the router with some random IP address and flood the router with ICMP address, such that router will not be able to send reposnse to other machines in the network.
 
-# A talk worth talking about Switches 
+# `macof`: MAC Flooding 
 
 It is a Layer 2 Attack and you can flood mac addresses and use the tool named **macof** to flood the mac addresses. 
 ```
@@ -113,6 +113,23 @@ sudo macof -i en9
 
 And that's it, you'll be able to find the random MAC addresses generating out of nowhere. 
 
+# `nc`: NetCat 
+
+The command `nc` allows you to communicate with the other machine across your network, all you need to do is create a socket and bind it to the port and start the conversation.
+
+```
+# On Machine 1
+nc -l 1337
+```
+
+Now on different machine, you can connect to the Machine 1 with the same port.
+
+```
+# On Machine 2
+nc <ip-address> 1337
+```
+
+This will create a network and you'll be able to share the messages across.
 
 # Resources
 

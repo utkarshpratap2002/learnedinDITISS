@@ -10,7 +10,7 @@ It is an open-source intelligence (OSINT) tool that is used for information gath
 *Check for search engine hacking* to learn in deep about information gathering to go into more details about how different aspect of this come together. **The point is**, it gathers information from various resources such search engines, PGP, linkedin, google and others. 
 
 ```
-sudo theharvester -d microsoft.com -l 500 -b duckduckgo
+sudo theHarvester -d microsoft.com -l 500 -b duckduckgo
 ```
 
 The above command means that the source is duckduckgo (which is the publicly available) and microsoft.com is the target, and it will execute upto 500 results.

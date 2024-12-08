@@ -67,10 +67,39 @@ foo.php?file=../../../../../../../../../etc/passwd
 ```
 
 
-
 # Open HTTP Redirection
 
-*What is HTTP Redirection?* It is about redirecting the link, In DVWA is 
+*What is HTTP Redirection?* It is caused due to the input validation flaw where user input is trusted that leads to external URL to some target site, or it could be malicious. This is basically used as phishing attack that can used to redirect the users to another website. This happens when the code takes the input without validating that the input is carrying a URL that is redirecting the user to another website.
+
+Consider the code below:
+
+```
+<?php
+
+if (array_key_exists ("redirect", $_GET) && $_GET['redirect'] != "") {
+    if (preg_match ("/http:\/\/|https:\/\//i", $_GET['redirect'])) {
+        http_response_code (500);
+        ?>
+        <p>Absolute URLs not allowed.</p>
+        <?php
+        exit;
+    } else {
+        header ("location: " . $_GET['redirect']);
+        exit;
+    }
+}
+
+http_response_code (500);
+?>
+<p>Missing redirect target.</p>
+<?php
+exit;
+?>
+```
+
+The line `if (array_key_exists ("redirect", $_GET) && $_GET['redirect'] != "")` checks whether the file input is not having any abosolute path to any website, this one ensures the security of the user, and doesn't fully trust the user input. 
+
+Refer to [Test for Client Side URL Redirection](https://owasp.org/www-project-web-security-testing-guide/v41/4-Web_Application_Security_Testing/11-Client_Side_Testing/04-Testing_for_Client_Side_URL_Redirect) in order you want to learn more about it.
 
 # How to Start the FTP Redirection?
 
