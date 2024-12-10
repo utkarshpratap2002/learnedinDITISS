@@ -164,4 +164,3 @@ The above gave the full packet, but you can filter that too, you can filter the 
 sudo tcpdump -c 2 --xxe -s 4
 ```
 
-Install debian and practise the command in debian based 
