@@ -75,17 +75,28 @@ Remember that this is only about generating the hash codes for files, these hash
 
 Often when using the MD5, we can see that the hash value comes to be same, hash value can be similar and the hash value for two different files can be same. Therefore, it is not recommended to use the MD5 in real world. You can use sha256sum for the same. 
 
+<br>
+
+# Configuration Entry of Debian-Based Linux
+
+That line is a configuration entry for Debian-based Linux systems (like Ubuntu, Debian itself, Linux Mint, etc.), instructing the system where to look for additional software packages.  Let's break down each part:
+
+```
+deb [trusted=1] http://sunebam.shuharilabs.com/sw/repo/deb12/ bookworm main
+```
+
+This line tells the system to add a software repository located at `htp://sunebam.shuharilabs.com/sw/repo/deb12/` (with the typo corrected to `https://`), trusting its packages completely, and specifically targeting the Debian 12 (Bookworm) release, focusing on the `main` component.  After adding this line to the system's sources list (usually `/etc/apt/sources.list` or a file in `/etc/apt/sources.list.d/`), the system will be able to download and install software packages from that repository using tools like `apt` or `apt-get`.
+
+But remember in case you are running an operating system with different arch, you need a different repo to install all the packages, so you need to go with the internet one, that will use the following global repository for the installation of the packages. In that case use the following script of `source.list`.
+
+```
+deb http://deb.debian.org/debian/ bookworm main
+```
+<br>
+
 # What is `tcpdump`?
 
 It is important to know that `tcpdump` extracts data from almost all the layer of OSI modal, and therefore it is important to know becuase it is capable of collecting data from all layers of OSI Modal.
-
-```
-/etc/apt/source.list
-```
-
-```
-deb [trusted=1] htp://sunebam.shuharilabs.com/sw/repo/deb12/ bookworm main
-```
 
 Now install the `tcpdump`, you need to install this software and reach out to it. 
 
