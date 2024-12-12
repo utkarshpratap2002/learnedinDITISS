@@ -34,7 +34,7 @@ fcrackzip -D -p another.txt protected_password.zip
 
 After this command, it will return a password with which it got cracked.
 
-# Wordlist using Crunch
+# Wordlist using crunch
 
 Use the man page of the crunch to create the wordlist for your own. These wordlist are present in **/usr/share/wordlist**.
 

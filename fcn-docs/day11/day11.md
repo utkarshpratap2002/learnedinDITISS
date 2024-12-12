@@ -1,6 +1,6 @@
 ### Frame-relay
 
-Frame-relay is called P2M (Point-to-Multipoint).
+Frame-relay is called P2M (Point-to-Multipoint). It works on the layer 2 (Data Link Layer), it is basically a connection-oriented communication medium then the *connection-less* communication in the ethernet. However, it is being hugley replaced by **MPLS**.
 
 - Frame-relay mapping happing according to the frame-relay numbers such that creating a multipoint connection.
 - ISPs provide you connection where you can map the one **hub** with muliple **spokes** using frame-relay numbers.
@@ -127,8 +127,7 @@ IPv6 has 64 bit in size, it was able to represent bigger number with lese spaces
 
 You can assign the IPv6 using the `::` when there us two cosecutive groups of **Zero**, Though you can see that there are total six groups are found in the hexadecimal.
 
-It is veryful in representing the netwrok, if you wnat ot represent your netwoork, then 
-it makes it easy to identify the *zeroes*. But remember that you can use the `::` only ones in the whole IP addressing, as it shouldn't be used **twice**.
+It is helpful in representing the netwrok, if you want ot represent your netwoork, then making it easy to identify the *zeroes*. But remember that you can use the `::` only ones in the whole IP addressing, as it shouldn't be used **twice**.
 
 There is no Subnetting in IPv6, there is fixed IPv6 subnets, i.e., `/64`. IPv6 Engineer while defining the IPv6, eliminating the DHCP and other protocols such as ARP, no need to ARP, when there is no need to broadcast within the network. 
 
@@ -156,5 +155,14 @@ In IPv6 there are `FEC0::` called as **Link Local** addresses, and another is `F
 
 Basically there is need to assign them with **SSID**, *provide a name*, then there is **Channel**, mostly is is autodetected but has a range from *0 - 15*, then there is **Mode**, if the *Mode id* is *Infrastructure* then it has to be multiple connection connected to **Access point**.
 
+# Wireless Communication Protocols
 
- 
+In the more modern infrastructure in the IT, there are mode advance instrastructure that can be visible. Some of them are given below:
+
+- **802.11 Family** - This container various protocols for wireless technolgies, such 802.11n, 802.11b, 802.11a etc.
+
+- **Cellular Technologies (3G, 4G LTE, 5G NR)** 
+
+- **Bluetooth** - 
+
+- **Other Wireless Technologies** - 

@@ -53,10 +53,11 @@ A(config)# access-list 110 permit ip any any
 
 Remember that after the `access-list 110 deny` ***protocol*** ***src-host*** ***dest-host***. Here in the command, you can **permit** or **deny** any protocol, meaning **IP** or **ICMP**, followed by the *soruce* ip-address and *destination* ip-address.
 
-|Network | IP | ICMP |
+| |  |  |
 |--------|----|------|
+|Network | IP | ICMP |
 |Transport| TCP | UDP|
-|     | HTTP, HTTPs, FTP etc. | POP3, TFTP|
+|Application| HTTP, HTTPs, FTP etc. | POP3, TFTP|
 
 You can add an `eq` that wil tell router to apply the rule on the specific port or service, meaning you can define the particular sevice that you want to allow or permit. So in that case the complete syntax of Extended access-list will become something like this below:
 

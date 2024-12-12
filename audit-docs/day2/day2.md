@@ -15,4 +15,6 @@ Now we must start with defining approaches for the requirements that occurs, mea
 
 ### 
 
+# ISO 27001 Controls
+
 

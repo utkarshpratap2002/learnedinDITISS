@@ -35,6 +35,14 @@ Brute force vulnerabilty that is cracking the password with all the possible com
 
 - **Make your passwords complicated** - Securoty from the brute force can be achieved by having long and complicated passwords, as the users can have very weak passwords, as they can have passwords for example *p@55w0rds* which is also an expression of *password*. 
 
+# `wfuzz`
+
+Run the following command in order to get the response for the passwords list that you ran over the website or say authentication form. 
+
+```
+wfuzz -c -w ~/password.txt -b "security:low; PHPSESSID=document.cookie" "http://127.0.0.1/dvwa/vulnerabilities/brute/index.php?username=admin&password=FUZZ&Login=Login" 
+``` 
+
 ### Dictionary Passwords
 
 This is how or say one of the methods of reducing the subset of possible passwords that will check for all the possible combination, meaning *trying the most comman passwords*. These are most comman combination, for example, *11111*, *55555*, *12345* etc.
@@ -75,3 +83,10 @@ If we go to the Youtube history, hyou
 
 # Setting Up DNS and DHCP Server To Redirect the user to Phishing website
 
+# SQL Injection
+
+Perform the following command in order to by pass the vulnerability.
+
+```
+1' or '1' = '1 UNION SELECT * from users#
+```
