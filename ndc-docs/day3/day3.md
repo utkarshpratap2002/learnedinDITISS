@@ -81,13 +81,13 @@ In this section we are going to cover the health inspection of the machine, basi
 
 # Nagios LAB
 
-1. **Step 1** - First you need to configure the hostname. Take a fresh machine and configure hostname. 
+1. **Configure the hostname**. Take a fresh machine and configure hostname. Use the commad `hostname <hostname>` to configure the hostname.
 
-2. Configure a **static IP address** on the server and try pinging to the another machine or sunbeam.shuharilabs.com
+2. Configure a **static IP address** on the server and try pinging to the another machine or sunbeam.shuharilabs.com.
 
-3. Check for the **updates** and try to try installing them.
+3. **Check for the updates**. Run the Command `sudo apt-get update && apt-get install`.
 
-4. Then **check whoami command** and try to get the 
+4. Then **check whoami command**.
 
 5. **Configure Time Zone**. Run the following command to `sudo dpkg-reconfigure tzdata`, this is how you configure the time zone of the machine.
 
@@ -97,32 +97,46 @@ In this section we are going to cover the health inspection of the machine, basi
     sudo apt-get install apache2 apache2-utils autoconf gcc libc6 libgd-dev make php python3 tree unzip wget libkrb5-dev openssl libssl-dev
     ```
 
-Remember to install the source code of the Nagios, the source code of the Nagios is written as C, **Download**, **Extract** and **Move to directory**.
+Remember to install the source code of the Nagios from the local server. **Download it**, **Extract it** and **Change the Directory** where Nagios is installed.
 
-7. Now, **Find Configure File**. Make sure that you have the Configure file inside the **nagios-4.5.0**.
+7. Now you need to make the configurations inside the nagios source file that you installed. 
 
 8. **Installation of Apache Server**. Make sure that you've created the file insdie the /etc/apache2/site-enabled/ folder.
 
     ```
     ./configure --with-httpd-conf=/etc/apache2/site-enabled
     ```
-9. **Compile**. Run the following command `sudo make all install` to start the installation. 
+9. **Compile**. Run the following command to start the installation.
 
-10. **Make New User**. Now we'll be running the Nagios server on this user. We are not going to use the command `sudo make install-group-users`.
+    ```
+    sudo make all
+    ```
+
+10. **Create New User**. Use the below command to make the nagios user and group, this user and group are the one on which our apache server will be running. 
+    ```
+    sudo make install-groups-users
+    ```
 
 In Debian based Linux, the apache user is ***www-data*** for the apace services. You can check the same using the cmd `cat /etc/passwd | grep www`.
 
-11. **Add the www_data to Nagios**. Now you need to add the user to the nagios group, so you need to run the following command `groupadd -aG nagios www-data`.
+11. **Add the www_data to Nagios**. Now you need to add the user to the nagios group so that apache can run the services that nagios has.
+    ```
+    sudo usermod -aG nagios www-data
+    ```
 
 12. **Change the nagios user password**. Now what needed to be done is that change the password for the nagios user.
 
-13. **Check nagios is installed**. You need to move to /usr/local/ and check if you are able to see the nagios folder created. So you need to install it. Because this is the file that is offical nagios file. Remember to run the `sudo make install` inside the nagios-4.5.0 file.
+```
+sudo passwd nagios
+```
+
+13. **Check nagios is installed**. Move to /usr/local/ and check if you are able to see the nagios folder created. Because this is the file that is offical nagios file. Run the below command to execute the executable file of the nagios.
 
 ```
 sudo make install
 ```
 
-14. **Inspect the nagios file**. You need to go into the file and check.
+14. **Inspect the nagios file**. You need to go into the file and check. Remember `/usr/local/nagios/bin` is the main nagios file.
 
 15. **Now make the service available**. Run the `sudo make install-daemoninit` and nagios is installed as the service and now the service is running.
 
@@ -130,7 +144,7 @@ sudo make install
 
 17. **Make the file available**. Run this command to execute `sudo make install-config`.
 
-18. Run the command, `ls -l /etc/apache2/site-enabled/`, this will ensure that the installation is complete. 
+18. Run the command, `ls -l /etc/apache2/site-enabled/`, this will ensure that the installation is complete.  After that you need to execute the `sudo make install-webconf`.
 
 Once you install the apache, there are modules **rewrite** that changes the url of the website when it get redirect. Another feature is **cgi**, it is the comman gateway interface, that needs to run both the module enable.
 
@@ -155,6 +169,8 @@ sudo /usr/local/nagios/bin/nagios -v /usr/local/nagios/etc/nagios.cfg
 ```
 
 21. Now you need to `sudo systemctl start apache2`.
+
+Once the setup is complete, open browser and look for `http://<ip-address>/nagios`, you'll find the nagios server running.
 
 
 
