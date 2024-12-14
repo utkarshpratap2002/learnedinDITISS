@@ -16,10 +16,14 @@ There is high amount of traffic that hits the application that is developed by I
 
 - **Implementation Vulnerabilty** - This includes Buffere Overflow.
 
-- **Operational/Configurational Vulnerability** - Instructional were clear, but failed to straight-a-way implement it.
+- **Operational/Configurational Vulnerability** - Instruction were clear, but failed to straight-a-way implement it.
 
 
 ### Quality-of-Service (QoS)
+
+QoS is about managing limited network resources. Quality-of-Service ensures that there is prioritize given to the multiple services running or basically to address the buffering that casuses due to the overload of the services. QoS ensures that there is priority given to each of them. 
+
+- **Scenario 1** - In a hospital, reliable network connectivity is crucial for patient care. Real-time applications like patient monitoring systems, medical imaging, and electronic health records require low latency and guaranteed bandwidth. QoS can prioritize these critical applications over less time-sensitive traffic like administrative tasks or guest Wi-Fi, ensuring that patient care is never compromised by network congestion.In a hospital, reliable network connectivity is crucial for patient care. Real-time applications like patient monitoring systems, medical imaging, and electronic health records require low latency and guaranteed bandwidth. QoS can prioritize these critical applications over less time-sensitive traffic like administrative tasks or guest Wi-Fi, ensuring that patient care is never compromised by network congestion.
 
 ### Exposure
 

@@ -64,6 +64,12 @@ Baically there are lot of things that can be done using the symmetric methods, b
   - Block Cipher
   - Stream Cipher 
 
+# What does Hash Function do?
+
+Understanding Hash Function is simple, it generates the Hash Code for the data, even a single bit change can cause the hash code to change, therefore hash function is used mainly for encryption in order to check the hash value for verification. 
+
+Hash funcitons are irreversible, meaning if you encrypted the data or message using teh hash function, you won't be able to extract the source from the value itself. This means that ***Hash Function is not for Encryptions or to Encrypt, rather it is used to check the Encryption and authenticity of the message or data***.
+
 # Redirection of Health of System
 
 In this section we are going to cover the health inspection of the machine, basically we are going to observer some parameter and redirect it to the server. This server is going to access the performance outside of the machine, these parameter can be made available to the main server.
@@ -172,10 +178,51 @@ sudo /usr/local/nagios/bin/nagios -v /usr/local/nagios/etc/nagios.cfg
 
 Once the setup is complete, open browser and look for `http://<ip-address>/nagios`, you'll find the nagios server running.
 
+# Installing Nagios Plugins
 
+- Dependencies for plugins 
 
+```
+sudo apt-get install -y automake autotools-dev bc build-esseential dc gawk gettext libmcrypt-dev libnet-snmp-perl libssl-dev snmp
+```
 
+- Second you need to install the following dependencies.
 
+```
+sudo apt-get install -y automake autotools-dev bc build-essential dc gawk gettext libmcrypt-dev libnet-snmp-perl libssl-dev snmp
+```
+- Extraction
+```
+tar zxf nagios-plugins<filename>
+cd nagios<filename>
+ls
+```
+
+- The location for the nagios plugin folder `/usr/local/nagios/libexec/`, remember that there should be no files within the folder.
+
+- Start `sudo ./configure`.
+
+- Next `sudo make`.
+
+- Now `sudo make install`.
+
+After the installation of the check the files within the libexec folder and verify. After that you can go and start looking at the **services** and check all the services will turn *green*.
+
+# Encryption
+
+Encryption of folder can be performed using the following cmd. There will be U in front of file names showing that they are unencrypted.
+
+```
+cipher /e one\oneone 
+```
+
+After you execute the cmd, the folder will turn *green*. But the content inside the oneone\ will not be encrypted. In order to encrypt the files and folder within you need to do a recursice encryption. 
+
+```
+cipher /e /s:two
+```
+
+The above cmd will encrypt the folder *two* recursively. This is the cmd line version. 
 
 
 
