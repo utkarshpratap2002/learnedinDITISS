@@ -170,35 +170,40 @@ Often, they are used together, with Nginx serving static content and handling in
     sudo apt-get install squid
     ```
 
-- This configuration file that contains 9149 lines has the path /etc/squid/squid.conf. Before going ahead *take backup*.
+- This configuration file that contains 9149 lines has the path `/etc/squid/squid.conf`. Before going ahead *take backup*. Inside this config file, each section is known as tags. 
 
 - Squid is basically configured using `TAG`s, which are nothing but indication of sections. We first need to write the ACL tags. 
 
-- Something missing!
-
-- Write the acl for domain.
-
     ```
-    acl shuhari_usrs dstdomain 192.168.80.128
+    acl <name-of-traffic> dstdomain <squid-server-ip-address>
     ```
 
-- Now search for `TAG: http` and write the following.
+- Remember to note that *name-of-traffic* can be anything, it is just that we are specifying the name for the traffic and nothing else.
+
+- Now find the `http_access tag` where wer are allowing the particular traffic user through this configuration within the **`http-access tag`**.
 
     ```
     http_access allow shuhari_users
     ```
 
-- Now seach for `TAG: http_port` and scroll down to http_port 3128 which is the default port. 
+- Now find the **`http_port`** where we are specifying the port number through which our services will go through. Remember that squid run on port number 3128 by default.
 
     ```
-    http_port 3128 accel defaultsite=192.168.80.128 vhost
+    http_port 3128 accel defaultsite=<squid-server-ip-address> vhost
+    ```
+
+- Now we need to add the backend servers and tag cache peers, basically telling where to find the cache peers, the real servers that are running the services over http.
+
+    ```
+    tag:cache_peer
+    # Internet caching protocol - used for caching
     ```
 
 - Now search for `TAG: cache_peer` 
 
-```
-cache_peer 192.168.80.130 parent 80 0 no-query originserver name=shuhari
-```
+    ```
+    cache_peer 192.168.80.130 parent 80 0 no-query originserver name=shuhari
+    ```
 
 # What do we mean by all that?
 
