@@ -1,4 +1,4 @@
-# Decryption of Hash Value
+# PHP
 
 Understanding the HTML Code. We need to understand what exactly the body part is.
 
@@ -8,7 +8,7 @@ Understanding the HTML Code. We need to understand what exactly the body part is
 
 This is called XSS. Whenever this script is being called, all the items will have the entry of the following script you inserted in the inputs. 
 
-PHPSESSID is required for session hijacking, meaning through this you'd be able to hijack the session using the following sessionid, but remember that this is only valid for the PHPSESSID, meaning it works in case of PHP only.
+PHPSESSID is requiresd for session hijacking, meaning through this you'd be able to hijack the session using the following sessionid, but remember that this is only valid for the PHPSESSID, meaning it works in case of PHP only.
 
 # What needs to be done?
 
@@ -101,7 +101,7 @@ The line `if (array_key_exists ("redirect", $_GET) && $_GET['redirect'] != "")` 
 
 Refer to [Test for Client Side URL Redirection](https://owasp.org/www-project-web-security-testing-guide/v41/4-Web_Application_Security_Testing/11-Client_Side_Testing/04-Testing_for_Client_Side_URL_Redirect) in order you want to learn more about it.
 
-# How to Start the FTP Redirection?
+# FTP Redirection?
 
 The FTP Redirection can be enabled using the following steps:
 

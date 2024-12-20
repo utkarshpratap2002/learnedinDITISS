@@ -88,29 +88,26 @@ You need to log into the original page, or perphaps you need an actual link, tha
 
 - Then you need to start with executing the zphisher script using `bash zphisher.sh`, then select appropiate options to clone the website such as *Instagram*, or *LinkedIn* or whatever.
 
-- Once done with the attack, you can go to /auth/username.dat which will contain the infomation for the users data.
+- Once done with the attack, you can go to `/auth/username.dat` which will contain the infomation for the users data.
 
 # Social Engineering Toolkit
 
-It is an open source penetration testing framework designed for xocial engineering, that is used for the education purposes, how the payloads are created and how trojans are transfered to the targets and attack is performed. 
+You missed several steps and explanations within your notes on the Social Engineering Toolkit (SET). Here's a more complete breakdown:
 
-- You first need to install the social engineering toolkit in linux. 
-- You need to select the following number according what you are going to perform.
-  - 1 for Social Engineering
-  - 2 for 
-  - 3 
-  - 2 
-- Now you need to enter the URL to clone, take a legitimate wesbiste ad then go to the kali linux and genrate the url in `webattack`.
+**Installation:**
 
-- Once it is reddy, let get to the Machine IP address.
-
-2
+* You mentioned installing SET, but *how*?  Specify the commands.  Typically, this involves cloning the SET repository from GitHub and running the setup script.  The commands would look something like this:
+```bash
+git clone https://github.com/trustedsec/social-engineer-toolkit/ set
+cd set
+./setup.py install
+```
 
 # Meterpreter Reverse TCP
 
 Basically we need a windows machine that will revert the session to the meterpreter after we create a payload and insert it inside the windows machine. All you need to do is, create a **payload** using the social engineering toolkit and somehow get it passed to the window machine. The below are the steps:
 
-- Open SET, and select option **1** *Create Payload and Listener*
+- Open **SET**, and select option **1** to *Create Payload and Listener*
 
 <div style="border-left: 4px solid #007acc; background-color: #f1f6f9; padding: 10px; border-radius: 5px;">
 <strong>Note: </strong> Remember that this practical lab is using Windows 7 Machine for the exploitation.

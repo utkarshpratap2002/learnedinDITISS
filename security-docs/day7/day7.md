@@ -36,9 +36,13 @@ Lets discuss about the basics of Android App Development, where we'll and might 
 
 Even if the hacker has the valid certificate, and if the certificate is not on your **truststoere**, the request will be dropped and connection will be prevented. This is called *Certificate Pinning*.
 
-# Root and Debigger Detection
+# Root and Debugger Detection
 
-A rooted device is the one that will have root privileges for the devices and from there the system can have multiple input as well as system command.
+Root and debugger detection are security measures implemented within mobile apps to protect against unauthorized access and tampering.  Think of them as alarms designed to go off if someone tries to gain excessive control over the device or the app itself.
+
+*Root detection* checks whether the device on which the app is running has been "rooted."  Rooting is a process that gives users administrative (or "superuser") privileges on Android devices.  While rooting can offer benefits like customization and access to advanced features, it also opens up significant security risks.  A rooted device is more vulnerable to malware and other security threats.  Therefore, many apps, especially those dealing with sensitive data like banking apps or DRM-protected content, employ root detection to prevent their use on compromised devices.  If root access is detected, the app might refuse to run, display a warning message, or restrict certain functionalities.
+
+*Debugger detection* checks whether a debugger is attached to the app. Debuggers are tools used by developers to step through code, inspect variables, and understand the app's behavior. However, malicious actors can also use debuggers to analyze an app's logic, reverse-engineer its functionality, or tamper with its data. Debugger detection acts as a countermeasure, preventing unauthorized debugging and protecting the app's integrity. If a debugger is detected, the app might terminate, display an alert, or modify its behavior to thwart the debugging attempt.
 
 # Android Security Hack
 
@@ -60,7 +64,7 @@ For the security of Android we are going to test the security of the Android Mac
 
   - Now you need to do the proxy settings where Default 127.0.0.1 and we will change it to 192.168.200.100 with port 8080, as if the traffic comes for the IP 192.168.200.100 it should connect to the same machine.
 
-  - **Possible Vulnerability** as it is given in the below diagram, where you need make sure that firewall is not getting bypassed as there is possibility that if some changes the default gateway, it will directly go to the router, bypassing the firewall. Router is only restricted to routing only, meaning router is only doing the routing part.
+**Possible Vulnerability** as it is given in the below diagram, where you need make sure that firewall is not getting bypassed as there is possibility that if some changes the default gateway, it will directly go to the router, bypassing the firewall. Router is only restricted to routing only, meaning router is only doing the routing part.
 
     ```
     Tinku -> IP -> DHCP -> Firewall (Gateway) -> Gateway

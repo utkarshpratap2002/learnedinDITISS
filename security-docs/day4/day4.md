@@ -79,7 +79,57 @@ THis is another kind of vulnerability which is Bypassing the OTP, and that when 
 
 # *Data & Privacy*
 
-If we go to the Youtube history, hyou 
+Lets talk about the General Request Handling Issues,
+
+* **Lack of Input Validation and Sanitization:** This is a fundamental issue that applies to all HTTP methods. Failure to sanitize user input can lead to injection attacks (XSS, SQL injection, command injection).
+* **Insufficient Authentication and Authorization:**  If requests are not properly authenticated and authorized, attackers could perform actions they should not be allowed to.
+* **Improper Error Handling:** Verbose error messages can leak sensitive information to attackers.
+* **Denial of Service (DoS):**  Large or malformed requests can overload the server, causing a denial of service.
+
+Improperly handling HTTP requests can lead to a wide range of vulnerabilities. Let's explore some common issues related to different HTTP methods:
+
+**1. GET Requests:**
+
+* **Information Leakage:**  Sensitive data should never be included in URLs (query parameters).  Attackers can easily access URLs, potentially exposing confidential information.
+* **Cross-Site Scripting (XSS):** If user-supplied data in query parameters is not properly sanitized, attackers could inject malicious JavaScript code that executes in other users' browsers.
+* **Server-Side Request Forgery (SSRF):** If a GET request is used to fetch a resource from a user-supplied URL, attackers could potentially access internal resources or services on the server.
+
+**2. POST Requests:**
+
+* **Cross-Site Request Forgery (CSRF):** If POST requests don't include proper CSRF protection (anti-CSRF tokens), attackers could trick users into submitting unintended requests.
+* **SQL Injection:** If user-supplied data in POST parameters is not sanitized and is used in SQL queries, attackers could inject malicious SQL code to manipulate the database.
+* **Command Injection:**  Similar to SQL injection, if POST data is used to construct shell commands, attackers might be able to inject commands to execute on the server.
+* **File Uploads (Unvalidated):**  If POST requests are used for file uploads without proper validation of file types and content, attackers could upload malicious files (e.g., executable scripts) to the server.
+
+**3. PUT Requests:**
+
+* **Method Overriding (Insecure):** Some frameworks allow overriding the HTTP method using a hidden form field. If not handled carefully, this can enable attackers to send unintended PUT requests.
+* **Unvalidated Data:**  Similar to POST, if data in PUT requests is not validated and sanitized, it can lead to injection vulnerabilities.
+* **Unauthorized Resource Modification:** If PUT requests are not properly authorized, attackers could modify resources they shouldn't have access to.
+
+**4. DELETE Requests:**
+
+* **Unvalidated Data/IDs:** If DELETE requests rely on user-supplied IDs without proper validation, attackers could potentially delete resources they shouldn't have access to.
+* **Unauthorized Resource Deletion:**  Similar to PUT, unauthorized DELETE requests can lead to data loss or disruption of service.
+
+**5. Other HTTP Methods (PATCH, HEAD, OPTIONS, etc.):**
+
+* **Method Not Allowed:**  If an application doesn't properly handle unsupported methods, it might reveal information about the server or create unexpected behavior.
+* **Method-Specific Vulnerabilities:** Each method has its potential vulnerabilities. For example, `OPTIONS` requests can be used for information gathering, and `PATCH` requests can have similar vulnerabilities to `PUT`.
+
+
+
+**Example (Insecure File Upload - PHP):**
+
+```php
+<?php
+$filename = $_FILES['uploaded_file']['name'];
+move_uploaded_file($_FILES['uploaded_file']['tmp_name'], "uploads/$filename");
+?>
+```
+
+This code is vulnerable because it doesn't validate the uploaded file's type or content. An attacker could upload a malicious PHP script and then execute it by accessing `uploads/malicious_script.php`.
+
 
 # Setting Up DNS and DHCP Server To Redirect the user to Phishing website
 
