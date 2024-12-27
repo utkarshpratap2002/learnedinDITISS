@@ -203,26 +203,86 @@ DVCSs, especially Git, have become the dominant type of VCS due to their flexibi
 
 # Basic Workflow
 
-First thing first, create directory.
+The diagram shows the flow of changes from your working directory, through the staging area, into the repository, and how the stash can be used to temporarily store uncommitted changes.
 
-```
-mkdir /home/git_d
-```
+![alt text](git-workflow.png)
 
-Then INitialise the Git repo, where **.git** has all the git metadeta or the git repository. It has initilised an empty repository, the subobjects for objects and templates. A database stored in a hidden .git directory within your project. It stores the complete history of your project.
-```
-git init
-# Reponse to git init
-Initialized empty Git repository in /home/git_d/.git/
-```
-This is called Working Directory, where you might create a codebase, multiple fiiles and folders and all. And because the file is currently within the working directory, you need to push the file to the Remote repository. 
+1. **Working Directory:** This is where you make changes to your files.  The example shows a file named `program.py`.
+
+<br>
+
+2. **Staging Area (Index):**  Before committing changes, you add them to the staging area. This lets you select which changes you want to include in the next commit.  `git add <file>` moves files from the working directory to the staging area.  `git reset` removes files from the staging area.
+
+<br>
+
+3. **Repository (.git directory):**  This is the Git database storing your project's history.  It contains all commits, branches, and other Git data.  `git init` initializes a new Git repository in your project directory.
+
+<br>
+
+4. **`git commit`:** This command takes the changes from the staging area and creates a new commit in the repository.  Each commit is a snapshot of your project at a specific point in time.  v1 and v2 likely represent different commit versions.
+
+<br>
+
+5. **`git checkout <file>`:** This command retrieves a specific file from the repository and places it in your working directory.  It's often used to revert changes or retrieve older versions of a file.
+
+<br>
+
+6. **Stash Area:** This is a temporary storage area.  `git stash` takes your uncommitted changes from the working directory and the staging area and saves them to the stash. This clears your working directory and staging area.  `git stash pop` retrieves the most recently stashed changes and applies them back to your working directory.  This is useful when you need to switch branches quickly without committing your current work.
+
+<br>
+
 ```
 Working Directory  -->  Staging Area  -->  Local Repository  -->  Remote Repository
      ^                                       |
      |                                       |
-     (git checkout)                           (git push/pull)
+     (git checkout)                          (git push/pull)
      |                                       |
      (git add)                              (git fetch)
 ```
-In order to see the file onto your Local Repository, you need to start using the **git status -s** in order to create the git file into 
 
+# `git init`
+
+With the help of this command, a .git subdirectory is created, which includes the metadata, like subdirectories for objects and template files, needed for generating a new Git repository.
+
+
+# `git config`
+
+* **Local (repository-specific):**  This is the most specific level. These settings only apply to the current Git repository.  The configuration file is stored within the repository itself (in the `.git/config` file). By default, if you don't specify a level, `git config` writes to the local level.
+
+* **Global (user-specific):** This level applies to all repositories owned by the current user on the system. The configuration file is typically located in your home directory (e.g., `~/.gitconfig` or `~/.config/git/config`).  This is where you'd typically set your global username and email.
+
+* **System (system-wide):** This is the broadest level.  These settings apply to all users and all repositories on the entire operating system. The location of the system-level configuration file varies depending on the operating system, but it's usually somewhere in the system's root path (e.g., `/etc/gitconfig` on Linux/macOS). This level is usually managed by system administrators.
+
+# Basic Workflow
+
+**Creating a Repository:**
+
+Start by creating a new directory for your project (`mkdir /tmp/myproject`).  Initialize a Git repository within that directory using `git init`. This creates a hidden `.git` subdirectory, which stores all the metadata and version control information for your project.
+
+**Checking the Repository Status:**
+
+Use `git status` to see the current state of your repository. It shows which files have been modified, added, or are untracked.  For a more concise view, use `git status -s`, which uses a two-character code to indicate the status of files relative to the staging area and the working directory.
+
+**Committing Changes:**
+
+After making changes to your files, use `git add <file>` to stage the changes you want to include in the next commit.  `git commit -m "<message>"` saves a snapshot of your staged changes to the repository, along with a descriptive message.
+
+**Viewing Commit History:**
+
+`git log` displays the commit history of your repository, showing each commit's author, timestamp, and message.
+
+**Comparing Changes:**
+
+`git diff` shows the differences between your working directory and the last committed version.
+
+**Reverting Changes:**
+
+`git checkout <file>` replaces the working directory version of a file with the last committed version from the repository.
+
+**Resetting Changes:**
+
+`git reset` moves staged changes back to the working directory (soft reset). `git reset --hard` discards all changes in both the staging area and the working directory, reverting to the last committed version (use with caution!).
+
+**Stashing Changes:**
+
+`git stash` temporarily saves your uncommitted changes to a separate stash area, clearing your working directory and staging area.  `git stash list` shows all stashed changes. `git stash pop` retrieves the most recently stashed changes and applies them back to your working directory.  This is useful for switching branches without committing incomplete work.
