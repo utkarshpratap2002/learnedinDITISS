@@ -65,6 +65,22 @@ You **can** open multiple files at a time using vim. Use `vim file*`, such that 
 
 You can check which files are open using **:ls**. You can move to the next file using **:n** and use **:N** to move to the previous file. You can directly move to the first and last file using **:first** and **:last**.
 
+# `rsync` with `--exclude`
+
+A most preferred method of excluding the files that are not needed, you can easily copy the files from source to destination using `rsync` method and excluding files, folders, you can also use pattern and regular expression. For exaxmple, 
+
+```
+rsync -av --exclude='file1.txt' --exclude='dir1/' --exclude='*.log' source/ destination/
+```
+
+* `-a`: archive mode (recursive, preserves timestamps, etc.)
+* `-v`: verbose output
+* `--exclude`: Specifies patterns to exclude.  You can use multiple `--exclude` options.
+* `source/`: The source directory.
+* `destination/`: The destination directory.
+
+To copy everything from `source/` to `destination/` *except* `file1.txt`, the `dir1` directory, and all files ending with `.log`
+
 ### `script session.log`
 
 Script will allow you to create your session logs that will store or say record the commands and output to the commands within the log file. Use `script session.log` to start the session and the session.log file will save all the commands and outputs executed on the terminal. Use `exit` to exit the session recording.
