@@ -8,8 +8,6 @@ So far we know that we can deal with IP and Subnets and how we calculate subnet 
 * Now NAT and Proxy, these two technolgies are used in to communicate with IP addresses over the internet.
 * **APIPA (Automatic Private IP addressing)** is the kind of IP address where system themselves are able to assign an IP within the subnetworks and they are able to communicate with them.
 
-
-
 - **Private Address Series** 
   - 10.0.0.0/8 (10.0.0.0 - 10.255.255.255)
   - 172.16.0.0/12 (172.16.0.0 - 172.31.255.255)
@@ -20,6 +18,10 @@ So far we know that we can deal with IP and Subnets and how we calculate subnet 
 - **APIPA (Automatic Private IP Addressing)** - 169.254.0.0/16
 
 - **Loopback Addresses** - 127.0.0.0/8
+
+### Public IP Address Space
+
+Public IP addresses are assigned by appropiate authorities such as RIPE, ARIN, AFRINIC, etc. or **Local Internet Registries (LIRs)**. Public Address space for the africa region available from AFRINIC. 
 
 ### Spanning Tree Protocol
 
